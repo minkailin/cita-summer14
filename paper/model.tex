@@ -1,0 +1,170 @@
+\section{Disc-planet models}\label{model}
+The system is a two-dimensional, self-gravitating gas disc of mass
+$M_d$ rotating about a central star of mass $M_*$. Cylindrical
+co-ordinates $(r,\phi,z)$ centred on the star is adopted. The frame is   
+non-rotating. Computational units are such that
+$G=M_*=\mathcal{R}=\mu=1$ where $G$ is the gravitational constant,
+$\mathcal{R}$ is the gas constant and $\mu$ is the mean molecular
+weight. %% \cite{lin12}
+
+The disc is governed by the standard fluid equations  
+\begin{align}\label{3d_gov_eq}
+  &\frac{\p\Sigma}{\p t}+\nabla\cdot(\Sigma \bv)=0, \\
+  & \frac{\p\bv}{\p t}+\bv\cdot\nabla\bv= -\frac{1}{\rho}\nabla p 
+  - \nabla{\Phi} + \bm{f}_\nu,\\
+  & \frac{\p e}{\p t} + \nabla\cdot(e\bv) = -p\nabla\cdot\bv +
+  \mathcal{H} - \mathcal{C}, \\
+  &\nabla^2\Phi_d = 4\pi G \Sigma \delta(z),\label{poisson}
+\end{align}
+where $\Sigma$ is the surface density, $\bv = (v_r,v_\phi)$ the fluid
+velocity, $p$ is the pressure, $e=p/(\gamma-1)$ is the energy
+density and the adiabatic index $\gamma=1.4$ is assumed constant. 
+
+The total potential $\Phi$ includes the stellar potential, planet potential
+(described below), and the disc potential $\Phi_d$ which satisfies the
+Poisson equation \ref{poisson}. Indirect potentials are also included
+to account for the non-inertial reference frame. In the momentum
+equations, $\bm{f}_\nu$ represent viscous forces whose magnitude is 
+characterised by a constant kinematic viscosity parameter $\nu$.   
+
+\subsection{Heating and cooling}
+In the energy equation, the heating term $\mathcal{H}$ is defined as 
+\begin{align}
+  \mathcal{H} \equiv Q^+ - Q^+_i\frac{\Sigma}{\Sigma_i}, 
+\end{align}
+where $Q^+$ represents viscous heating and subscript $i$ denotes
+evaluation at $t=0$. The cooling term $\mathcal{C}$ is defined as
+\begin{align}
+  \mathcal{C} \equiv \frac{1}{t_c}\left(e -
+  e_i\frac{\Sigma}{\Sigma_i}\right),  
+\end{align}
+where $t_c = \beta\Omega_k^{-1}$ is the cooling time,
+$\Omega_k=\sqrt{GM/r^3}$ is the Keplerian frequency and $\beta$ is an
+input parameter. Although idealised, this cooling prescription allows one 
+to explore the full range of thermodynamic response of the disc in a 
+systematic way. 
+
+Note that the energy source terms have been chosen to be absent 
+at $t=0$. This allows the steady state energy equation to be satisfied
+provided the flow is axisymmetric and $v_r$ is negligible compared to $v_\phi$.  
+% If the disc is axisymmetric, steady and with only azimuthal flow, then the 
+%energy equation is trivially satisfied. 
+%This allows one to specify equilibrium discs (see below)
+%in the same way as in the case where the energy equation is replaced by a fixed temperature 
+%profile (i.e. $c_\mathrm{iso}^2\equiv p/\Sigma$ is prescribed). 
+The cooling term attempts 
+to restore the initial energy density (and therefore temperature) profile. 
+
+
+\subsection{Disc model and initial condition}
+The disc occupies $r\in[r_\mathrm{in}, r_\mathrm{out}]$ with $\rout =
+25\rin$ and $\phi\in[0,2\pi]$. The initial disc is axisymmetric with
+surface density profile  
+ 
+\begin{align}\label{initial_density}
+   \Sigma_i(r) = \Sigma_0\left(\frac{r}{r_\mathrm{in}}\right)^{-s}
+    \left[1 - \sqrt{\frac{r_\mathrm{in}}{r + H_i(\rin)}}\,\right] 
+\end{align}
+where the power-law index $s=3/2$, $H(r) = \ciso\Omega_k $ defines the disc scale-height 
+where $\ciso=\sqrt{p/\Sigma}$ isothermal sound-speed. The disc aspect-ratio is defined as $h\equiv H/r$ and initially
+$h_i=0.05$. The surface density scale $\Sigma_0$ is set by  
+\begin{align}
+\Sigma_0 = \frac{h_i\rout\Omega_k^2(\rout)}{\pi G Q_o},
+\end{align}
+where $Q_o$ is the thin-disc Keplerian Toomre parameter at the outer boundary initially. 
+
+The initial azimuthal velocity $v_{\phi i}$ is set by centrifugal balance with
+pressure, stellar gravity and disc gravity. The initial radial velocity is $v_{r i}=3\nu/r$ 
+with $\nu = \hat{\nu}\rin^2\Omega_k(\rin)$. For parameter values employed in this work, $v_{\phi i}\simeq r\Omega_k$ 
+and $\hat{\nu}\lesssim O(10^{-5})$, so that $|v_{r i}/v_{\phi i}|\ll1$ and the initial 
+flow is effectively only in the azimuthal direction. 
+
+
+\subsection{Planet potential}\label{planet_config}
+The planet potential is given by
+\begin{align}
+\Phi_p = -\frac{GM_p}{\sqrt{|\bm{r} - \bm{r}_p|^2 + \epsilon_p^2}},
+\end{align}
+where $M_p=qM_*$ is the planet mass ($q$ is the planet-to-star mass ratio), $\bm{r}_p=(r_p,\phi_p)$ is the planet's 
+position in the disc and $\epsilon_p=0.5r_h$ is a softening length with $r_h=(q/3)^{1/3}r_p$ being the Hill radius. 
+%Hill radius chosen so eps doesn't change with time (scale-height does)
+In most simulations the planet is held on a fixed circular orbit, so that $r_p(t) = r_p(0) \equiv r_{p0}$. This also
+defines the time unit $P_0\equiv 2\pi/\Omega_k(r_{p0})$ used to describe results. 
+
+In this study only one planet mass is considered, with $q=10^{-3}$. This corresponds to a Jupiter-mass
+planet if $M_*=M_{\sun}$. The initial orbital radius is $r_{p0} = 10\rin$. 
+
+
+\section{Numerical experiments}\label{method}
+The self-gravitating disc-planet system is evolved using the 
+\texttt{FARGO-ADSG} code \citep{baruteau08, baruteau08b}. This is a modified version 
+of the original \texttt{FARGO} code \citep{masset00a} to include the energy 
+equation and disc gravity. The code employs finite-difference scheme similar 
+to the \texttt{ZEUS} code \citep{stone92}, but with a modified azimuthal transport 
+algorithm to circumvent the time-step restriction set by the inner disc boundary. 
+The disc is divided into $(N_r,N_\phi)$ zones in the radial and azimuthal directions, 
+respectively. The grid spacing is logarithmic in radius and uniform in azimuth.
+
+\subsection{Control parameters}
+The disc parameters are $Q_o$, which characterizes the strength of self-gravity; 
+and $\beta$ which sets the cooling time. Two levels of self-gravity is considered: 
+a light disc with $Q_o=8$ and a heavy disc with $Q_o=1.5$. The cooling 
+parameter $\beta$ is chosen indirectly  through the parameter
+$\tilde{\beta}$ such that 
+
+\begin{align}
+  t_c(r_p+x_s) = \beta\Omega_k^{-1}(r_p+x_s) = \tilde{\beta} t_{\mathrm{lib}}(r_p+x_s), 
+\end{align}
+where $x_s$ is the distance from the planet, and $t_\mathrm{lib}$ is
+the time interval between successive encounters of a fluid element and
+the planet's azimuth. Assuming Keplerian orbital frequencies and $x_s\ll r_p$
+gives $t_\mathrm{lib}\simeq 4\pi r_p/(3\Omega_{kp} x_s)$, where
+$\Omega_{kp} = \Omega_k(r_p)$. Therefore   
+\begin{align}\label{betatilde}
+  \beta = \tilde{\beta} \frac{4\pi r_p}{3x_s} \left(1  - \frac{3x_s}{2r_p}\right), 
+\end{align}
+where $x_s\ll r_p$ was used again. We use $x_s = 2r_h$ in
+Eq. \ref{betatilde}. For a planet mass with $q=10^{-3}$,
+Eq. \ref{betatilde} then gives $\beta \simeq 23.9\tilde{\beta}$. 
+
+
+%giant planet gap is 2.5rh
+%2rh is CR of G.E.I. 
+
+\subsection{Simulation procedure}
+The disc is evolved without a planet for $t\in[0,20]P_0$. The planet potential is smoothly switched on
+between $t\in[20,30]P_0$. In a separate set of calculations the planet
+potential is turned off after $t>t_\mathrm{off}$, immediately  
+afterwhich the surface density, energy density and velocity fields are
+azimuthally averaged and then subject to random surface density  
+perturbations of magnitude $10^{-2}$.   
+
+
+\subsection{Diagonistic measures}
+%% The Toomre parameter is 
+%% \begin{align}\label{toomre}
+%% Q \equiv \frac{\kappa c_s}{\pi G \Sigma},
+%% \end{align}
+%% where $\kappa^2 = r^{-3}\p(rv_\phi)/\p r$ is the square of the epicyclic frequency and $c_s = \sqrt{\gamma} \ciso $ is the adiabatic sound-speed. 
+%% Note that Eq. \ref{toomre} differs from the Keplerian Toomre parameter used to label the disc models. 
+%The potential vorticity (PV), or vortensity, is 
+%\begin{align}
+%\eta \equiv \frac{\kappa^2}{2\Omega\Sigma}.
+%\end{align}
+%Note that $\eta$ is related to $Q$ through $\kappa$. 
+
+According to previous 2D studies, the key quantitiy in describing the
+stability of radially structured non-barotropic discs is the
+\emph{generalized vortensity} (GV): 
+\begin{align}
+  \tilde{\eta}\equiv \left(\frac{\kappa^2}{2\Omega\Sigma}\right)S^{-2/\gamma}, 
+\end{align}
+where $S \equiv p/\Sigma^\gamma$ is defined to be the entropy. The
+quantity in brackets, $\eta\equiv \kappa^2/2\Omega\Sigma$, is the
+usual vortensity or potential vorticity (PV). 
+
+%It will be convenient to analyse results in terms of perturbations with respect to a smooth background. Let 
+%\begin{align}
+%\Delta f = \frac{f-\avg{f}}{\avg{f}}
+%\end{align}
+%denote the perturbation of a flow quantity $f$

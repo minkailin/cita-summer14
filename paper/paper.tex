@@ -1,0 +1,91 @@
+\documentclass[useAMS,usenatbib]{mn2e}
+\usepackage{epsfig,rotate,graphicx}
+\usepackage[fleqn]{amsmath}
+\usepackage{subfigure}
+\usepackage{lscape}
+\usepackage{bm}
+
+\newcommand{\p}{\partial}
+\newcommand{\mnras}{MNRAS}
+\newcommand{\apj}{ApJ}
+\newcommand{\aap}{A\&A}
+\newcommand{\apjl}{ApJL}
+\newcommand{\araa}{ARAA}
+\newcommand{\dd}{\delta}
+\newcommand{\adot}{\dot{a}}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\gtrsim}{\;\raisebox{-.8ex}{$\buildrel{\textstyle>}\over\sim$}\;}
+\newcommand{\lesssim}{\; \raisebox{-.8ex}{$\buildrel{\textstyle<}\over\sim$}\;}
+\newcommand{\anrev}{{\it ARA\&A, }}
+\newcommand{\apjs}{{\it ApJS, }}
+\newcommand{\icar}{{\it Icarus, }}
+\newcommand{\mnr}{{\it MNRAS, }}
+\newcommand{\nat}{{\it Nature, }}
+\newcommand{\sci}{{\it Sci, }}
+\newcommand{\ana}{{\it A\&A, }}
+\newcommand{\anas}{{\it A\&AS, }}
+\newcommand{\aaps}{{\it A\&AS, }}
+\newcommand{\anar}{{\it A\&AR, }}
+\newcommand{\prd}{{\it Phys. Rev. D }}
+\newcommand{\qjl}{{\it QJRAS, }}
+\newcommand{\sbar}{\bar{\sigma}}
+\newcommand{\avg}[1]{\langle #1 \rangle_\phi}
+\newcommand{\bu}{\bm{u}}
+\newcommand{\lmax}{l_\mathrm{max}}
+\newcommand{\mmax}{m_\mathrm{max}}
+\newcommand{\trel}{t_\mathrm{rel}}
+\newcommand{\zeus}{{\tt ZEUS-MP }}
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\bv}{\bm{v}}
+\newcommand{\rin}{r_\mathrm{in}}
+\newcommand{\rout}{r_\mathrm{out}}
+\newcommand{\ciso}{c_\mathrm{iso}}
+\newcommand{\tbeta}{\tilde{\beta}}
+\DeclareMathOperator{\erf}{erf}
+
+
+
+
+\title[Gaps in non-isothermal discs]{Gap formation and stability in 
+  non-isothermal self-gravitating discs} 
+
+\author[Lin]{ Min-Kai Lin
+  \thanks{E-mail: mklin924@cita.utoronto.ca} \\ 
+Canadian Institute for Theoretical Astrophysics,  
+60 St. George Street, Toronto, ON, M5S 3H8, Canada \\
+}
+
+\begin{document}
+
+\maketitle
+\begin{abstract}
+Hydrodynamic simulations of self-gravitating disc-planet interactions are presented. The energy equation is solved with a simple cooling law 
+such that $\beta = t_c\Omega_k$ is constant, where $t_c$ is the cooling time and $\Omega_k$ is the Keplerian frequency. 
+The simulations are customized to examine the stability of gaps opened by massive planets as a function of $\beta$. 
+
+\end{abstract}
+
+\begin{keywords}
+planetary systems: formation --- planetary systems:
+protoplanetary discs
+\end{keywords}
+
+
+\section{Introduction}\label{intro}
+
+\input{model}
+\input{results}
+%\input{discussion}
+%\input{summary}
+
+%\section*{Acknowledgments}
+
+\bibliographystyle{mn2e}
+\bibliography{ref}
+
+\appendix
+%\input{appendix}
+%\input{appendix2}
+
+\end{document}
