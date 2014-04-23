@@ -1,34 +1,34 @@
 ### Disk parameters
 
 AspectRatio             0.05            Thickness over Radius in the disk
-Sigma0                  0.00265192      Surface Density at r=1
+Sigma0                  0.000497235      Surface Density at r=1
 Viscosity               1.0e-5          Uniform kinematic viscosity
-SigmaSlope              1.5             Slope of surface density profile
+SigmaSlope              2.0             Slope of surface density profile
 FlaringIndex            0.0             Slope of Temperature/radius profile
 SelfGravity             YES              choose: Yes, Z or No
 Adiabatic               YES             choose No for an isothermal eq. of state
 AdiabaticIndex          1.4             Default value: 1.4
-Cooling                 YES             choose: Yes or No
-CoolingTime0            23.923221             
-OUTTRUNC                45.0
-INTRUNC                 -0.45
+Cooling                 NO             choose: Yes or No
+CoolingTime0            2.3923221             
+OUTTRUNC                 1e10
+INTRUNC                 -1e10
 DENFLOOR                1.0e-9
 FOUT                    1.0e3
 FIN                     10.0
 SGSMOOTH                0.3
 PERTMIN                 0.00
 PERTMAX                 0.00
-PERTTIME                282843.0
-QOUT                    1.5
+PERTTIME                1e10
+QOUT                    1.7
 
 ### Planet parameters
 
-PlanetConfig            in/jupiter_fix.cfg
+PlanetConfig            ./planet.cfg
 ForcedCircular          YES
 RocheSmoothing          0.5           
 MassTaper               316.227766
 PLANET_ON               632.455532
-HPLANET                 0.5
+HPLANET                 -1
 ### Numerical method parameters
 
 Transport               FARGO
@@ -41,15 +41,15 @@ LabelAdvection          NO
 
 ### Mesh parameters
 
-Nrad                    512             Radial number of zones
-Nsec                    1024            Azimuthal number of zones (sectors)
+Nrad                    256             Radial number of zones
+Nsec                    512            Azimuthal number of zones (sectors)
 Rmin                    1.0             Inner boundary radius
-Rmax                    25.0            Outer boundary radius
+Rmax                    40.0            Outer boundary radius
 RadialSpacing           L               Zone interfaces evenly spaced
 
 ### Output control parameters
 
-Ntot                    126480                 Total number of time steps
+Ntot                    632400                 Total number of time steps
 Ninterm                 6324                  Time steps between outputs
 DT                      0.314159265359        Time step length. 2PI = 1 orbit
-OutputDir               runs/noniso1/nrbc/
+OutputDir               ./
