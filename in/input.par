@@ -1,55 +1,55 @@
 ### Disk parameters
 
 AspectRatio             0.05            Thickness over Radius in the disk
-Sigma0                  0.000497235      Surface Density at r=1
-Viscosity               1.0e-5          Uniform kinematic viscosity
-SigmaSlope              2.0             Slope of surface density profile
-FlaringIndex            0.0             Slope of Temperature/radius profile
-SelfGravity             YES              choose: Yes, Z or No
-Adiabatic               YES             choose No for an isothermal eq. of state
+Sigma0                  0.000497235     obsolete, reference density will be set internally
+Viscosity               1.0e-5          ***Uniform kinematic viscosity***
+SigmaSlope              2.0             Slope of surface density profile at large radius (initial)
+FlaringIndex            0.0             Slope of Temperature/radius profile (initial), 0 means H/r= constant 
+SelfGravity             YES             Do self-gravity? (non-SG is a lot faster, suitable when disk mass is low) 
+Adiabatic               YES             NO for fixed temperature profile, YES to evolve energy equation 
 AdiabaticIndex          1.4             Default value: 1.4
-Cooling                 NO             choose: Yes or No
-CoolingTime0            2.3923221             
-OUTTRUNC                 1e10
-INTRUNC                 -1e10
-DENFLOOR                1.0e-9
-FOUT                    1.0e3
-FIN                     10.0
-SGSMOOTH                0.3
-PERTMIN                 0.00
-PERTMAX                 0.00
-PERTTIME                1e10
-QOUT                    1.7
+Cooling                 YES             Explicit cooling? (NO means adiabatic run, disk will only heat up)
+CoolingTime0            2.3923221       ***coolingtime*omega_kep*** 
+OUTTRUNC                 1e10           obsolete
+INTRUNC                 -1e10           obsolete
+DENFLOOR                1.0e-9          prevent very low densities (if rho < denfloor*sigma0, then set rho to denfloor) 
+FOUT                    1.0e3           obsolete
+FIN                     10.0            obsolete
+SGSMOOTH                0.3             softening length for self-gravity 
+PERTMIN                 0.00            max perturbation 
+PERTMAX                 0.00            min perturbation 
+PERTTIME                1e10            when to apply perturbations? (large number -> never) 
+QOUT                    1.7             ***keplerian toomre parameter at outer radius*** used to set density/mass scale. low Q -> self-gravity important 
 
 ### Planet parameters
 
-PlanetConfig            ./planet.cfg
-ForcedCircular          YES
-RocheSmoothing          0.5           
-MassTaper               316.227766
-PLANET_ON               632.455532
-HPLANET                 -1
+PlanetConfig            ./planet.cfg    location of planet configuration file relative to this input file
+ForcedCircular          YES             always YES 
+RocheSmoothing          0.5             softening length in units of hill radius
+MassTaper               316.227766      timescale over which to switch on the planet (actual time = MassTaper*2*PI) 
+PLANET_ON               632.455532      when to introduce planet (actual time = PLANET_ON*2*PI    
+HPLANET                 -1              obsolete IF evolving energy equation (otherwise set to 0.5) 
 ### Numerical method parameters
 
-Transport               FARGO
-InnerBoundary           NONREFLECTING           Can also be OPEN, RIGID or NONREFLECTING
-Disk                    YES
-OmegaFrame              0.0
-Frame                   FIXED
-IndirectTerm            YES
-LabelAdvection          NO
+Transport               FARGO           use FARGO speed-up algorithm
+InnerBoundary           NONREFLECTING   radial boundary conditions (OPEN or NONREFLECTING. probably use OPEN for production)
+Disk                    YES             we are evolving the disk
+OmegaFrame              0.0             rotation speed of the frame of reference (0 -> non-rotating frame)
+Frame                   FIXED           non-rotating frame
+IndirectTerm            YES             include extra potentials because of non-inertial frame 
+LabelAdvection          NO              not used 
 
 ### Mesh parameters
 
-Nrad                    256             Radial number of zones
-Nsec                    512            Azimuthal number of zones (sectors)
+Nrad                    256             ***Radial number of zones***
+Nsec                    512             ***Azimuthal number of zones***
 Rmin                    1.0             Inner boundary radius
 Rmax                    40.0            Outer boundary radius
-RadialSpacing           L               Zone interfaces evenly spaced
+RadialSpacing           L               must use Log grid if doing self-gravity 
 
 ### Output control parameters
 
-Ntot                    632400                 Total number of time steps
+Ntot                    632400                Total number of time steps
 Ninterm                 6324                  Time steps between outputs
-DT                      0.314159265359        Time step length. 2PI = 1 orbit
-OutputDir               ./
+DT                      0.314159265359        Time step length. [one orbital period at r is T = 2.0*PI*r^(1.5) )  
+OutputDir               ./                    where to output data 
