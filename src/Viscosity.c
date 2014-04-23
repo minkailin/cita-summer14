@@ -12,30 +12,7 @@ real FViscosity (rad)
     viscosity = ALPHAVISCOSITY*GLOBAL_bufarray[i]*	\
       GLOBAL_bufarray[i]*pow(rad, 1.5);
   }
-  rmin = CAVITYRADIUS-CAVITYWIDTH*ASPECTRATIO;
-  rmax = CAVITYRADIUS+CAVITYWIDTH*ASPECTRATIO;
-  scale = 1.0+(PhysicalTime-PhysicalTimeInitial)*LAMBDADOUBLING;
-  rmin *= scale;
-  rmax *= scale;
-  if (rad < rmin) viscosity *= CAVITYRATIO;
-  if ((rad >= rmin) && (rad <= rmax)) {
-    viscosity *= exp((rmax-rad)/(rmax-rmin)*log(CAVITYRATIO));
-  }
-   if(rad > OUTTRUNC){
-	DR = 2.0*ASPECTRATIO*OUTTRUNC; /*(RMAX - OUTTRUNC)/pow(log(FOUT), 0.5);*/
-        fac = exp(pow((rad-OUTTRUNC)/DR, 2.0));
-        if(fac > FOUT){
-        fac = FOUT;
-        }
-        viscosity *= fac;
-/*     viscosity *= FOUT;*/
-/*     /\*gaussian*\/ */
-/*     /\* viscosity *= pow(rad/OUTTRUNC,3.0/2.0); *\/ */
-/*     /\*power law but only for background density of r^-0.5*\/ */
-   } 
-/*   if(rad <= INTRUNC){ */
-/*     viscosity *= exp(pow((rad-INTRUNC)/DELTAIN,2.0)/2.0); */
-/*   } */
+
   return viscosity;
 }
 

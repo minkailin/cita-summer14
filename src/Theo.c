@@ -8,45 +8,13 @@ real Sigma(r)
 {
   real cavity = 1.0;
   real density, Hin, DR, newden, fac;
-  if (r < CAVITYRADIUS) cavity = 1.0/CAVITYRATIO; 
-  /* This is *not* a steady state */
-  /* profile, if a cavity is defined. It first needs */
-  /* to relax towards steady state, on a viscous time scale */
-  density = cavity*ScalingFactor*SIGMA0*pow(r,-SIGMASLOPE);
 
   Hin = ASPECTRATIO*pow(RMIN,FLARINGINDEX+1.0);
-  if(RMAX <= OUTTRUNC){
   SIGMA0 = ASPECTRATIO*pow(RMAX,-0.5)*pow(RMAX, -1.5);
   SIGMA0 /=QOUT*PI*pow(RMAX, -SIGMASLOPE)*(1.0-pow(RMIN/(RMAX+Hin),0.5));
-  } else {
-	SIGMA0 = ASPECTRATIO*pow(OUTTRUNC,-0.5)*pow(OUTTRUNC, -1.5);
-        SIGMA0 /=QOUT*PI*pow(OUTTRUNC, -SIGMASLOPE)*(1.0-pow(RMIN/(OUTTRUNC+Hin),0.5));
-  }
-  density = SIGMA0*pow(r,-SIGMASLOPE)*(1.0-pow(RMIN/(r+Hin),0.5));
-  if(r > OUTTRUNC){
-        DR = 2.0*ASPECTRATIO*OUTTRUNC; /*(RMAX - OUTTRUNC)/pow(log(FOUT), 0.5);*/
-	fac = exp(pow((r-OUTTRUNC)/DR, 2.0));
-        if(fac > FOUT){
-	fac = FOUT;
-	}
-	density /= fac;
-/* /\*Figure out appropriate Gaussian width to truncate*\/ */
-/*   DELTAOUT = 0.5*pow(RMAX-OUTTRUNC,2.0)/log(FOUT); */
-/*   DELTAIN = 0.5*pow(RMIN-INTRUNC,2.0)/log(FIN); */
-/*   DELTAOUT = sqrt(DELTAOUT); */
-/*   DELTAIN = sqrt(DELTAIN); */
-/*   if(r >= OUTTRUNC){ 
-     density /= FOUT;
-*/
-/*     /\*gauss outer trunct*\/ */
-/*     /\* density *= pow(OUTTRUNC/r,3.0/2.0); *\/ */
-/*     /\*power law outer trunc s.t. constant Q outside outtrunct. but only for background density of r^-0.5*\/ */
-   }
-/*   if(r <= INTRUNC){ */
-/*     density *= exp(-pow((r-INTRUNC)/DELTAIN,2.0)/2.0); */
-/*   } */
 
-  if(density < DENFLOOR*SIGMA0) density = DENFLOOR*SIGMA0;
+  density = SIGMA0*pow(r,-SIGMASLOPE)*(1.0-pow(RMIN/(r+Hin),0.5));
+
   return density;
 }
 
@@ -167,7 +135,7 @@ real Qplusinit(r)
   omega_sq = csq*(2.0*FLARINGINDEX - 1.0 - SIGMASLOPE + 0.5*r*sqrt(RMIN)*pow(Rsoft, -1.5)/hole) + 1.0/r;
   omega_sq/= r*r; 
 
-  romega_prime = dlogcsq*(r*r*omega_sq - 1.0/r) + 0.5*sqrt(RMIN)*csq*( pow(Rsoft,-3.0)/(hole*hole) )*( pow(Rsoft, 1.5) - 1.5*r*sqrt(Rsoft)*hole - 0.5*sqrt(RMIN)*r ) - 1.0/(r*r);
+  romega_prime = dlogcsq*(r*r*omega_sq - 1.0/r) + 0.5*sqrt(RMIN)*csq*( pow(Rsoft,-3.0)/(hole*hole) )*( (pow(Rsoft, 1.5) - 1.5*r*sqrt(Rsoft))*hole - 0.5*sqrt(RMIN)*r ) - 1.0/(r*r);
   romega_prime-= 2.0*r*omega_sq;
   romega_prime/= 2.0*r*sqrt(omega_sq);
 

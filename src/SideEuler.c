@@ -231,7 +231,7 @@ void OpenBoundary (Vrad, Rho, Energy)
       l = j+i*ns; 
       rho[l-ns] = rho[l] ;		// copy first ring into ghost ring
       energy[l-ns] = energy[l];
-      if ((vr[l+ns] > 0.0) || (rho[l] < SigmaMed[0]))
+      if ((vr[l+ns] > 0.0) )//|| (rho[l] < SigmaMed[0]))
 	vr[l] = 0.0; /*we just allow outflow [inwards] */
       else
 	vr[l] = vr[l+ns];
@@ -245,7 +245,7 @@ void OpenBoundary (Vrad, Rho, Energy)
       l = j+i*ns;
       rho[l] = rho[l-ns];		// copy first ring into ghost ring
       energy[l] = energy[l-ns];
-      if ((vr[l-ns] < 0.0) ) //|| (rho[l] < SigmaMed[nr-2]))
+      if ((vr[l-ns] < 0.0) )//|| (rho[l] < SigmaMed[nr-2]))
 	vr[l] = 0.0; // we just allow outflow [outwards]
       else
 	vr[l] = vr[l-ns];
@@ -512,10 +512,10 @@ void ApplySubKeplerianBoundary (Vtheta)
     if ( !SelfGravity ) {
       Hin = ASPECTRATIO*pow(RMIN,FLARINGINDEX+1.0);
 
-//      VKepIn = G*1.0/Rmed[0]                                            \
-//        + pow(ASPECTRATIO,2.0)*pow(Rmed[0],2.0*FLARINGINDEX -1.0)*
-//        (-SIGMASLOPE + 2.0*FLARINGINDEX - 1.0 + 0.5*Rmed[0]*sqrt(RMIN)*pow(Rmed[0]+Hin, -1.5)/(1.0 - sqrt(RMIN/(Rmed[0]+Hin))));
-//      VKepIn = sqrt(VKepIn);
+      VKepIn = G*1.0/Rmed[0]                                            \
+        + pow(ASPECTRATIO,2.0)*pow(Rmed[0],2.0*FLARINGINDEX -1.0)*
+        (-SIGMASLOPE + 2.0*FLARINGINDEX - 1.0 + 0.5*Rmed[0]*sqrt(RMIN)*pow(Rmed[0]+Hin, -1.5)/(1.0 - sqrt(RMIN/(Rmed[0]+Hin))));
+      VKepIn = sqrt(VKepIn);
 
       VKepOut = G*1.0/Rmed[nr-1]                                          \
         + pow(ASPECTRATIO,2.0)*pow(Rmed[nr-1],2.0*FLARINGINDEX -1.0)*
@@ -531,11 +531,11 @@ void ApplySubKeplerianBoundary (Vtheta)
 
        Hin = ASPECTRATIO*pow(RMIN,FLARINGINDEX+1.0);
 
-//       VKepIn = G*1.0/Rmed[0]						\
-//	+ pow(ASPECTRATIO,2.0)*pow(Rmed[0],2.0*FLARINGINDEX -1.0)*
-//	(-SIGMASLOPE + 2.0*FLARINGINDEX - 1.0 + 0.5*Rmed[0]*sqrt(RMIN)*pow(Rmed[0]+Hin, -1.5)/(1.0 - sqrt(RMIN/(Rmed[0]+Hin)))) - \
-//	Rmed[0]*GLOBAL_AxiSGAccr[0];
-//       VKepIn = sqrt(VKepIn);
+       VKepIn = G*1.0/Rmed[0]						\
+	+ pow(ASPECTRATIO,2.0)*pow(Rmed[0],2.0*FLARINGINDEX -1.0)*
+     (-SIGMASLOPE + 2.0*FLARINGINDEX - 1.0 + 0.5*Rmed[0]*sqrt(RMIN)*pow(Rmed[0]+Hin, -1.5)/(1.0 - sqrt(RMIN/(Rmed[0]+Hin)))) - \
+	Rmed[0]*GLOBAL_AxiSGAccr[0];
+       VKepIn = sqrt(VKepIn);
     
         VKepOut = G*1.0/Rmed[nr-1]						\
 	 + pow(ASPECTRATIO,2.0)*pow(Rmed[nr-1],2.0*FLARINGINDEX -1.0)*
@@ -550,8 +550,8 @@ void ApplySubKeplerianBoundary (Vtheta)
       i = 0;
       for (j = 0; j < ns; j++) {
 	l = i*ns + j;
-//	vt[l] = VKepIn-Rmed[i]*OmegaFrame;
-        vt[l] = vt[l+ns];
+	vt[l] = VKepIn-Rmed[i]*OmegaFrame;
+//        vt[l] = vt[l+ns];
       }
     }
     /* ---------- */
