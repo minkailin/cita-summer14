@@ -1,0 +1,127 @@
+\documentclass[final,hyperref={pdfpagelabels=false}]{beamer}
+\usepackage{grffile}
+\mode<presentation>{\usetheme{I6pd2}}
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath,amsthm, amssymb, latexsym}
+%\usepackage{times}\usefonttheme{professionalfonts}  % obsolete
+%\usefonttheme[onlymath]{serif}
+\boldmath
+\usepackage[orientation=portrait,size=a0,scale=1.4,debug]{beamerposter}
+\usepackage{ragged2e} 
+\usepackage{bm}
+% change list indention level
+% \setdefaultleftmargin{3em}{}{}{}{}{}
+
+%\usepackage{snapshot} % will write a .dep file with all dependencies, allows for easy bundling
+
+\usepackage{array,booktabs,tabularx}
+\newcolumntype{Z}{>{\centering\arraybackslash}X} % centered tabularx columns
+\newcommand{\pphantom}{\textcolor{ta3aluminium}} % phantom introduces a vertical space in p formatted table columns??!!
+\newcommand{\p}{\partial}
+\newcommand{\bu}{\bm{u}}
+\newcommand{\bv}{\bm{v}}
+
+\listfiles
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\graphicspath{{figures/}}
+ 
+\title{\huge Gap formation and stability in non-isothermal disks}
+\author{Min-Kai Lin and Robert Les}
+\institute[CITA]{Canadian Institute for Theoretical Astrophysics, 60
+  St George Street, Toronto, M5S 3H8, Canada}
+%% \date[Sep. 8th, 2009]{Sep. 8th, 2009}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newlength{\columnheight}
+\setlength{\columnheight}{105cm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{frame}
+  \begin{columns}
+    % ---------------------------------------------------------%
+    % Set up a column 
+    \begin{column}{.49\textwidth}
+      \begin{beamercolorbox}[center,wd=\textwidth]{postercolumn}
+        \begin{minipage}[T]{.95\textwidth}  % tweaks the width, makes a new \textwidth
+          \parbox[t][\columnheight]{\textwidth}{ % must be some better way to set the the height, width and textwidth simultaneously
+            % Since all columns are the same length, it is all nice and tidy.  You have to get the height empirically
+            % ---------------------------------------------------------%
+            % fill each column with content            
+            \begin{block}{{\Large Introduction}}
+              \justifying
+                  {\large              
+                    {\bf
+                      stuff
+                    }
+                  }
+            \end{block}
+            \vfill
+            
+            \begin{block}{{\Large The generalized potential vorticity}}
+              \justifying
+              
+            \end{block}
+            
+            \begin{block}{{\Large Disk-planet model with simple cooling}}
+              
+            \end{block}
+            \vfill
+            
+            \begin{block}{{\Large Linear stability}}
+              \justifying
+              
+            \end{block}
+            
+            \vfill            
+            \begin{block}{\Large{Non-linear vortex evolution}}
+              \justifying
+              
+            \end{block}
+          }
+        \end{minipage}
+      \end{beamercolorbox}
+    \end{column}
+    % ---------------------------------------------------------%
+    % end the column
+    
+    % ---------------------------------------------------------%
+    % Set up a column 
+    \begin{column}{.49\textwidth}
+      \begin{beamercolorbox}[center,wd=\textwidth]{postercolumn}
+        \begin{minipage}[T]{.95\textwidth} % tweaks the width, makes a new \textwidth
+          \parbox[t][\columnheight]{\textwidth}{ % must be some better way to set the the height, width and textwidth simultaneously
+            % Since all columns are the same length, it is all nice and tidy.  You have to get the height empirically
+            % ---------------------------------------------------------%
+            % fill each column with content
+            
+            \begin{block}{{\Large Conclusions so far}}\justifying
+              {\large{\bf
+                  
+                }
+              }
+            \end{block}
+          }
+          % ---------------------------------------------------------%
+          % end the column
+        \end{minipage}
+      \end{beamercolorbox}
+    \end{column}
+    % ---------------------------------------------------------%
+    % end the column
+  \end{columns}
+  \vskip1ex
+  %\tiny\hfill\textcolor{ta2gray}{Created with \LaTeX \texttt{beamerposter}  \url{http://www-i6.informatik.rwth-aachen.de/~dreuw/latexbeamerposter.php}}
+  %% \tiny\hfill{Created with \LaTeX \texttt{beamerposter}  \url{http://www-i6.informatik.rwth-aachen.de/~dreuw/latexbeamerposter.php} \hskip1em}
+\end{frame}
+\end{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-PDF-mode: t
+%%% End:
