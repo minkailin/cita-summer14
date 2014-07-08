@@ -15,8 +15,9 @@
 
 %\usepackage{snapshot} % will write a .dep file with all dependencies, allows for easy bundling
 
+
 \usepackage{array,booktabs,tabularx}
-\newcolumntype{Z}{>{\centering\arraybackslash}X} % centered tabularx columns
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X} % right justified tabularx columns
 \newcommand{\pphantom}{\textcolor{ta3aluminium}} % phantom introduces a vertical space in p formatted table columns??!!
 \newcommand{\p}{\partial}
 \newcommand{\bu}{\bm{u}}
@@ -37,7 +38,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newlength{\columnheight}
 \setlength{\columnheight}{105cm}
-
+\setbeamertemplate{caption}{\centering\insertcaption\par}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
@@ -69,10 +70,29 @@
 
             \begin{block}{{\Large The generalized potential vorticity}}
               \justifying
-              {\bf generalized vortensity profile due to planet for
-                different beta. also density profiles.}
-            \end{block}
+                  {\bf generalized vortensity profile due to planet for
+                    different beta. also density profiles.}
 
+                  \begin{figure}
+                    \centering
+                    \hfill
+                    \begin{minipage}{0.49\textwidth}
+                      \includegraphics[width=\textwidth]{Posterfig_Density}
+                    \end{minipage}
+                    \hfill
+                    \begin{minipage}{0.49\textwidth}
+                      \includegraphics[width=\textwidth]{Posterfig_Vortensity}
+                    \end{minipage}
+                    \hfill
+                  \end{figure}
+
+                  \begin{figure}
+                    \centering
+                    \includegraphics[width=0.5\textwidth]{Posterfig_HR}
+                  \end{figure}
+                  
+            \end{block}
+            
             \vfill
 
             \begin{block}{{\Large Linear stability}}
@@ -80,6 +100,41 @@
                   {\bf plot of growth rate v.s m for different beta,
                     or table. 2D density plot showing development of
                     vortex, for different beta}
+
+                   \begin{figure}
+                    \centering
+                    \hfill
+                    \begin{minipage}{0.45\textwidth}
+                      \includegraphics[width=\textwidth]{Posterfig_lowb}
+                    \end{minipage}
+                    \hfill
+                    \begin{minipage}{0.45\textwidth}
+                      \includegraphics[width=\textwidth]{Posterfig_medb}
+                    \end{minipage}
+                    \hfill
+                  \end{figure}
+
+                   \begin{table}
+                     \hfill
+                     \begin{minipage}{0.45\textwidth}
+                       \begin{tabularx}{\textwidth}{l*{5}{R}} \toprule \addlinespace[10pt]
+                         \multicolumn{6}{c}{$\tilde{\beta}=0.1$} \\ \midrule
+                         m                    & 1 & 2 & 3 & 4 & 5  \\ 
+                         $\gamma/\Omega(r_o)$ & 1 & 2 & 3 & 4 & 5   \\ \bottomrule
+                       \end{tabularx}
+                     \end{minipage}
+                     \hfill
+                     \begin{minipage}{0.45\textwidth}
+                       \begin{tabularx}{\textwidth}{l*{5}{R}} \toprule \addlinespace[10pt]
+                         \multicolumn{6}{c}{$\tilde{\beta}=1.0$} \\ \midrule
+                         m                    & 1 & 2 & 3 & 4 & 5  \\ 
+                         $\gamma/\Omega(r_o)$ & 1 & 2 & 3 & 4 & 5   \\ \bottomrule
+                       \end{tabularx}
+                     \end{minipage}
+                     \hfill
+                   \end{table}
+
+                  
             \end{block}
             \vfill
           }
@@ -99,13 +154,50 @@
             % ---------------------------------------------------------%
             % fill each column with content
             
+            \begin{block}{\Large{Linear stability Cont.}}
+              \justifying
+              \begin{figure}
+                \centering
+                \includegraphics[width=\textwidth]{Posterfig_Growth}
+              \end{figure}
+            \end{block}
+
+            \vfill
+
             \begin{block}{\Large{Non-linear vortex evolution}}
               \justifying
                   {\bf `lifetime' plot of m=1 for diff beta, snapshots
                     (before, during, after vortex decay). quote rossby
                   number when vortices in quasi-steady state}
+
+                  \begin{figure}
+                    \centering
+                    \includegraphics[width=\textwidth]{Posterfig_Lifetime_b}
+                  \end{figure}
+
+                  \begin{figure}
+                    \centering
+                    \hfill
+                    \begin{minipage}{0.3\textwidth}
+                      \includegraphics[width=\textwidth]{Posterfig_Before}
+                      \caption{$Ro=-0.16$}
+                    \end{minipage}
+                    \hfill
+                    \begin{minipage}{0.3\textwidth}
+                      \includegraphics[width=\textwidth]{Posterfig_During}
+                      \caption{$Ro=-0.43$}
+                    \end{minipage}
+                    \hfill
+                    \begin{minipage}{0.3\textwidth}
+                      \includegraphics[width=\textwidth]{Posterfig_After}
+                      \caption{$Ro=-0.10$}
+                    \end{minipage}
+                    \hfill
+                  \end{figure}
+
             \end{block}
             \vfill
+    
             \begin{block}{{\Large Conclusions so far}}\justifying
               {\large{\bf
                   
