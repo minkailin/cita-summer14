@@ -17,7 +17,7 @@
 
 
 \usepackage{array,booktabs,tabularx}
-\newcolumntype{R}{>{\raggedleft\arraybackslash}X} % right justified tabularx columns
+\newcolumntype{R}{>{\centering\arraybackslash}X} % right justified tabularx columns
 \newcommand{\pphantom}{\textcolor{ta3aluminium}} % phantom introduces a vertical space in p formatted table columns??!!
 \newcommand{\p}{\partial}
 \newcommand{\bu}{\bm{u}}
@@ -44,6 +44,21 @@
 \begin{document}
 \begin{frame}
   \begin{columns}
+
+    %Aspect ratio: For higher $\tilde{\beta}$ values the disk aspect ratio increases non-monotonicly. Values for $\tilde{\beta}=0.1,1.0,10.0$ are $h=0.05,0.055,0.08$. The values are not constant over time and make roughly parabolic shapes from intial planet formation to vortex death. The aspect ratio of the vortices themselves seem to be constantly near $h=0.05$ regardless of the cooling paramter. Also $\tilde{\beta}=5.0$ which has longest lifetime (2000+ orbits) corresponds to approximately $h=0.06$ which is similar result as Fu et al. 
+
+    %Mach Number: Mach numbers generally in the vortex region of disk averaged aziumthally are $<0.4$ during semi-stable vortex state. Just as vortex dies out mach numbers drop to $M=0.2$ which are from the shock. Mach number near vortices during semi-stable state are near 0.2 from 2D plots.
+    
+    %Reynold's Stress:The averaged reynold's stress of the disk is usually of order $\alpha=10^{-2} - 10^{-3}$. During vortex death $\alpha=10^{-2}$ consistantly for all $\tilde{\beta}$ than drops to lower bound after vortex dissipation. Vortices themselves seem to have almost no characteristic reynolds stress associated with them from 2D plots.
+
+    %Gap profile:After vortex death sees a distortion in outer gap depth and the outer gap edge slowly and continuously extends outwards. Gap edge in semi-steady state is around 5 hill radii (gap edges not very clear since current resolution isn't good). Changes in gap depth start before vortex dissaption and indicate that matter is moving inwards towards the planet. Supports notion that vortex distorts background profile. This effect increases largely during the dissipation phase
+
+    %Vortex:The overdensiy of the vortex itself can reach 10 times the intial density of the disk. Vortex evolves from a large vortex to a highly dense small vortex. As it dies off the vortex distorts in shape most probably from interaction with shocks.Disapation time is around 50 orbits.
+    
+    %Rossby Numbers:Rossby numbers during semi-stable states are approximately around $Ro=-0.2$. Just after vortex amplitude drop, Rossby numbers increase to around $Ro=-0.4$ because of spreading of angular momentum from the once densly packed spinning vortex.
+
+    %Non-linear Planet off:Long Term planet-off simulations do not show these drops in vortex amplitude. The vortices are of order of magnitude less in max amplitude and over time slowly decay assumingly by viscous friction. This supports fact that planet helps drive the interactions we are seeing. Results in progress.
+
     % ---------------------------------------------------------%
     % Set up a column 
     \begin{column}{.49\textwidth}
@@ -116,25 +131,27 @@
 
                    \begin{table}
                      \hfill
-                     \begin{minipage}{0.45\textwidth}
-                       \begin{tabularx}{\textwidth}{l*{5}{R}} \toprule \addlinespace[10pt]
-                         \multicolumn{6}{c}{$\tilde{\beta}=0.1$} \\ \midrule
-                         m                    & 1 & 2 & 3 & 4 & 5  \\ 
-                         $\gamma/\Omega(r_o)$ & 1 & 2 & 3 & 4 & 5   \\ \bottomrule
+                     \begin{minipage}{\textwidth}
+                       \begin{tabularx}{\textwidth}{l*{10}{R}} %\toprule \addlinespace[10pt]
+                         \multicolumn{11}{c}{$\tilde{\beta}=0.1$} \\ \midrule
+                         m                    & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10  \\ 
+                         $\gamma10^2/\Omega(r_o)$ & 6.56 & 6.82 & 6.73 & 5.78 & 6.00 & 6.38 & 5.97 & 5.62 & 4.61 & 3.36   \\ \bottomrule
                        \end{tabularx}
                      \end{minipage}
-                     \hfill
-                     \begin{minipage}{0.45\textwidth}
-                       \begin{tabularx}{\textwidth}{l*{5}{R}} \toprule \addlinespace[10pt]
+
+                     \vspace{1in}
+
+                     \begin{minipage}{\textwidth}
+                       \begin{tabularx}{\textwidth}{l*{5}{R}} %\toprule \addlinespace[10pt]
                          \multicolumn{6}{c}{$\tilde{\beta}=1.0$} \\ \midrule
                          m                    & 1 & 2 & 3 & 4 & 5  \\ 
-                         $\gamma/\Omega(r_o)$ & 1 & 2 & 3 & 4 & 5   \\ \bottomrule
+                         $\gamma10^2/\Omega(r_o)$ & 1.27 & 1.28 & 1.35 & 1.01 & 0.61   \\ \bottomrule
                        \end{tabularx}
                      \end{minipage}
                      \hfill
                    \end{table}
 
-                  
+                   
             \end{block}
             \vfill
           }
