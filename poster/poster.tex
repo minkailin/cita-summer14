@@ -76,12 +76,23 @@
                   }
             \end{block}
             \vfill
-            
+             
             \begin{block}{{\Large Disk-planet model with simple cooling}}
-              
-            \end{block}
-            \vfill
-
+             We numerically evolve the 2D fluid equations including a gap-opening giant planet, treated as an external potential on fixed circular orbit. We include in the energy equation
+        a simple source term in the form
+	\begin{align*}
+	\frac{\partial e}{\partial t} = \cdots + \frac{e-e_{t=0}}{t_\mathrm{cool}},
+	\end{align*}
+        and $t_\mathrm{cool} = \beta \Omega_k^{-1}$, where $\Omega_k$ is the Keplerian frequency. We choose $\beta$ indirectly 
+        through $\tilde{\beta}$ such that
+        \begin{align*}
+        t_\mathrm{cool, gap\,edge} = \tilde{\beta} t_\mathrm{lib, gap\,edge},
+        \end{align*}
+        where $t_\mathrm{lib, gap\,edge}$ is the time interval between successive encounters of a fluid element, 
+        located at the gap edge, and the planet's azimuth. Thus $\tilde{\beta}\ll 1$ implies that such a fluid returns to its initial temperature
+        before passing by the planet again. 
+        \end{block}
+        \vfill
 
             \begin{block}{{\Large The generalized potential vorticity}}
               \justifying
