@@ -77,9 +77,14 @@
             \end{block}
             \vfill
              
-            \begin{block}{{\Large Disk-planet model with simple cooling}}
-             We numerically evolve the 2D fluid equations including a gap-opening giant planet, treated as an external potential on fixed circular orbit. We include in the energy equation
-        a simple source term in the form
+            \begin{block}{{\Large Disk-planet model with simple
+                  cooling}}
+              \justifying
+             We numerically evolve the 2D fluid equations including a
+             gap-opening giant planet, treated as an external
+             potential on fixed circular orbit. We include in the
+             energy equation  
+        a simple source term in the form 
 	\begin{align*}
 	\frac{\partial e}{\partial t} = \cdots + \frac{e-e_{t=0}}{t_\mathrm{cool}},
 	\end{align*}
@@ -94,32 +99,36 @@
         \end{block}
         \vfill
 
-            \begin{block}{{\Large The generalized potential vorticity}}
-              \justifying
-                  {\bf generalized vortensity profile due to planet for
-                    different beta. also density profiles.}
+        \begin{block}{{\Large Planet gaps as a function of cooling
+              rate}}
+          \justifying
+          % {\bf generalized vortensity profile due to planet for
+          %   different beta. also density profiles.}
+          
+          \begin{figure}
+            \centering
+%            \hfill
+%            \begin{minipage}{0.49\textwidth}
+              \includegraphics[width=.49\textwidth]{Posterfig_Density}\\
+%           \end{minipage}
+%            \hfill
+%            \begin{minipage}{0.49\textwidth}
+              \includegraphics[width=.49\textwidth]{Posterfig_Vortensity}
+%            \end{minipage}
+%            \hfill
+          \end{figure}
+          
+          %\begin{figure}
+          %  \centering
+          %  \includegraphics[width=0.5\textwidth]{Posterfig_HR}
+          %\end{figure}
+          
+        \end{block}
+        
 
-                  \begin{figure}
-                    \centering
-                    \hfill
-                    \begin{minipage}{0.49\textwidth}
-                      \includegraphics[width=\textwidth]{Posterfig_Density}
-                    \end{minipage}
-                    \hfill
-                    \begin{minipage}{0.49\textwidth}
-                      \includegraphics[width=\textwidth]{Posterfig_Vortensity}
-                    \end{minipage}
-                    \hfill
-                  \end{figure}
 
-                  \begin{figure}
-                    \centering
-                    \includegraphics[width=0.5\textwidth]{Posterfig_HR}
-                  \end{figure}
-                  
-            \end{block}
-            
-            \vfill
+
+        \vfill
 
             \begin{block}{{\Large Linear stability}}
               \justifying
