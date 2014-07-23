@@ -111,10 +111,14 @@
         \begin{align*}
         t_\mathrm{cool, gap\,edge} = \tilde{\beta} t_\mathrm{lib, gap\,edge},
         \end{align*}
-        where $t_\mathrm{lib, gap\,edge}$ is the time interval between
-        successive encounters of a fluid element 
-        located at the gap edge, and the planet's azimuth. Thus $\tilde{\beta}\ll 1$ implies that such a fluid returns to its initial temperature
-        before passing by the planet again. 
+\vspace{-1.8cm}
+        \begin{itemize}
+        \item  $t_\mathrm{lib, gap\,edge}$: time interval between
+          successive encounters of a fluid element located at the gap
+          edge, and the planet's azimuth
+        \item $\tilde{\beta}\ll 1 \Rightarrow$ fluid at the gap edge returns to its initial temperature
+          between going through planet-induced shocks 
+        \end{itemize}
         \end{block}
         \vfill
 
@@ -161,10 +165,12 @@
         \begin{block}{{\Large Numerical linear stability simulations}}
           \justifying
           We switch off the planet potential after it is fully
-          introduced and a partial gap is already formed. An azimuthal
+          introduced and a partial gap is formed. An azimuthal
           average is performed, and the system is subject to random
-          density perturbations.\\   
-          \vspace{-1.5cm}
+          density perturbations. Fourier analysis of the density field
+          gives the dominant mode number $m$ and growth rate $\gamma$.  
+          \\   
+          \vspace{-2cm}
 %                  {\bf plot of growth rate v.s m for different beta,
 %                    or table. 2D density plot showing development of
 %                    vortex, for different beta}                   
@@ -172,14 +178,14 @@
                     \begin{minipage}[t]{0.49\textwidth}
                       \begin{figure}
                         \centering
-                        \includegraphics[width=.95\textwidth,clip=false,trim=0.01cm
+                        \includegraphics[width=.9\textwidth,clip=false,trim=0.01cm
                           0cm .1cm 0cm]{Posterfig_lowb}
                       \end{figure}
                     \end{minipage}
                                         %\hfill
                     \begin{minipage}[t]{0.49\textwidth}
                       \begin{figure}
-                        \includegraphics[width=.95\textwidth,clip=false,trim=0cm
+                        \includegraphics[width=.9\textwidth,clip=false,trim=0cm
                         0cm .1cm 0cm]{Posterfig_medb}
                       \end{figure}
                     \end{minipage}    
@@ -245,8 +251,15 @@
 %                  {\bf `lifetime' plot of m=1 for diff beta, snapshots
 %                    (before, during, after vortex decay). quote rossby
 %                  number when vortices in quasi-steady state}
-
-
+              Generic evolution independent of $t_\mathrm{cool}$:
+              \begin{itemize}
+              \item Single vortex in quasi-steady state from vortex merging
+              \item Vorticity source from disk-planet interaction
+                $\to$ vortex intensifies
+              \item Vortex dissipates quickly after its Rossby number
+                $Ro$ minimizes, due to shocks and/or smoothing out the
+                gap edge  
+              \end{itemize}
                   \begin{figure}
                     \centering
                     \hfill
@@ -269,22 +282,45 @@
 
             \end{block}
 
-
-            \begin{block}{\Large{Vortex life-time and cooling rate}}
+            \begin{block}{\Large{Vortex lifetimes and cooling rate}}
               \justifying
-
-                  \begin{figure}
-                    \centering
-                    \includegraphics[width=\textwidth]{lifetime_regime1}\\
-                    \includegraphics[width=\textwidth]{lifetime_regime2}
-                  \end{figure}
-                  \end{block}
-
+              \begin{itemize}
+              \item Vortices typically live longer with increasing cooling time:
+              \end{itemize}
+              \begin{figure}
+                \centering
+                \includegraphics[width=\textwidth,clip=true,trim=0cm
+                  1.5cm 0cm 1cm]{lifetime_regime1}
+              \end{figure}
+              \vspace{-1cm}
+              \begin{itemize}
+              \item However, for very long $t_\mathrm{cool}$ vortex
+                lifetimes shorten again:
+              \end{itemize}
+              \begin{figure}
+                \centering
+                \includegraphics[width=\textwidth,clip=true,trim=0cm
+                  0cm 0cm 1cm]{lifetime_regime2}
+              \end{figure}
+              \vspace{-2cm}
+              \begin{itemize}
+              \item A cooling time of $\tilde{\beta}\sim 5$ maximizes
+                vortex lifetime (nearly adiabatic)
+              \end{itemize}
+            \end{block}
             \vfill
-    
-            \begin{block}{{\Large Discussion}}\justifying
+            \begin{block}{{\Large Summary}}\justifying
               {\large{\bf
-                  
+                  The stability of planetary gaps in gaseous
+                  protoplanetary disks is affected by disk
+                  thermodynamics. A slower cooling rate, which permits
+                  more heating, tends to stabilize the system, but
+                  also enables longer vortex lifetimes unless the
+                  cooling rate is extremely long. Our simulations
+                  suggest there exists an optimal $t_\mathrm{cool}$
+                  that maximizes vortex lifetimes, a result consistent
+                  with recent isothermal simulations by Fu et
+                  al. (2014). 
                 }
               }
               \vfill
