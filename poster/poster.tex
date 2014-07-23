@@ -30,9 +30,11 @@
  
 \title{\huge Gap formation and stability in non-isothermal
   disks\\ \Large [2014 CITA Summer Student Program]}
-\author{Min-Kai Lin and Robert Les}
+\author{Min-Kai Lin and Robert Les$^\dagger$}
 \institute[CITA]{Canadian Institute for Theoretical Astrophysics, 60
-  St George Street, Toronto, M5S 3H8, Canada}
+  St George Street, Toronto, M5S 3H8, Canada\\{\footnotesize$^\dagger$student: all
+  simulations, data analysis and figures}}
+
 %% \date[Sep. 8th, 2009]{Sep. 8th, 2009}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -72,6 +74,19 @@
               \justifying
                   {\large              
                     {\bf
+                      Unstable disk-planet, leading to the
+                      formation of large-scale vortices, has been
+                      suggested to explain observations of transition
+                      disks with lopsided dust
+                      distributions. While theoretical disk-planet
+                      models employed locally isothermal disks, 
+                      the original linear theory of this vortex
+                      instability was developed for adiabataic disks. We
+                      generalize the study of planetary gap edge
+                      instabilities to non-isothermal disks by
+                      including an energy equation with variable
+                      cooling rate, and study its effect on the
+                      formation and evolution of gap-edge vortices. 
                     }
                   }
             \end{block}
@@ -88,88 +103,111 @@
 	\begin{align*}
 	\frac{\partial e}{\partial t} = \cdots + \frac{e-e_{t=0}}{t_\mathrm{cool}},
 	\end{align*}
-        and $t_\mathrm{cool} = \beta \Omega_k^{-1}$, where $\Omega_k$ is the Keplerian frequency. We choose $\beta$ indirectly 
+        and $t_\mathrm{cool} = \beta \Omega_k^{-1}$, where $\Omega_k$
+        is the Keplerian frequency. The energy density
+        $e=p/(\gamma-1)$ where $p$ is the pressure field and
+        $\gamma=1.4$ is the adiabatic index. We choose $\beta$ indirectly 
         through $\tilde{\beta}$ such that
         \begin{align*}
         t_\mathrm{cool, gap\,edge} = \tilde{\beta} t_\mathrm{lib, gap\,edge},
         \end{align*}
-        where $t_\mathrm{lib, gap\,edge}$ is the time interval between successive encounters of a fluid element, 
+        where $t_\mathrm{lib, gap\,edge}$ is the time interval between
+        successive encounters of a fluid element 
         located at the gap edge, and the planet's azimuth. Thus $\tilde{\beta}\ll 1$ implies that such a fluid returns to its initial temperature
         before passing by the planet again. 
         \end{block}
         \vfill
 
-        \begin{block}{{\Large Planet gaps as a function of cooling
+        \begin{block}{{\Large Planetary gap profiles and cooling
               rate}}
           \justifying
-          % {\bf generalized vortensity profile due to planet for
-          %   different beta. also density profiles.}
-          
-          \begin{figure}
-            \centering
-%            \hfill
-%            \begin{minipage}{0.49\textwidth}
-              \includegraphics[width=.49\textwidth]{Posterfig_Density}\\
-%           \end{minipage}
-%            \hfill
-%            \begin{minipage}{0.49\textwidth}
-              \includegraphics[width=.49\textwidth]{Posterfig_Vortensity}
-%            \end{minipage}
-%            \hfill
-          \end{figure}
-          
+          %Profiles during initial stages of gap formation $\to$
+          \begin{minipage}[t]{0.49\textwidth}
+            \begin{figure}
+              %            \hfill
+              \includegraphics[width=.99\textwidth,clip=true,trim=0.5cm
+                2cm 0cm 1cm]{Posterfig_Density}\\
+              \includegraphics[width=.99\textwidth,clip=true,trim=0.5cm
+                0.5cm 0cm 1cm]{Posterfig_Vortensity}
+            \end{figure}
+          \end{minipage}
+          \begin{minipage}[t]{0.49\textwidth}
+            \begin{itemize}
+            \item Top panel: shallower gaps with increasing $t_\mathrm{cool}$ 
+              but no strong dependence 
+            \item Lower panel shows the generalized vortensity
+              \begin{align*}
+                \tilde{\eta} = \frac{\omega_z}{\Sigma}\times S^{-2/\gamma},
+              \end{align*}
+              where $\omega_z$ is the vertical vorticity and $S\equiv
+              p/\Sigma^\gamma$ is the entropy. 
+            \item Extrema in $\tilde{\eta}$ associated with
+              instability (Lovelace et al. 1999, Li et al. 2000)
+            \item Entropy-production across planet-induced shocks
+              weakens extrema in $\tilde{\eta}$, so
+             increasing $t_\mathrm{cool}$ may stabilize the
+              system by making gap edges less sharp
+%              \item A sufficiently deep minima in $\tilde{\eta}$ can
+%                cause instability
+%              \item 
+            \end{itemize}
+          \end{minipage}
           %\begin{figure}
           %  \centering
           %  \includegraphics[width=0.5\textwidth]{Posterfig_HR}
           %\end{figure}
-          
         \end{block}
-        
-
-
-
         \vfill
-
-            \begin{block}{{\Large Linear stability}}
-              \justifying
-                  {\bf plot of growth rate v.s m for different beta,
-                    or table. 2D density plot showing development of
-                    vortex, for different beta}
-
-                   \begin{figure}
-                    \centering
+        \begin{block}{{\Large Numerical linear stability simulations}}
+          \justifying
+          We switch off the planet potential after it is fully
+          introduced and a partial gap is already formed. An azimuthal
+          average is performed, and the system is subject to random
+          density perturbations.\\   
+          \vspace{-1.5cm}
+%                  {\bf plot of growth rate v.s m for different beta,
+%                    or table. 2D density plot showing development of
+%                    vortex, for different beta}                   
                     \hfill
-                    \begin{minipage}{0.45\textwidth}
-                      \includegraphics[width=\textwidth]{Posterfig_lowb}
+                    \begin{minipage}[t]{0.49\textwidth}
+                      \begin{figure}
+                        \centering
+                        \includegraphics[width=.95\textwidth,clip=false,trim=0.01cm
+                          0cm .1cm 0cm]{Posterfig_lowb}
+                      \end{figure}
                     \end{minipage}
-                    \hfill
-                    \begin{minipage}{0.45\textwidth}
-                      \includegraphics[width=\textwidth]{Posterfig_medb}
-                    \end{minipage}
-                    \hfill
-                  \end{figure}
-
-                   \begin{table}
-                     \hfill
-                     \begin{minipage}{\textwidth}
-                       \begin{tabularx}{\textwidth}{l*{10}{R}} %\toprule \addlinespace[10pt]
-                         \multicolumn{11}{c}{$\tilde{\beta}=0.1$} \\ \midrule
-                         m                    & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10  \\ 
-                         $\gamma10^2/\Omega(r_o)$ & 6.56 & 6.82 & 6.73 & 5.78 & 6.00 & 6.38 & 5.97 & 5.62 & 4.61 & 3.36   \\ \bottomrule
-                       \end{tabularx}
-                     \end{minipage}
-
-                     \vspace{1in}
-
-                     \begin{minipage}{\textwidth}
-                       \begin{tabularx}{\textwidth}{l*{5}{R}} %\toprule \addlinespace[10pt]
-                         \multicolumn{6}{c}{$\tilde{\beta}=1.0$} \\ \midrule
-                         m                    & 1 & 2 & 3 & 4 & 5  \\ 
-                         $\gamma10^2/\Omega(r_o)$ & 1.27 & 1.28 & 1.35 & 1.01 & 0.61   \\ \bottomrule
-                       \end{tabularx}
-                     \end{minipage}
-                     \hfill
-                   \end{table}
+                                        %\hfill
+                    \begin{minipage}[t]{0.49\textwidth}
+                      \begin{figure}
+                        \includegraphics[width=.95\textwidth,clip=false,trim=0cm
+                        0cm .1cm 0cm]{Posterfig_medb}
+                      \end{figure}
+                    \end{minipage}    
+                    \begin{itemize}
+                    \item Slowering cooling rate increases
+                      \emph{linear} stability and favors lower-$m$ modes
+                    \end{itemize}
+%                   \begin{table}
+%                     \hfill
+%                     \begin{minipage}{\textwidth}
+%                       \begin{tabularx}{\textwidth}{l*{10}{R}} %\toprule \addlinespace[10pt]
+%                         \multicolumn{11}{c}{$\tilde{\beta}=0.1$} \\ \midrule
+%                         m                    & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10  \\ 
+%                         $\gamma10^2/\Omega(r_o)$ & 6.56 & 6.82 & 6.73 & 5.78 & 6.00 & 6.38 & 5.97 & 5.62 & 4.61 & 3.36   \\ \bottomrule
+%                       \end{tabularx}
+%                     \end{minipage}
+%
+%                     \vspace{1in}
+%
+%                     \begin{minipage}{\textwidth}
+%                       \begin{tabularx}{\textwidth}{l*{5}{R}} %\toprule \addlinespace[10pt]
+%                         \multicolumn{6}{c}{$\tilde{\beta}=1.0$} \\ \midrule
+%                         m                    & 1 & 2 & 3 & 4 & 5  \\ 
+%                         $\gamma10^2/\Omega(r_o)$ & 1.27 & 1.28 & 1.35 & 1.01 & 0.61   \\ \bottomrule
+%                       \end{tabularx}
+%                     \end{minipage}
+%                     \hfill
+%                   \end{table}
 
                    
             \end{block}
@@ -191,26 +229,23 @@
             % ---------------------------------------------------------%
             % fill each column with content
             
-            \begin{block}{\Large{Linear stability Cont.}}
+ %           \begin{block}{\Large{Linear stability Cont.}}
+ %             \justifying
+ %             \begin{figure}
+ %               \centering
+ %               \includegraphics[width=\textwidth]{Posterfig_Growth}
+ %             \end{figure}
+ %           \end{block}
+ %
+ %           \vfill
+
+            \begin{block}{\Large{Non-linear evolution of gap edge
+                  vortices}}
               \justifying
-              \begin{figure}
-                \centering
-                \includegraphics[width=\textwidth]{Posterfig_Growth}
-              \end{figure}
-            \end{block}
+%                  {\bf `lifetime' plot of m=1 for diff beta, snapshots
+%                    (before, during, after vortex decay). quote rossby
+%                  number when vortices in quasi-steady state}
 
-            \vfill
-
-            \begin{block}{\Large{Non-linear vortex evolution}}
-              \justifying
-                  {\bf `lifetime' plot of m=1 for diff beta, snapshots
-                    (before, during, after vortex decay). quote rossby
-                  number when vortices in quasi-steady state}
-
-                  \begin{figure}
-                    \centering
-                    \includegraphics[width=\textwidth]{Posterfig_Lifetime_b}
-                  \end{figure}
 
                   \begin{figure}
                     \centering
@@ -233,9 +268,21 @@
                   \end{figure}
 
             \end{block}
+
+
+            \begin{block}{\Large{Vortex life-time and cooling rate}}
+              \justifying
+
+                  \begin{figure}
+                    \centering
+                    \includegraphics[width=\textwidth]{lifetime_regime1}\\
+                    \includegraphics[width=\textwidth]{lifetime_regime2}
+                  \end{figure}
+                  \end{block}
+
             \vfill
     
-            \begin{block}{{\Large Conclusions so far}}\justifying
+            \begin{block}{{\Large Discussion}}\justifying
               {\large{\bf
                   
                 }
