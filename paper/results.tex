@@ -1,4 +1,42 @@
-\section{Gaps in low mass discs (RL)}
+\section{Numerical linear stability simulations}
+We first consider the effect of a cooling time on the \emph{linear} stability
+of planetary gaps. There are two competing effects. Increasing
+$t_\mathrm{cool}$ leads to more heating and hence a larger sound-speed
+$c_s$, which favours instability \citep{li00} since the vortex
+instability is pressre-driven. However, gap-opening requires $r_h>H$,
+so increasing the sound-speed, and hence $H$, leads to a shallower
+gap (see below) and expected to be more stable. 
+
+In the following simulations, the planet is introduced at $t=20P_0$ and
+its potential switched on over $10P_0$. At $t=30P_0$ we switch off the
+planet potential and azimuthally average the surface density, energy
+and velocity fields. We then perturb the density field and continue
+evolve the disc. %more details on perturbation: m=1 to 10, amplitude?  
+%resolution?
+%switch off at t=30 because in full disk-planet sims, instability sets
+%in soon after planet introduced 
+
+\subsection{Gap structure}
+{\bf plots of the gap structure before instability sets in, e.g. at
+  t=30. surface density perturbation, gen. vortensity perturbation,
+  aspect-ratio. compare diff. beta. gaps become more shallow with
+  increasing cooling time (but not significantly - not enough time for
+  full gap formation). generalized vortensity: extrema smoothed out
+  with increasing cooling - expect more stability. aspect-ratio:
+  significant heating. increase in H so expect larger vortices
+}
+
+\subsection{Linear modes and growth rates}
+{\bf present `planet-off' simulations. one `fourier mode v.s. time'
+  plot to show growth of linear instability. 
+  compare growth rate and dominant
+  m as function of beta (table). 2D figs to contrast (also used to
+  show it's the minimum in generalized pv that goes unstable.    
+  result: increasing cooling time makes the gap
+  more stable, and favors lower m. note: the `basic state' should be
+  the system at t=30 after azimuthal average. linear results should
+  have small perturbations. 
+}
 
 %% We first describe results for weakly self-gravitating
 %% discs $Q_0=8$ (giving $M_d=0.015M_*$) so that the gap remains 
@@ -13,6 +51,21 @@
 %% surface density and aspect-ratio at $t=200P_0$. Three levels of cooling are considered:
 %% $\tbeta=0.1,\,1.0$ and $10.0$ (i.e. $t_c\Omega_k\simeq2.4,\,24$ and $240$). We refer to them as
 %% fast, moderate and slow cooling cases, respectively. 
+
+\section{Non-linear evolution of
+  gap-edge vortices with finite cooling time} 
+{\bf main fig: vortex amplitude v.s. time for diff beta. enough data
+  to plot vortex lifetime v.s. beta? table: 
+  averaged quantities over quasi-steady state: aspect-ratio (to
+  compare with fu at al), rossby number (vortex strength
+  v.s. cooling?), maybe alpha visc. vortex size: visible difference?  
+  only inviscid cases. describe evolution of one case. main
+  conclusion: longer vortex lifetime with increasing cooling time (up
+  to some optimal timescale). vortex death: induced-shock and/or
+  smoothing the gap edge. describe simulation setup, resolution?
+  should mention that results consistent with lower-resolution prelim
+  runs. maybe torques? 
+}
 
 Long term simulation of vortices were done for $\tilde{\beta}=0.1,1.0$ and
  $\hat{\nu}=10^{-6},10^{-8},10^{-9}$ up to a total of 2000 orbits. Values
@@ -39,18 +92,19 @@ Short term simulations of the linear phase of instability growth also distinguis
  \label{stability_vis9medb)}
  \end{figure}
 
-\begin{figure}
-   \includegraphics[scale=.42]{figures/stability_vis6betalow.ps}
-   \caption{Same as Fig. \ref{stability_vis9lowb} but $\hat{\nu}=10^{-6}$ and $\tilde{\beta}=0.1$. }
- \label{stability_vis6lowb)}
- \end{figure}
+%\begin{figure}
+%   \includegraphics[scale=.42]{figures/stability_vis6betalow.ps}
+%   \caption{Same as Fig. \ref{stability_vis9lowb} but $\hat{\nu}=10^{-6}$ and $\tilde{\beta}=0.1$. }
+% \label{stability_vis6lowb)}
+% \end{figure}
 
-\begin{figure}
-   \includegraphics[scale=.42]{figures/stability_vis6betamed.ps}
-   \caption{Same as Fig. \ref{stability_vis9lowb} but $\hat{\nu}=10^{-6}$ and $\tilde{\beta}=1.0$. }
- \label{stability_vis6medb)}
- \end{figure}
-Same as \ref{stability_vis9lowb} but $\hat{\nu}=10^{-6}$ and $\tilde{\beta}=1.0$. 
+%\begin{figure}
+%   \includegraphics[scale=.42]{figures/stability_vis6betamed.ps}
+%   \caption{Same as Fig. \ref{stability_vis9lowb} but $\hat{\nu}=10^{-6}$ and $\tilde{\beta}=1.0$. }
+% \label{stability_vis6medb)}
+% \end{figure}
+%Same as \ref{stability_vis9lowb} but $\hat{\nu}=10^{-6}$ and $\tilde{\beta}=1.0$. 
+
 \begin{figure}
    \includegraphics[scale=.60]{figures/analysis_sigma50lowb.ps}
    \caption{Density pertibation of disk at time=$50t_p$ with $\hat{\nu}=10^{-9}$ and $\tilde{\beta}=0.1$. }
@@ -64,23 +118,7 @@ Same as \ref{stability_vis9lowb} but $\hat{\nu}=10^{-6}$ and $\tilde{\beta}=1.0$
  \end{figure}
 
 
-\subsection{Gap structure}
-{\bf plots of the gap structure before instability sets in, e.g. at
-  t=30. surface density perturbation, gen. vortensity perturbation,
-  aspect-ratio. compare diff. beta
-}
 
-
-\subsection{Linear stability}
-{\bf present `planet-off' simulations. compare growthrate and dominant
-  m as function of beta. although focus is linear stability
-  properties, can also show non-linear evolution for completeness (to
-  be compared with planet-on sims. later)
-}
-
-\subsection{Non-linear evolution}
-           {\bf describe a few planet-on sims. as func. of beta. lifetime. 
-           }
 %we checked that open bc doesn't affect gap structure
 %checked that t=200 plots are similar to t=100 
 
