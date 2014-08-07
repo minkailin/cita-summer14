@@ -51,15 +51,16 @@ to explore the full range of thermodynamic response of the disc in a
 systematic way. 
 
 Note that the energy source terms have been chosen to be absent 
-at $t=0$. This allows the steady state energy equation to be satisfied
-provided the flow is axisymmetric and $v_r$ is negligible compared to $v_\phi$.  
+at $t=0$. This allows the disc to be initialised in a steady state
+energy, provided the flow is axisymmetric and $v_r$ is negligible compared to $v_\phi$.  
 % If the disc is axisymmetric, steady and with only azimuthal flow, then the 
 %energy equation is trivially satisfied. 
 %This allows one to specify equilibrium discs (see below)
 %in the same way as in the case where the energy equation is replaced by a fixed temperature 
 %profile (i.e. $c_\mathrm{iso}^2\equiv p/\Sigma$ is prescribed). 
-The cooling term attempts 
-to restore the initial energy density (and therefore temperature) profile. 
+The energy source term attempts to restore the initial energy density (and
+therefore temperature) profile. In practice, this is a cooling term at
+the gap edge because disc-planet interaction leads to heating.  
 
 
 \subsection{Disc model and initial condition}
@@ -107,7 +108,7 @@ defines the time unit $P_0\equiv 2\pi/\Omega_k(r_p)$ used to describe results.
 
 
 \section{Numerical experiments}\label{method}
-The self-gravitating disc-planet system is evolved using the 
+The disc-planet system is evolved using the 
 \texttt{FARGO-ADSG} code \citep{baruteau08, baruteau08b}. This is a modified version 
 of the original \texttt{FARGO} code \citep{masset00a} to include the energy 
 equation. The code employs finite-difference scheme similar 

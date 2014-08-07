@@ -1,20 +1,39 @@
-\section{Numerical linear stability simulations}
-We first consider the effect of a cooling time on the \emph{linear} stability
-of planetary gaps. There are two competing effects. Increasing
-$t_\mathrm{cool}$ leads to more heating and hence a larger sound-speed
-$c_s$, which favours instability \citep{li00} since the vortex
-instability is pressre-driven. However, gap-opening requires $r_h>H$,
-so increasing the sound-speed, and hence $H$, leads to a shallower
-gap (see below) and expected to be more stable. 
-
-In the following simulations, the planet is introduced at $t=20P_0$ and
+\section{Growth of non-axisymmetric modes without the influence of the
+  planet}
+%We first consider the linear stability of planetary gaps.  
+In this section, the planet is introduced at $t=20P_0$ and 
 its potential switched on over $10P_0$. At $t=30P_0$ we switch off the
 planet potential and azimuthally average the surface density, energy
-and velocity fields. We then perturb the density field and continue
-evolve the disc. %more details on perturbation: m=1 to 10, amplitude?  
+and velocity fields. At this point the planet has carved a partial
+gap. We then perturb the density field and continue to 
+evolve the disc. This procedure allows us to analyse the growth of
+non-axisymmetric modes associated with the gap, but without
+complications from non-axisymmetry arising directly from disk-planet
+interaction.   
+
+%The goal of these simulations is to compliment the disk-planet
+%simluations presented later. 
+These `planet-off' simulations are not linear stability calculations
+because our cooling term restores the initial temperature profile
+corresponding to $H/r=0.05$, rather than the heated gap edge.   
+
+%disk-planet leads to heating 
+%tcool tries to return it to the initial smooth profile (axisymmetric)
+%if tcool > trwi -> temp returns to original value. heated gap not
+%captured 
+
+%There are two competing effects. Increasing
+%$t_\mathrm{cool}$ leads to more heating and hence a larger sound-speed
+%$c_s$, which favours instability \citep{li00} since the vortex
+%instability is pressre-driven. However, gap-opening requires $r_h>H$,
+%so increasing the sound-speed, and hence $H$, leads to a shallower
+%gap (see below) and expected to be more stable. 
+
+%tcool -> return to initial, t=0 temp. profile
+%whereas the `basic state' is the gap profile with structured temp profile
+
+%more details on perturbation: m=1 to 10, amplitude?  
 %resolution?
-%switch off at t=30 because in full disk-planet sims, instability sets
-%in soon after planet introduced 
 
 \subsection{Gap structure}
 {\bf plots of the gap structure before instability sets in, e.g. at
@@ -28,7 +47,9 @@ evolve the disc. %more details on perturbation: m=1 to 10, amplitude?
 
 \subsection{Linear modes and growth rates}
 {\bf present `planet-off' simulations. one `fourier mode v.s. time'
-  plot to show growth of linear instability. 
+  plot to show growth of linear instability. do an adiabatic case (or
+  extremely long cooling time) to see the effect of heated gap edge
+  (i.e. temp doesn't go back to t=0 value too quickly)
   compare growth rate and dominant
   m as function of beta (table). 2D figs to contrast (also used to
   show it's the minimum in generalized pv that goes unstable.    
@@ -38,6 +59,13 @@ evolve the disc. %more details on perturbation: m=1 to 10, amplitude?
   have small perturbations. 
 }
 
+\subsubsection{Nearly adiabatic disks}
+{\bf a case with extrmely long cooling time (or adiabatic run) in
+  order to look at effect of heated gap edge.  prelim result: not
+  important, at t=30, gap edge only heats to $H/r\simeq0.06$ even for
+  purely adiabatic disk. change in $h$ not important for linear
+  perturbations (but important for setting up the basic state). 
+}
 %% We first describe results for weakly self-gravitating
 %% discs $Q_0=8$ (giving $M_d=0.015M_*$) so that the gap remains 
 %% gravitationally stable \citep{lin11b}. We also impose a dimensionless
