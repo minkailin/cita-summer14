@@ -65,7 +65,7 @@ the gap edge because disc-planet interaction leads to heating.
 
 \subsection{Disc model and initial condition}
 The disc occupies $r\in[r_\mathrm{in}, r_\mathrm{out}]$ with $\rout =
-40\rin$ and $\phi\in[0,2\pi]$. The initial disc is axisymmetric with
+25\rin$ and $\phi\in[0,2\pi]$. The initial disc is axisymmetric with
 surface density profile  
  
 \begin{align}\label{initial_density}
@@ -86,8 +86,8 @@ $\Sigma_0$ is arbitrary.
 The initial azimuthal velocity $v_{\phi i}$ is set by centrifugal balance with
 pressure, stellar gravity and disc gravity. The initial radial velocity is $v_{r i}=3\nu/r$ 
 with $\nu = \hat{\nu}\rin^2\Omega_k(\rin)$. For parameter values employed in this work, $v_{\phi i}\simeq r\Omega_k$ 
-and $\hat{\nu}\lesssim O(10^{-5})$, so that $|v_{r i}/v_{\phi i}|\ll1$ and the initial 
-flow is effectively only in the azimuthal direction. 
+and $\hat{\nu}= 10^{-9}$, so that $|v_{r i}/v_{\phi i}|\ll1$ and the initial 
+flow is effectively only in the azimuthal direction.  With this choice of physical viscosity $\hat{\nu}$ the only energy source is through shock-heating (via artificial viscosity) and the $\mathcal{C}$ function when $e\Sigma<e_i\Sigma_i$
 
 
 \subsection{Planet potential}\label{planet_config}
@@ -174,8 +174,24 @@ instability. In a barotropic disc, the entropy factor is absent
 and the important quantity is the PV. 
 
 \subsubsection{Fourier modes}
+Convential Rossby instabilities are characterized by exponetially growing pertibations originating from an axisymetric original state. Though this paper will not deal with formal linear instability scenarios, linear mode measurements will be useful to characterize azimuthal vortex numbers and overdensity values.
+
+The fourier transform of the density field is defined as
+\begin{align}\label{fouriertransform}
+  \Sigma_m(r,t) = \int_{0}^{2\pi} \Sigma(r,\phi,t) \, \mathrm{e}^{-\mathrm{i}m\phi+\sigma_m \mathrm{t}} \, \mathrm{d}\phi
+\end{align}
+Here $m$ is the aziumuthal wave frequency and $\sigma_m$ is the angular frequency of the $m \mathrm{th}$ mode which is complex value. Since $\sigma_m$ is a value dependent on $r$, a more useful diagnostic is the mode growth rate defined as 
+\begin{align}\label{growth}
+  \frac{\partial \langle|\Sigma_m|\rangle_r }{\partial \mathrm{t}}= \gamma \langle|\Sigma_m|\rangle_r 
+\end{align}
+where $\gamma$ is the real part of the $\sigma_m$ and $\langle|\cdot|\rangle_r$ denotes the radial averaging of the absolute value over the region of interest. By using Eq.~\ref{growth} the growth rates of the linear unstable modes can be found from successive spatial Fourier transforms over an appropriate period of time.
 
 \subsubsection{Rossby number}
+The Rossby Number defined as
+\begin{align}
+  Ro = \frac{{\bf \hat{z}} \cdot \nabla \times \bv - \langle {\bf\hat{z}} \cdot \nabla \times \bv \rangle_{\phi}}{2\langle\Omega\rangle_{\phi}}, 
+\end{align}
+is a dimensionless number which measures the ratio of interial to Corriolis forces. Here $\langle \cdot \rangle_{\phi}$ denotes azimuthal the averaged quantity. Values of $Ro<0$ correspond to anti-cyclonic rotation with respect to the background motion and thus can be used to quantify area of a vortex and its intensity.
 
 %{\bf {MKL.} describe vortensity and generalized vortensity, and its
 %  relevance to stability. fourier mode amplitude definition and how
