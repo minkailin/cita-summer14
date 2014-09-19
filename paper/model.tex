@@ -20,14 +20,16 @@ The disc is governed by the standard fluid equations
 %  &\nabla^2\Phi_d = 4\pi G \Sigma \delta(z),\label{poisson}
 \end{align}
 where $\Sigma$ is the surface density, $\bv = (v_r,v_\phi)$ the fluid
-velocity, $p$ is the pressure, $e=p/(\gamma-1)$ is the energy
-density and the adiabatic index $\gamma=1.4$ is assumed constant. 
+velocity, $p$ is the vertically-integrated pressure, $e=p/(\gamma-1)$ is the energy
+per unit area and the adiabatic index $\gamma=1.4$ is assumed
+constant.  
 
 The total potential $\Phi$ includes the stellar potential, planet potential
-(described below)%, and the disc potential $\Phi_d$ which satisfies the
+(described below) %, and the disc potential $\Phi_d$ which satisfies the
 %Poisson equation \ref{poisson}. 
-and indirect potentials are also included
-to account for the non-inertial reference frame. In the momentum
+and indirect potentials to account for the non-inertial reference
+frame.%  \citep[see][for explicit expressions]{masset02}
+In the momentum 
 equations, $\bm{f}_\nu$ represent viscous forces whose magnitude is 
 characterised by a constant kinematic viscosity parameter
 $\nu$. However, we will be considering effectively inviscid discs by
@@ -46,35 +48,32 @@ evaluation at $t=0$. The cooling term $\mathcal{C}$ is defined as
 \end{align}
 where $t_c = \beta\Omega_k^{-1}$ is the cooling time,
 $\Omega_k=\sqrt{GM/r^3}$ is the Keplerian frequency and $\beta$ is an
-input parameter. Although idealised, this cooling prescription allows one 
+input parameter. This cooling prescription allows one 
 to explore the full range of thermodynamic response of the disc in a 
-systematic way. 
+systematic way: $\beta\ll1$ is a locally isothermal disc while
+$\beta\gg1$ is an adiabatic disk.  
 
-Note that the energy source terms have been chosen to be absent 
-at $t=0$. This allows the disc to be initialised in a steady state
-energy, provided the flow is axisymmetric and $v_r$ is negligible compared to $v_\phi$.  
-% If the disc is axisymmetric, steady and with only azimuthal flow, then the 
-%energy equation is trivially satisfied. 
-%This allows one to specify equilibrium discs (see below)
-%in the same way as in the case where the energy equation is replaced by a fixed temperature 
-%profile (i.e. $c_\mathrm{iso}^2\equiv p/\Sigma$ is prescribed). 
-The energy source term attempts to restore the initial energy density (and
+
+Note that the energy source terms
+have been chosen to be absent at $t=0$, allowing the disc to be
+initialised close to steady state. The $\mathcal{C}$ function attempts to restore the initial energy density (and
 therefore temperature) profile. In practice, this is a cooling term at
 the gap edge because disc-planet interaction leads to heating.  
 
-
 \subsection{Disc model and initial condition}
-The disc occupies a region $r\in[r_\mathrm{in}, r_\mathrm{out}]$ and $\phi\in[0,2\pi]$. The initial disc is axisymmetric with
+The disc occupies $r\in[r_\mathrm{in}, r_\mathrm{out}]$ with
+$r_\mathrm{out}=25\mathrm{in}$ {\bf check: if all simulations use the
+  same domain, state it here} and $\phi\in[0,2\pi]$. The initial disc is axisymmetric with
 surface density profile  
  
 \begin{align}\label{initial_density}
-   \Sigma_i(r) = \Sigma_0\left(\frac{r}{r_\mathrm{in}}\right)^{-s}
+   \Sigma(r) = \Sigma_\mathrm{ref}\left(\frac{r}{r_\mathrm{in}}\right)^{-s}
     \left[1 - \sqrt{\frac{r_\mathrm{in}}{r + H_i(\rin)}}\,\right] 
 \end{align}
 where the power-law index $s=2$, $H(r) = \ciso\Omega_k $ defines the disc scale-height 
 where $\ciso=\sqrt{p/\Sigma}$ isothermal sound-speed. The disc aspect-ratio is defined as $h\equiv H/r$ and initially
 $h=0.05$. For a non-self-gravitating disc, the surface density scale
-$\Sigma_0$ is arbitrary. 
+$\Sigma_\mathrm{ref}$ is arbitrary. 
 
 %The surface density scale $\Sigma_0$ is set by  
 %\begin{align}
@@ -83,21 +82,23 @@ $\Sigma_0$ is arbitrary.
 %where $Q_o$ is the thin-disc Keplerian Toomre parameter at the outer boundary initially. 
 
 The initial azimuthal velocity $v_{\phi i}$ is set by centrifugal balance with
-pressure, stellar gravity and disc gravity. The initial radial velocity is $v_{r i}=3\nu/r$ 
-with $\nu = \hat{\nu}\rin^2\Omega_k(\rin)$. For parameter values employed in this work, $v_{\phi i}\simeq r\Omega_k$ 
-and $\hat{\nu}= 10^{-9}$, so that $|v_{r i}/v_{\phi i}|\ll1$ and the initial 
-flow is effectively only in the azimuthal direction.  With this choice of physical viscosity $\hat{\nu}$ the only energy source is through shock-heating (via artificial viscosity) and the $\mathcal{C}$ function when $e\Sigma<e_i\Sigma_i$
-
+pressure, stellar gravity and disc gravity. The initial radial velocity is $v_{r}=3\nu/r$ 
+with $\nu = \hat{\nu}\rin^2\Omega_k(\rin)$. For parameter values employed in this work, $v_{\phi}\simeq r\Omega_k$ 
+and $\hat{\nu}= 10^{-9}$, so that $|v_{r}/v_{\phi}|\ll1$ and the initial 
+flow is effectively only in the azimuthal direction.  With this choice
+of physical viscosity $\hat{\nu}$ the only heating source is through
+shock-heating (via artificial viscosity) and the $\mathcal{C}$
+function when $e\Sigma<e_i\Sigma_i$. 
 
 \subsection{Planet potential}\label{planet_config}
 The planet potential is given by 
 \begin{align}
-\Phi_p = -\frac{GM_p}{\sqrt{|\bm{r} - \bm{r}_p|^2 + \epsilon_p^2}},
+  \Phi_p = -\frac{GM_p}{\sqrt{|\bm{r} - \bm{r}_p|^2 + \epsilon_p^2}},
 \end{align}
 where $M_p$ is the planet mass and we fix $q\equiv M_p/M_*=10^{-3}$
 throughout this work. This corresponds to a Jupiter-mass planet if $M_*=M_{\sun}$. 
 The planet's position in the disc 
- $\bm{r}_p=(r_p,\phi_p)$  and $\epsilon_p=0.5r_h$ is a softening
+$\bm{r}_p=(r_p,\phi_p)$  and $\epsilon_p=0.5r_h$ is a softening
 length with $r_h=(q/3)^{1/3}r_p$ being the Hill radius.  
 %Hill radius chosen so eps doesn't change with time (scale-height does)
 The planet is held on a fixed circular orbit with $ r_p = 10\rin$. This also
@@ -110,7 +111,7 @@ defines the time unit $P_0\equiv 2\pi/\Omega_k(r_p)$ used to describe results.
 The disc-planet system is evolved using the 
 \texttt{FARGO-ADSG} code \citep{baruteau08, baruteau08b}. This is a modified version 
 of the original \texttt{FARGO} code \citep{masset00a} to include the energy 
-equation. The code employs finite-difference scheme similar 
+equation. The code employs a finite-difference scheme similar 
 to the \texttt{ZEUS} code \citep{stone92}, but with a modified azimuthal transport 
 algorithm to circumvent the time-step restriction set by the inner disc boundary. 
 The disc is divided into $(N_r,N_\phi)$ zones in the radial and azimuthal directions, 
@@ -118,8 +119,7 @@ respectively. The grid spacing is logarithmic in radius and uniform in azimuth.
 
 \subsection{Parametrized cooling}
 In this work we only vary one control parameter: the cooling
-time. 
-%The disc parameters are $Q_o$, which characterizes the strength of self-gravity; 
+time. %The disc parameters are $Q_o$, which characterizes the strength of self-gravity; 
 %and $\beta$ which sets the cooling time. Two levels of self-gravity is considered: 
 %a light disc with $Q_o=8$ and a heavy disc with $Q_o=1.5$. 
 The cooling parameter $\beta$ is chosen indirectly  through the parameter
@@ -128,9 +128,14 @@ $\tilde{\beta}$ such that
 \begin{align}
   t_c(r_p+x_s) = \beta\Omega_k^{-1}(r_p+x_s) = \tilde{\beta} t_{\mathrm{lib}}(r_p+x_s), 
 \end{align}
-where $x_s$ is the distance from the planet, and $t_\mathrm{lib}$ is
-the time interval between successive encounters of a fluid element and
-the planet's azimuth. Assuming Keplerian orbital frequencies and $x_s\ll r_p$
+where $x_s=2r_h$ is the approximate distance from the planet to its
+gap edge, and $t_\mathrm{lib}$ is the time interval between successive
+encounters of a fluid element at the gap edge and the planet's
+azimuth. That is, we measure the cooling time in units of the time
+taken for a gap edge fluid element to encounter planet-induced
+shocks.   
+
+Assuming Keplerian orbital frequencies and $x_s\ll r_p$
 gives $t_\mathrm{lib}\simeq 4\pi r_p/(3\Omega_{kp} x_s)$, where
 $\Omega_{kp} = \Omega_k(r_p)$. Therefore   
 \begin{align}\label{betatilde}
@@ -143,7 +148,6 @@ Eq. \ref{betatilde} then gives $\beta \simeq 23.9\tilde{\beta}$.
 
 %giant planet gap is 2.5rh
 %2rh is CR of G.E.I. 
-
 %\subsection{Simulation procedure}
 %The disc is evolved without a planet for $t\in[0,20]P_0$. The planet potential is smoothly switched on
 %between $t\in[20,30]P_0$.
@@ -157,14 +161,14 @@ Eq. \ref{betatilde} then gives $\beta \simeq 23.9\tilde{\beta}$.
 
 \subsubsection{Generalized potential vorticity}
 
-The generalized potential vorticity (PV, or vortensity) is defined as
+The generalized potential vorticity is defined as
 \begin{align}
   \tilde{\eta} = \frac{\kappa^2}{2\Omega\Sigma}\times S^{-2/\gamma}, 
 \end{align}
 where $\kappa^2 = r^{-3}\partial_r(r^4\Omega^2)$ is the square of the
 epicycle frequency, $\Omega=v_\phi/r$ is the angular speed, and
 $S\equiv p/\Sigma^\gamma$ is the entropy. The first factor is the
-usual potential vorticity. 
+usual potential vorticity (PV, or vortensity). 
 
 The generalized PV appears in the description of the linear stability
 of radially-structured adiabatic discs \citep{lovelace99,li00}, where
@@ -172,25 +176,49 @@ the authors show an extremum in $\teta$ may lead to a dynamical
 instability. In a barotropic disc, the entropy factor is absent
 and the important quantity is the PV. 
 
-\subsubsection{Fourier modes}
-Convential Rossby instabilities are characterized by exponetially growing pertibations originating from an axisymetric original state. Though this paper will not deal with formal linear instability scenarios, linear mode measurements will be useful to characterize azimuthal vortex numbers and overdensity values.
+\subsubsection{Fourier modes} 
+The Rossby wave instability is characterized by exponetially
+growing pertibations. Though in this paper we do not formally consider
+linear instability, modal analysis will be useful to
+analyse the growth of different wavenumbers, which is associated with
+the number of vortices initially formed by the RWI.  
 
-The fourier transform of the density field is defined as
+%characterize 
+%azimuthal vortex numbers and overdensity values. 
+
+The Fourier transform of the time-dependent surface density is
 \begin{align}\label{fouriertransform}
-  \Sigma_m(r,t) = \int_{0}^{2\pi} \Sigma(r,\phi,t) \, \mathrm{e}^{-\mathrm{i}m\phi+\sigma_m \mathrm{t}} \, \mathrm{d}\phi
-\end{align}
-Here $m$ is the aziumuthal wave frequency and $\sigma_m$ is the angular frequency of the $m \mathrm{th}$ mode which is complex value. Since $\sigma_m$ is a value dependent on $r$, a more useful diagnostic is the mode growth rate defined as 
+  \Sigma_m(r,t) = \int_{0}^{2\pi}
+  \Sigma(r,\phi,t) \, \mathrm{e}^{-\mathrm{i}m\phi} \, \mathrm{d}\phi 
+\end{align} 
+where $m$ is the aziumuthal wave number. We define the growth rate
+$\gamma$ of the $m^\mathrm{th}$ component of the surface density
+through 
+% and $\sigma_m$ is the complex frequency
+%of the $m \mathrm{th}$ mode. Since $\sigma_m$ is a value dependent on
+%$r$, a more useful diagnostic is the mode growth rate defined as  
 \begin{align}\label{growth}
-  \frac{\partial \langle|\Sigma_m|\rangle_r }{\partial \mathrm{t}}= \gamma \langle|\Sigma_m|\rangle_r 
+  \frac{d \langle|\Sigma_m|\rangle_r }{dt}= \gamma \langle|\Sigma_m|\rangle_r 
 \end{align}
-where $\gamma$ is the real part of the $\sigma_m$ and $\langle|\cdot|\rangle_r$ denotes the radial averaging of the absolute value over the region of interest. By using Eq.~\ref{growth} the growth rates of the linear unstable modes can be found from successive spatial Fourier transforms over an appropriate period of time.
+where %$\gamma$ is the real part of the $\sigma_m$ and 
+$\langle|\cdot|\rangle_r$ denotes the average of the absolute value
+over a raidal region of interest. By using Eq.~\ref{growth} the growth
+rates of the unstable modes can be found from successive spatial
+Fourier transforms over an appropriate period of time. 
 
 \subsubsection{Rossby number}
-The Rossby Number defined as
+The Rossby number
 \begin{align}
-  Ro = \frac{{\bf \hat{z}} \cdot \nabla \times \bv - \langle {\bf\hat{z}} \cdot \nabla \times \bv \rangle_{\phi}}{2\langle\Omega\rangle_{\phi}}, 
+  Ro = \frac{{\bf \hat{z}} \cdot \nabla \times \bv - \langle
+    {\bf\hat{z}} \cdot \nabla \times \bv
+    \rangle_{\phi}}{2\langle\Omega\rangle_{\phi}},  
 \end{align}
-is a dimensionless number which measures the ratio of interial to Corriolis forces. Here $\langle \cdot \rangle_{\phi}$ denotes azimuthal the averaged quantity. Values of $Ro<0$ correspond to anti-cyclonic rotation with respect to the background motion and thus can be used to quantify area of a vortex and its intensity.
+is a dimensionless measure of relative vorticity. 
+% the ratio of interial to Corriolis forces. 
+Here $\langle \cdot \rangle_{\phi}$ denotes an azimuthal
+average. Values of $Ro<0$ correspond to anti-cyclonic rotation with
+respect to the background shear and thus can be used to identify
+vortices and quantify its intensity. 
 
 %{\bf {MKL.} describe vortensity and generalized vortensity, and its
 %  relevance to stability. fourier mode amplitude definition and how
