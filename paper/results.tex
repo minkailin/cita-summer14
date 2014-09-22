@@ -21,11 +21,12 @@ section~\ref{adiabatic_section}.
 
 
 Simulations here employ a resolution of $(N_r,N_{\phi})=(1024,2048)$
+with $r_\mathrm{out}=25r_\mathrm{in}$, 
 and we consider 
 %for a time up to $200P_0$ allowing high resolution and detection of high
 %$m$ structures.
 cases of $\tilde{\beta}=0.1,1,10$ corresponding to fast, moderate,
-and slowly cooled discs.  
+and slowly cooled discs.  {\bf boundary condition for these sims?}
 
 \subsection{Gap structure}
 %Since stability of the gap is of interest 
@@ -296,8 +297,8 @@ only marginally over the instability growth timescale. %heat is
 We find very similar gap profiles and mode growth rates for
 $\tilde{\beta}=100$ as with $\tilde{\beta}=10$. The disc heats up to
 values $h\simeq0.06$ in the nearly adiabatic case. This is close to
-the original temperature of $h=0.05$, so growth rates are not expected
-to change significantly according to the linear theory presented in
+the original temperature of $h=0.05$, so linear growth rates are not expected
+to change significantly %according to the linear theory presented in
 \citep{li00}. 
 
 According to \cite{li00}, increasing $h$ increases linear growth rates
@@ -327,7 +328,7 @@ state for the instability).
 
 
 {\bf
-If there's time, repeat planet off simulations but keep the planet on
+If there's time, do low resolution planet off simulations but keep the planet on
 until $t=40P_0$ or $50P_0$. Look at stability properties when the gaps
 are generally deeper (including the nearly adiabatic case). Although
 with the planet instability may already appear by $t=40P_0$, the
@@ -352,81 +353,43 @@ azimtuhal average performed prior to perturbations will erase it.
 %  runs. maybe torques? 
 %}
 
-Long term simulation of edge vortices were done for
-$\tilde{\beta}=0.1,0.5,1.0,5.0,10.0$ up to a total of
-$2000P_0$. Planets were left free to interact dynamiclly with the disk
-and vortices after $t=30P_0$ as apposed to previous section. These
-simulations were less resolved with $(N_r,N_{\phi})=(512,1024)$ in
-order for them to be computationally economical. An open boundry
-condition was used in the outer edge of
-$r_{\mathrm{out}}=45r_{\mathrm{in}}$ allowing significant room for
-linblad resonances of the vortices. 
+We now consider long term simulations of gap-edge vortices for
+$\tilde{\beta}=0.1,0.5,1,5,10$. The planet potential is kept on
+throughout.  
+% up to a total of
+%$2000P_0$. 
+%Planets were left free to interact dynamiclly with the disk
+%and vortices after $t=30P_0$ as apposed to previous section.  
+We employ a grid with $(N_r,N_{\phi})=(512,1024)$ 
+in order for these simulations to be computationally feasible. We also use a larger
+disc with $r_{\mathrm{out}}=45r_{\mathrm{in}}$ to minimize boundary
+effects on vortex evolution. We apply an open boundary at
+$r_\mathrm{out}$. {\bf mention lower resolution preliminary runs -
+  similar results to those presented here (?). want to demonstrate convergence}
 
-After the semi-linear growth of vortices, vortex merger effects take
-hold and by $150P_0$ for all $\tilde\beta$ values, only $m=1$ vortex
-modes exist. Plots of the amplitude of the $m=1$ mode for the
-different $\tilde\beta$ cases are shown in
-Fig~\ref{lifetimeplot}. These instabilities stay in quasi-steady
-states for $>1000P_0$ in most cases, in which they grow in intensity
-and reaching overdenisities almost 10 times the intial local
-density. The growth of these vortices are supplied by the continuous
-generation of vorticity by the planet-disk interactions. Eventually
-the $m=1$ amplitudes are also characterized by sudden large drops of
-vortex intensity which happen over timescales of $50P_0$. After these
-drops the instability is never seen to reform at such large over
-densities and density bumps are never larger than the planet induced
-shocks. We designate the time of these amplitude drops as the lifetime
-of the quasi-steady vortex.  
 
-Rossby values have dynamics that are coupled with the lifetime and
-$m=1$ amplitude of the vortices. As the vortex forms it has a
-charcteristic value of $Ro\approx-0.1$ indicating anti-cyclonic
-motion. As the $m=1$ amplitude grows the relative spin of the vortex
-continuously grows along with it, reaching values of
-$Ro\approx-0.4$. As the vortex dies off as described above the
-associated Rossby number of the vortex accordingly quickly approaches
-0. 
 
-The sudden dissipation of these vortices seem to be a result of the
-vortices shocking the system. Measurements of the Mach number near the
-vortices show large increases in value when the vortex is dissipating
-which indicates that the system is more susceptible to shocks. Also
-gradients of surface density are seen to spike up in wake like
-features around the vortex during dissipation which is also indicative
-of shocks. Of note is also that the large overdensity the vortex
-creates during it's quasi-steady state distorts the background
-disk. So as the vortex grows in intensity it alters the intial gap
-structure that formulated its growth. 
+%An open boundry
+%condition was used in the outer edge of
+% allowing significant room for
+%linblad resonances of the vortices. 
 
-Contradictory to our `planet-off' simulations, vortex lifetimes did
-not monotonicly depend on intial edge stability and from our
-simulations we find that there is $t_{\mathrm{coo}l}$ which optimizes
-the vortex lifetime as seen in Fig~\ref{lifetimeplot}. Increasing
-$\tilde\beta$ correspondingly increased the lifetime of the vortex up
-to a critical value for $\tilde{\beta}=5.0$ which had a lifetime that
-lasted beyond the simulation time of $2000P_0$. Cooling rates with
-$\tilde\beta>5.0$ showed lifetimes that were well below the max
-lifetime. By analyzing the aspect ratio of the corotation region
-around the vortex we find that longest lifetime $\tilde\beta=5.0$ disk
-corresponds to $h\approx0.06$ which is a result similarily found by
-\citet{fu14} to be the optimum lifetime for long-term simulations of
-isothermal disks with varying intial temperature profiles $h$. 
 
-Competing effects of gap stability with $t_{\mathrm{coo}l}$ result in
-the the non-montonic form of the lifetime. As the $\tilde\beta$
-increases so does the stability of the gap edge as seen in
-section~\ref{linear}, however as $\tilde\beta$ increases so does the
-$c_{\mathrm{iso}}$ which is known from theory to effect the growth of
-instability \citep{li00}. Thus increasing $\tilde\beta$ increases the
-sound speed $c_{\mathrm{iso}}$ and likewise the gap instability up to
-a certain point in which the effects of the more stable gap edge
-becomes a significant effect. The correlation of growth rate and sound
-speed is non-negligible as in previous `planet-off' case as the disk
-now can reach values of $h\simeq0.08$ for very slow cooling and the
-importance of the effect can be imagined to accumulate over the now
-considerably longer timescale. These effects dictate when then the
-vortex reaches the critical value in which it shocks the system that
-subsequently causes disspation and hence the lifetime fo the vortex. 
+\subsection{Generic evolution}
+
+The linear growth of the RWI and vortex-formation is followed by 
+vortex merging. For all $\tilde\beta$ values, only one vortex remains
+by $150P_0$.
+%i.e. only the $m=1$ mode remains. 
+{\bf is vortex merging affected by $\tilde{\beta}$? e.g. timescale
+  taken to reach one vortex as a function of cooling}
+%by $150P_0$ for all , only $m=1$ vortex
+%modes exist. 
+The evolution of the amplitude of the $m=1$ mode in surface density is
+shown in Fig~\ref{lifetimeplot} for   
+different $\tilde\beta$. {\bf should state (also for planet-off runs)
+  what the radial range is used for averaging the Fourier amplitudes} 
+
 
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0.5cm
@@ -437,99 +400,218 @@ subsequently causes disspation and hence the lifetime fo the vortex.
     $\tilde\beta=5.0$ (the red line). \label{lifetimeplot}} 
 \end{figure}
 
+In all cases the system remains in a quasi-steady state for
+$\gtrsim500P_0$ with a single vortex circulating 
+the outer gap edge at the local Keplerian  
+frequency. Fig. \ref{Vortex2D} shows a typical plot of the relative 
+surface density perturbation in this state. During this stage, the 
+vortex grows in intensity. As the vortex forms it has a
+charcteristic value of $Ro\approx-0.1$ indicating anti-cyclonic
+motion. As the $m=1$ amplitude grows the relative spin of the vortex
+continuously grows along with it, reaching values of
+$Ro\approx-0.4$, corresponding to surface density almost 10 times the
+initial value. {\bf for what cooling are these values quoted for? do
+  these values depend on cooling?} Vortex growth is attributed to
+the continuous generation of vorticity by the planet-disc interactions. 
+{\bf is the evidence for this the fact that growth is not observed in
+  planet-off simulations?}   
+
+{\bf note that there
+  are two origins for the surface density boost relative to $t=0$: 1) gap
+  formation, which increases the surface density at the location of
+  the instability (since they happen at surface density max., and 2)
+  vortex instability). what is the surface density boost relative to
+  the gap profile?}   
+
+
+Interestingly, in most cases we observe a sudden drop in 
+the $m=1$ amplitude within the simulation time, which occurs over
+timescales of $50P_0$, i.e. much shorter than the duration of the quasi-steady
+state. {\bf is this dissipation timescale independent of cooling?}.  
+%Eventually
+%the $m=1$ amplitudes are also characterized by 
+After these characteristic drops, the instability is never seen to
+reform at such large overdensities and surface density bumps are never larger
+than that due to the planetary wakes. We designate the time of these
+amplitude drops as the lifetime 
+of the quasi-steady vortex.  
+{\bf question: does instability
+  actually happen again? if it does, but just weaker, that may be
+  because the first vortex has smoothed out the gap edge, so
+  instabilities following that would be weaker.}
+
+
+
 \begin{figure}
   \includegraphics[width=\linewidth,height=\linewidth]{figures/vortex2D}
-  \caption{Cartesian plot of relative density pertibation for
-    $\tilde\beta=0.1$ vortex case during the quasi-steady state. The
-    large scale non-axisyemetric $m=1$ overdensity can be
-    seen. \label{Vortex2D}} 
+  \caption{Relative surface density perturbation for the
+    $\tilde\beta=0.1$ case during quasi-steady state with a single
+    vortex. The plot for other values of the cooling time $\tilde{\beta}$ are
+    similar. {\bf is this plot truncated? in the text it says the
+      domain goes to $r=45$?}
+    %The large scale non-axisyemetric $m=1$ overdensity can be
+    %seen. 
+    \label{Vortex2D}} 
 \end{figure}
 
-%\begin{figure}
-%   \includegraphics[scale=.42]{figures/stability_vis6betalow.ps}
-%   \caption{Same as Fig. \ref{stability_vis9lowb} but $\hat{\nu}=10^{-6}$ and $\tilde{\beta}=0.1$. }
-% \label{stability_vis6lowb)}
-% \end{figure}
+{\bf
+\subsection{Additional analysis on vortex dissipation}
+Conjecture: vortex death due to vortex shocking the system and
+dissipating its energy. discuss one case. here we want to explain or
+suggest why vortices die} 
+%Rossby values have dynamics that are coupled with the lifetime and
+%$m=1$ amplitude of the vortices. 
 
-%\begin{figure}
-%   \includegraphics[scale=.42]{figures/stability_vis6betamed.ps}
-%   \caption{Same as Fig. \ref{stability_vis9lowb} but $\hat{\nu}=10^{-6}$ and $\tilde{\beta}=1.0$. }
-% \label{stability_vis6medb)}
-% \end{figure}
-%Same as \ref{stability_vis9lowb} but $\hat{\nu}=10^{-6}$ and $\tilde{\beta}=1.0$. 
+As the vortex dies off as described above its associated Rossby number
+of quickly approaches $0$. Gradients of surface density are seen to
+spike up in wake-like features around the vortex during dissipation. 
+{\bf show
+  this. e.g. vortex before, during and after death. maybe show
+  snapshots of surface density perturbation (vortex) compared with
+  $\nabla\Sigma/\Sigma$ (vortex shocks). demonstrate vortex shape
+  changes and shocks develop prior ot death. state whether this is
+  generic for all coolings}.  
+In addition, we also observed large increases in the Mach number near
+the vortex during dissipation, which indicate susceptibility to
+shocks. {\bf show mach number plot, or quote values. relevant mach
+  number is fluid flow speed with respect to 
+  vortex bulk motion around the disc. does the typical mach number
+  near the vortex just before its death depend on cooling?} 
+Thus, the sudden drop in vortex amplitude may  
+be a result of the development of associated spiral shocks dissipating
+its energy \citep[cf.][who 
+  suggested damping due to planet-induced shocks]{fu14}.  
+
+{\bf note that fu et al suggested vortex damping by the planet
+  shocks. here, we are suggesting vortex dissipates energy by shocking
+  the disk. our evidence is that we observe vortex growth before it
+  dissipates, and spiral shocks associated with the vortex always
+  develop before vortex death. once it starts shocking the disc it
+  loses energy. if the planet-induced shocks were responsible, death
+  should be more gradual. can we think of other evidences that it's
+  not the planet shock that's responsible?                    
+}
+
+Vortex growth during the quasi-steady state also acts to smooth out
+the gap edge. 
+%Of note is also that the large overdensity the vortex
+%creates during it's quasi-steady state distorts the background
+%disk. 
+{\bf show this (smoothening of gap edge due to vortex growth),
+  e.g. general vortensity evolution or surface density 
+  evolution}. 
+This is because the vortex has an associated viscosity {\bf quote a
+  typical value of alpha viscosity associated with vortex}. This acts
+against gap-opening by the planet, so that the condition for the RWI
+becomes less favourable as the vortex grows. {\bf self-limiting
+  behaviour?} 
+
+\subsection{Vortex lifetimes as a function of cooling rate}
+
+{\bf describe dependency on
+cooling. Do we have enough data to have a `lifetime v.s. beta'
+  plot? here we want to explain why vortex lives longer with longer
+  cooling, but very long cooling results in shorter lifetimes. 
+  Consider the following quantities as a function of cooling:
+  initial strength of the single vortex; growth rate of single vortex
+  strength from its formation to just before death; ampiltude of
+  vortex just before death; disc temperature in the vortex region. 
+
+  we expect the initial $m=1$ vortex (after merging) to be weaker with
+  increasing cooling time because the instability is weaker. (see
+  meheut et al 2013, mnras, 430, 1988 who show that the initial vortex
+  amplitude after linear growth is correlated with the linear growth
+  rate). 
+
+  suppose the vortex shocks when it reaches a certain amplitude (which
+  probably increases with longer cooling rate because it's more
+  difficult to shock a hotter disc). as we
+  increase the cooling time, the initial $m=1$ vortex is weaker, it
+  also grows more slowly because gap-opening is opposed by a hotter
+  disc. the above implies that it takes longer for the vortex reach
+  the shock-inducing amplitude and dissipate.  
+
+  but the above is not consistent with non-monotonic behaviour, which
+  predicts the $\tilde{\beta}=10$ vortex to survive longest. this is
+  because we expect the initial vortex to be weakest (check) which
+  means it should take the longest to grow and shock. check
+  whether there's anything special about this case. one possibility is
+  that vortex growth during the quasi-steady state is actually faster
+  because of the raised temperature (li et al 2000 show increased
+  temperature favours RWI - possibiliy evidenced here by a stronger
+  vortex before death than other cases) 
+
+  perhaps have a case of $\tilde{\beta}=7.5$ as further evidence of
+  non-monotonic behaviour
+}
+
+Fig. \ref{lifetimeplot} shows that increasing $\tilde{\beta}$
+increases the lifetime of the vortex up to a critical 
+value $\tilde{\beta}=5.0$ for which the vortex lasted beyond the
+simulation time of $2000P_0$. This is consistent with vortex
+dissipation when it induce shocks. Our `planet-off' simulations
+indicate weaker vortices are formed initially with increased cooling
+times. After merging, the growth of the single vortex, mediated by disc-planet
+interaction, is expected to be slower with increased cooling time
+because gap-opening becomes more difficult in a hotter
+disc. Furthermore, the increased sound-speed suggest the vortex should
+reach larger amplitudes in order to induce shocks. 
+These expectations
+imply that it takes longer for the vortex to induce shocks and
+dissipate, and hence longer lifetimes with increasing
+$\tilde{\beta}$. 
+
+However, Fig. \ref{lifetimeplot} shows that increasing the cooling
+time further to $\tilde{\beta}=10$ actually results in a
+\emph{shorter} vortex lifetime. Notice for $\tilde{\beta}=10$ the vortex growth 
+during the quasi-steady state is faster than for
+$\tilde{\beta}=5$. This may be attributed to the higher temperature
+reached in the former case ($h\simeq 0.08$). {\bf temperature for
+  $\tilde{\beta}=5$?}, since \cite{li00} showed that the RWI grows
+faster with increased disc temperature. At long cooling times, this
+effect may dominate over the weaker gap-opening effect at higher $h$.   
 
 
-%we checked that open bc doesn't affect gap structure
-%checked that t=200 plots are similar to t=100 
+Thus, unlike our `planet-off' simulations we find that there is
+a cooling time $t_c$ which maximises the vortex lifetime. {\bf to make
+this comparison we need to discuss vortex lifetimes for planet-off
+simulations as well} 
+This
+non-monotonic behaviour was also reported by \cite{fu14}, who
+performed isothermal disc-planet simluations with different fixed
+aspectratios.   
+%Cooling rates with
+%$\tilde\beta>5.0$ showed lifetimes that were well below the max
+%lifetime. 
+By analyzing the region
+around the vortex {\bf define this region} we find the
+$\tilde\beta=5.0$ case, with the longest vortex lifetime, has
+$h\approx0.06$. This value of $h$ was also found to maximize vortex
+lifetimes in the isothermal simulations of \cite{fu14}. 
 
-%surface density plot
+%be the optimum lifetime for long-term simulations of
+%isothermal disks with varying intial temperature profiles $h$. 
 
-%aspect-ratio plot
+%Competing effects of gap stability with $t_{\mathrm{coo}l}$ result in
+%the the non-montonic form of the lifetime. As the $\tilde\beta$
+%increases so does the stability of the gap edge as seen in
+%section~\ref{linear}, however as $\tilde\beta$ increases so does the
+%$c_{\mathrm{iso}}$ which is known from theory to effect the growth of
+%instability \citep{li00}. Thus increasing $\tilde\beta$ increases the
+%sound speed $c_{\mathrm{iso}}$ and likewise the gap instability up to
+%a certain point in which the effects of the more stable gap edge
+%becomes a significant effect. 
 
-%general vortensity plot 
-
-
-
-%% \begin{figure}
-%%   \includegraphics[scale=.42,clip=true,trim=0cm 1.8cm 0cm 0cm]{figures/compare_profiles_dens020.ps}\\
-%%   \includegraphics[scale=.42]{figures/compare_profiles_h020.ps}
-%%   \caption{Steady-state gap profiles in a low mass viscous disc. The
-%%     surface density perturbation (top) and disc aspect-ratio (bottom)
-%%     are shown as a function of the cooling parameter:  
-%%     $\tbeta=0.1$ (solid, fast cooling), $\tbeta=1$ (dotted,
-%%     moderate cooling) and $\tbeta=10$ (dashed, slow
-%%     cooling). \label{lvisc_steady_gap}}  
-%% \end{figure}
-
-
-
-%% \begin{figure}
-%%   \includegraphics[scale=.42]{figures/compare_profiles_gvort020.ps}
-%%   \caption{Gap structure in a low mass viscous disc, in terms of the
-%%     perturbed generalized vortensity as a function of the cooling
-%%     parameter. \label{lvisc_steady_gvort}} 
-%% \end{figure}
-
-
-%%\section{Gaps in massive discs (MKL)}
-%% We first examine disc models with $Q_o=1.5$. We set the physical
-%% viscosity $\hat{\nu}=10^{-9}$, so that the only energy source is
-%% through shock-heating (via artificial viscosity) and the $\mathcal{C}$
-%% function when $e\Sigma<e_i\Sigma_i$. The numerical resolution is
-%% $N_r\times N_\phi = 512\times 1024$.   
-
-%% %Since we are primarily concerened with gap stability, it is important
-%% %to first examine the gap structured opened by the planet as a function
-%% %of cooling. 
-%% Fig. \ref{gvort1d_q1d5} compares the gap structure in terms of the GV profile for three
-%% levels of cooling: $\tilde{\beta}=0.1$, $\tilde{\beta}=1$ and
-%% $\tbeta=10$. For convenience we will refer to these cases as fast,
-%% intermediate and slow cooling, respectively. The snapshot is taken at
-%% $t=30P_0$, just after the planet is fully introduced. 
-
-%% In terms of the GV profile, the qualitative features of the planetary
-%% gap --- localized GV extrema at the gap edges --- remain unchanged
-%% despite two orders of magnitude difference in the cooling rate.   
+%The correlation of growth rate and sound
+%speed is non-negligible as in previous `planet-off' case as the disk
+%now can reach values of $h\simeq0.08$ for very slow cooling and the
+%importance of the effect can be imagined to accumulate over the now
+%considerably longer timescale. These effects dictate when then the
+%vortex reaches the critical value in which it shocks the system that
+%subsequently causes disspation and hence the lifetime fo the vortex. 
 
 
-%% \begin{figure}
-%% %  \includegraphics[scale=.42,clip=true,trim=0cm 1.8cm 0cm 0cm]{figures/dens1d_q1d5_003_global.ps}\\
-%% %  \includegraphics[scale=.42]{figures/gvort1d_q1d5_003_global.ps}
-%%   \caption{Gap structure in terms of the perturbed surface density
-%%     (top) and perturbed generalized
-%%     vortensity (bottom), as a function of the cooling parameter:  
-%%     $\tbeta=0.1$ (solid, fast cooling), $\tbeta=1$ (dotted,
-%%     intermediate cooling) and $\tbeta=10$ (dashed, slow
-%%     cooling). \label{gvort1d_q1d5}} 
-%% \end{figure}
 
-%% \begin{figure*}
-%% %  \includegraphics[scale=.55,clip=true,trim=0cm 0cm 0cm
-%% %    0cm]{figures/noniso0_HR_dens004}\includegraphics[scale=.55,clip=true,trim=2.26cm 0cm 0cm
-%% %    0cm]{figures/noniso1_HR_dens004}\includegraphics[scale=.55,clip=true,trim=2.26cm 0cm 0cm
-%% %    0cm]{figures/noniso2_HR_dens004}
-%%   \caption{Gap instability in the heavy disc model, as a function of
-%%     the cooling parameter: $\tbeta=0.1$ (left), $\tbeta=1$ (middle)
-%%     and $\tbeta=10$ (right). The relative surface density
-%%     perturbation is shown. \label{polarxy_q1d5}} 
-%% \end{figure*}
+
+
+
