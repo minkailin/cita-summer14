@@ -1,0 +1,47 @@
+if ( !SelfGravity ) {
+/*      VKepIn = sqrt (  G*1.0/Rmed[0] *                                        \
+                       ( 1.0 - (1.0+SIGMASLOPE-2.0*FLARINGINDEX)*       \
+                         pow(AspectRatio(Rmed[0]),2.0)*pow(Rmed[0],2.0*FLARINGINDEX) ) );
+      VKepOut = sqrt (  G*1.0/Rmed[nr-1] *                              \
+                        ( 1.0 - (1.0+SIGMASLOPE-2.0*FLARINGINDEX)*      \
+                          pow(AspectRatio(Rmed[nr-1]),2.0)*pow(Rmed[nr-1],2.0*FLARINGINDEX) ) );
+*/
+Hin = ASPECTRATIO*pow(RMIN,FLARINGINDEX+1.0);
+      VKepIn = G*1.0/Rmed[0]                                            \
+        + pow(ASPECTRATIO,2.0)*pow(Rmed[0],2.0*FLARINGINDEX -1.0)*
+        (-SIGMASLOPE + 2.0*FLARINGINDEX - 1.0 + 0.5*Rmed[0]*sqrt(RMIN)*pow(Rmed[0]+Hin, -1.5)/(1.0 - sqrt(RMIN/(Rmed[0]+Hin))));
+    VKepIn = sqrt(VKepIn);
+
+VKepOut = G*1.0/Rmed[nr-1]                                          \
+        + pow(ASPECTRATIO,2.0)*pow(Rmed[nr-1],2.0*FLARINGINDEX -1.0)*
+        (-SIGMASLOPE + 2.0*FLARINGINDEX - 1.0 + 0.5*Rmed[nr-1]*sqrt(RMIN)*pow(Rmed[nr-1]+Hin, -1.5)/(1.0 - sqrt(RMIN/(Rmed[nr-1]+Hin))));
+    VKepOut = sqrt(VKepOut);
+    }
+    else {
+      if ( !SGZeroMode )
+        mpi_make1Dprofile (SG_Accr, GLOBAL_AxiSGAccr);
+      else
+        GLOBAL_AxiSGAccr = SG_Accr;
+ /*     VKepIn = sqrt (  G*1.0/Rmed[0] *                                        \ 
+                       ( 1.0 - (1.0+SIGMASLOPE-2.0*FLARINGINDEX)*       \ 
+                         pow(AspectRatio(Rmed[0]),2.0)*pow(Rmed[0],2.0*FLARINGINDEX) ) - \ 
+                       Rmed[0]*GLOBAL_AxiSGAccr[0] ); */
+
+      Hin = ASPECTRATIO*pow(RMIN,FLARINGINDEX+1.0);
+      VKepIn = G*1.0/Rmed[0]                                            \
+        + pow(ASPECTRATIO,2.0)*pow(Rmed[0],2.0*FLARINGINDEX -1.0)*
+        (-SIGMASLOPE + 2.0*FLARINGINDEX - 1.0 + 0.5*Rmed[0]*sqrt(RMIN)*pow(Rmed[0]+Hin, -1.5)/(1.0 - sqrt(RMIN/(Rmed[0]+Hin)))) - \
+        Rmed[0]*GLOBAL_AxiSGAccr[0];
+    VKepIn = sqrt(VKepIn);
+
+      /* VKepOut = sqrt (  G*1.0/Rmed[nr-1] *                           \ */
+/*                      ( 1.0 - (1.0+SIGMASLOPE-2.0*FLARINGINDEX)*      \ */
+/*                        pow(AspectRatio(Rmed[nr-1]),2.0)*pow(Rmed[nr-1],2.0*FLARINGINDEX) ) - \ */
+/*                      Rmed[nr-1]*GLOBAL_AxiSGAccr[nr-1+IMIN] ); */
+    VKepOut = G*1.0/Rmed[nr-1]                                          \
+        + pow(ASPECTRATIO,2.0)*pow(Rmed[nr-1],2.0*FLARINGINDEX -1.0)*
+        (-SIGMASLOPE + 2.0*FLARINGINDEX - 1.0 + 0.5*Rmed[nr-1]*sqrt(RMIN)*pow(Rmed[nr-1]+Hin, -1.5)/(1.0 - sqrt(RMIN/(Rmed[nr-1]+Hin)))) - \
+        Rmed[nr-1]*GLOBAL_AxiSGAccr[IMIN+nr-1];
+    VKepOut = sqrt(VKepOut);
+    }
+
