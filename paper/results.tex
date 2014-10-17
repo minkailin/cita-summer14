@@ -6,7 +6,8 @@ planet potential and azimuthally average the surface density, energy
 and velocity fields. At this point the planet has carved a partial
 gap. We then perturb the surface density for $r>r_p$ and continue to 
 evolve the disc. We impose  sinusoidal perturbations with 
-azimuthal wavenumbers $m\in[1,10]$. {\bf what are PERTMIN and PERTMAX values?}  
+azimuthal wavenumbers $m\in[1,10]$ and random amplitudes within $\pm 0.01$
+ times the local surface density.% {\bf what are PERTMIN and PERTMAX values?}  
 This procedure allows us to analyse the growth of 
 non-axisymmetric modes associated with the gap, but without
 complications from non-axisymmetry arising directly from disc-planet
@@ -21,12 +22,11 @@ section~\ref{adiabatic_section}.
 
 
 Simulations here employ a resolution of $(N_r,N_{\phi})=(1024,2048)$
-with $r_\mathrm{out}=25r_\mathrm{in}$, 
-and we consider 
+with an open boundry condition at the outer disk edge $r_\mathrm{out}=25r_\mathrm{in}$. We consider 
 %for a time up to $200P_0$ allowing high resolution and detection of high
 %$m$ structures.
 cases of $\tilde{\beta}=0.1,1,10$ corresponding to fast, moderate,
-and slowly cooled discs.  {\bf boundary condition for these sims?}
+and slowly cooled discs. % {\bf boundary condition for these sims?}
 
 \subsection{Gap structure}
 %Since stability of the gap is of interest 
@@ -165,6 +165,23 @@ stability. Can use analytical criteria given in section 3.1 of Li et
 al (2000, ApJ, 533, 1023). No plot needed, just statements. 
 }
 
+The intial planet-disk interaction form bumps and grooves in the gap profiles
+ which can potentially be unstable due to axisymmetric instabilities. The
+ generalized local axisymmetric stability condition is the Solberg-Hoiland
+ criterion,
+\begin{equation}
+ \kappa^2+N^2 \geq 0 $ where $ N^2=\frac{1}{\Sigma} \frac{\partial P}{\partial r} \left(\frac{1}{\Sigma} \frac{\partial \Sigma}{\partial r}-\frac{1}{\gamma P} \frac{\partial P}{\partial r}  \right)
+\end{equation}
+where $N$ is the Brunt-V\"ais\"al\"a frequency for the disk due to entropy
+ variation which is non-zero for non-adiabatic models such as being considered.
+ At  $t=30P_0$ the outer gap edge of $r=2.5r_h$,  where the RWI is excited the
+ criterion value, is found to be approximately $0.002$ for all $\tilde\beta$
+ which is the local minimum in the gap region which indicates local
+ axisymmetric stability of gap. The Solberg-Hoiland criteria is similary
+ satisfied for the entire disk and for all times within the simulation length
+ with little change of values. Thus for all cases of $\tilde\beta$ the
+ planet-induced gaps formed are stable to axisymmertic instabilities.
+
 \subsection{Non-axisymmetric instability}\label{linear}
 %{\bf present `planet-off' simulations. one `fourier mode v.s. time'
 %  plot to show growth of linear instability. do an adiabatic case (or
@@ -187,7 +204,7 @@ planet potential is switched off and the system subject to random
 perturbations. An example is shown in Fig. \ref{linearmodes} for 
 $\tilde{\beta}=10$. We charcterize these
 modes with an azimuthal wavenumber $m$ and growth rate $\gamma(m)$ as defined by
-Eq.~\ref{fouriertransform}---\ref{growth}. Table \ref{modetable}
+Eq.~\ref{fouriertransform}---\ref{growth} with radial range of $[2r_h,5r_h]$. Table \ref{modetable}
 lists the growth rates for the three cooling
 times, measured during linear growth. 
 
@@ -196,12 +213,13 @@ times, measured during linear growth.
   \includegraphics[width=\linewidth,clip=true,trim=1.2cm
     0cm 0cm 0cm]{figures/linear_stability}
   \caption{Evolution of azimuthal Fourier modes of disc surface
-    density, non-dimenionlized by the axisymmetric mode for the
+    density, non-dimenionlized by the axisymmetric background keplerian mode
+ $\Sigma_0(t=0)$ for the
     `planet-off' simulations with $\tilde{\beta}=10$. Colours correspond
     to different $m$ values. The $m=3$ component is the fastest growing
     mode during linear growth and has a corresponding
-    $\gamma=0.017\Omega(r_p)$. {\bf is the $\Sigma_0$ at
-      t=0?} \label{linearmodes}}  
+    $\gamma=0.017\Omega(r_p)$.\label{linearmodes}}
+% {\bf is the $\Sigma_0$ at t=0?} }  
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -235,18 +253,18 @@ the disc is allowed to heat up.
 
 
 
-\begin{figure*}
+\begin{figure}
   \centering
   \subfigure{
-    \includegraphics[width=0.3\linewidth]{figures/analysis_gvortensity_lowb}
+    \includegraphics[width=0.3\linewidth]{figures/analysis_gvortensity50}
   }
 \hfill
   \subfigure{
-    \includegraphics[width=0.3\linewidth]{figures/analysis_gvortensity_medb}
+    \includegraphics[width=0.3\linewidth]{figures/analysis_gvortensity67}
   }
 \hfill
   \subfigure{
-    \includegraphics[width=0.3\linewidth]{figures/analysis_gvortensity_highb}
+    \includegraphics[width=0.3\linewidth]{figures/analysis_gvortensity75}
   }  
   \caption{Generalized vortensity perturbation (relative to $t=0$) for
     cases of $\tilde{\beta}=0.1,1,10$ (left,middle,right) during
@@ -262,7 +280,7 @@ the disc is allowed to heat up.
       our reference state for instability. But we'll probably keep
       these for consistency (later non-linear plots are all measure
       with respect to t=0).}} 
-\end{figure*}
+\end{figure}
 
 \subsubsection{Nearly adiabatic discs}
 \label{adiabatic_section}
@@ -336,6 +354,7 @@ azimtuhal average performed prior to perturbations will erase it.
 }
 
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Non-linear evolution of
@@ -364,7 +383,14 @@ We employ a grid with $(N_r,N_{\phi})=(512,1024)$
 in order for these simulations to be computationally feasible. We also use a larger
 disc with $r_{\mathrm{out}}=45r_{\mathrm{in}}$ to minimize boundary
 effects on vortex evolution. We apply an open boundary at
-$r_\mathrm{out}$. {\bf mention lower resolution preliminary runs -
+$r_\mathrm{out}$.
+
+Preliminary simulations with same numerical scheme but lower resolution of
+ $(N_r,N_{\phi})=(256,512)$ where also done for the above $\tilde\beta$ values
+with the inclusions of $\tilde{\beta}=0.25,0.75,2.5,7.5$ as well.
+Results and vortex behaviour are convergent with
+higher resolution simulations as discussed in this section.
+ {\bf mention lower resolution preliminary runs -
   similar results to those presented here (?). want to demonstrate convergence}
 
 
@@ -378,17 +404,17 @@ $r_\mathrm{out}$. {\bf mention lower resolution preliminary runs -
 \subsection{Generic evolution}
 
 The linear growth of the RWI and vortex-formation is followed by 
-vortex merging. For all $\tilde\beta$ values, only one vortex remains
-by $150P_0$.
+vortex merging. Merging timescales are independent of $\tilde\beta$ value,
+ and by $70P_o$ only one vortex remains as the growth of these modes are now
+ supported by the continuous driving of the planet.
 %i.e. only the $m=1$ mode remains. 
 {\bf is vortex merging affected by $\tilde{\beta}$? e.g. timescale
   taken to reach one vortex as a function of cooling}
-%by $150P_0$ for all , only $m=1$ vortex
-%modes exist. 
-The evolution of the amplitude of the $m=1$ mode in surface density is
-shown in Fig~\ref{lifetimeplot} for   
-different $\tilde\beta$. {\bf should state (also for planet-off runs)
-  what the radial range is used for averaging the Fourier amplitudes} 
+The evolution of the amplitude of the $m=1$ surface density mode
+ over the radial range of $[2r_h,10r_h]$ is shown in Fig~\ref{lifetimeplot}
+ for different $\tilde\beta$.
+% {\bf should state (also for planet-off runs)
+ % what the radial range is used for averaging the Fourier amplitudes} 
 
 
 \begin{figure}
@@ -401,19 +427,32 @@ different $\tilde\beta$. {\bf should state (also for planet-off runs)
 \end{figure}
 
 In all cases the system remains in a quasi-steady state for
-$\gtrsim500P_0$ with a single vortex circulating 
+$\gtrsim800P_0$ with a single vortex circulating 
 the outer gap edge at the local Keplerian  
 frequency. Fig. \ref{Vortex2D} shows a typical plot of the relative 
 surface density perturbation in this state. During this stage, the 
 vortex grows in intensity. As the vortex forms it has a
-charcteristic value of $Ro\approx-0.1$ indicating anti-cyclonic
+ value of $Ro\approx-0.1$ for all $\tilde\beta$
+ indicating anti-cyclonic
 motion. As the $m=1$ amplitude grows the relative spin of the vortex
 continuously grows along with it, reaching values of
-$Ro\approx-0.4$, corresponding to surface density almost 10 times the
-initial value. {\bf for what cooling are these values quoted for? do
-  these values depend on cooling?} Vortex growth is attributed to
+$Ro\approx-0.4$ characteristicly for all cooling rates. Relative surface
+ density pertibations at the center of vortices can reach values of 7 times the
+ intial density for all cases of $\tilde\beta$ in this quasi-steady state and
+ can be found as high as 9 times for the $\tilde\beta=1.0$ case.
+ The gap profiles apply a surface density boost in the vortex region as the
+ vortices are located at the gap edge maxima
+ but the values associated with this boost have relative density pertibations
+ of under 1 and thus are negligibe compared to the max amplitudes of the vortices.
+ Vortex growth is attributed to
 the continuous generation of vorticity by the planet-disc interactions. 
-{\bf is the evidence for this the fact that growth is not observed in
+This is supported by the evidence that in long term simulations where the
+planet is removed such as in section \ref{nonlinearplanetoff} the amplitude of
+ the vortices are not seen to contiunously grow without the planet influence.
+
+{\bf for what cooling are these values quoted for? do
+  these values depend on cooling?}
+ {\bf is the evidence for this the fact that growth is not observed in
   planet-off simulations?}   
 
 {\bf note that there
@@ -427,14 +466,18 @@ the continuous generation of vorticity by the planet-disc interactions.
 Interestingly, in most cases we observe a sudden drop in 
 the $m=1$ amplitude within the simulation time, which occurs over
 timescales of $50P_0$, i.e. much shorter than the duration of the quasi-steady
-state. {\bf is this dissipation timescale independent of cooling?}.  
+state. {\bf is this dissipation timescale independent of cooling? No but will wait for simulation to finish before commenting}.  
 %Eventually
 %the $m=1$ amplitudes are also characterized by 
 After these characteristic drops, the instability is never seen to
 reform at such large overdensities and surface density bumps are never larger
 than that due to the planetary wakes. We designate the time of these
 amplitude drops as the lifetime 
-of the quasi-steady vortex.  
+of the quasi-steady vortex.
+The instability is not seen to emerge again after the intial vortex dissipation
+ due to the smoothening out of the gap edge during dissipation by the
+ transfer of density from the once tightly held vortex region to the surrounding
+ disk and gap.  
 {\bf question: does instability
   actually happen again? if it does, but just weaker, that may be
   because the first vortex has smoothed out the gap edge, so
@@ -447,11 +490,33 @@ of the quasi-steady vortex.
   \caption{Relative surface density perturbation for the
     $\tilde\beta=0.1$ case during quasi-steady state with a single
     vortex. The plot for other values of the cooling time $\tilde{\beta}$ are
-    similar. {\bf is this plot truncated? in the text it says the
-      domain goes to $r=45$?}
+    similar.% {\bf is this plot truncated? in the text it says the
+      %domain goes to $r=45$?}
     %The large scale non-axisyemetric $m=1$ overdensity can be
     %seen. 
     \label{Vortex2D}} 
+\end{figure}
+
+\subsection{Non-linear instability without planet influence} \label{nonlinearplanetoff}
+Non-linear observations were also made for the `planet-off' simulations.
+After the linear growth phase of the vortices, vortex merging takes hold but
+ now on timescales of up to $150P_0$ as the vortices grow as linear
+ instabilities discussed previously. The vortex merging time is depedendent on
+ the growth rates of the modes and how long they take to saturate. Similar
+ quasi-steady vortices form but the long-term behaviour is significantly
+ different without the planet as seen in Fig.\ref{planetofflifetimeplot}.
+ The quasi-steady vortices formed have significantly lower density pertibations
+ and now slowly decrease in amplitute in time as apposed to previously
+ where their growth was supported by planet interactions. The vortices simply
+ dissipate viscously and no longer undergo the quick dissipation that
+ characterized the dissipation as earlier. The dissipation rate is dependent
+ on the cooling rate with viscous dissipation decreasing with larger
+$\tilde\beta$.
+
+\begin{figure}
+  \includegraphics[width=\linewidth,clip=true,trim=0.5cm
+    0cm 0cm 1cm]{figures/longterm_planetoff}
+  \caption{Similar plot as Fig. \ref{lifetimeplot} but with `planet-off' simulations. Vortices dissipate viscously without planet driving influence} \label{planetofflifetimeplot}
 \end{figure}
 
 {\bf
@@ -573,7 +638,8 @@ effect may dominate over the weaker gap-opening effect at higher $h$.
 
 
 Thus, unlike our `planet-off' simulations we find that there is
-a cooling time $t_c$ which maximises the vortex lifetime. {\bf to make
+a cooling time $t_c$ which maximises the vortex lifetime. In the long term
+ 'planet-off' simulations we find that the vortices dissipate very gradually and visciously. {\bf to make
 this comparison we need to discuss vortex lifetimes for planet-off
 simulations as well} 
 This
