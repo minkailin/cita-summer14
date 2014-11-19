@@ -474,7 +474,9 @@ The evolution of the amplitude of the $m=1$ surface density component,
 averaged over $r-r_p\in[2,10]r_h$ is shown in Fig~\ref{lifetimeplot} 
 for different $\tilde\beta$. 
 {\bf any particular reason for the larger radial range for average?
-  did we get bigger vortices?} 
+  did we get bigger vortices?:Yes vortices get quite large in quais steady,
+ changing the planet off averaging range to [2,10] changes the plots negligibly
+ if we want to just use this value range for consistancy } 
 % {\bf should state (also for planet-off runs)
 % what the radial range is used for averaging the Fourier amplitudes} 
 
@@ -502,7 +504,8 @@ in magnitude,
 %relative spin of the vortex
 %continuously grows along with it
 , reaching a characteristic value of $Ro\approx-0.4$ for all cooling
-rates. {\bf is the the value reached just before decay for all cooling?}
+rates. {\bf is the the value reached just before decay for all cooling?:yes 
+values peak in small range [-0.35,-0.45] for all beta}
 
 The surface density perturbation (relative to $t=0$)  
 can reach values of $\Delta\Sigma/\Sigma_0 \sim 7$ at the center of vortices
@@ -638,7 +641,7 @@ the vortex when it begins to decay. Figure \ref{machplot} plots the
 Mach number $M=|\bm{v} - \bm{v}_\mathrm{vor}|/c_s$, where
 $\bm{v}_\mathrm{vor}$ corresponds to the bulk velocity of the vortex
 around the disc. {\bf check - i assume this is the definition of mach
-  number used here}. Values in Fig. \ref{machplot} have been averaged over
+  number used here:yes this was the definition I used}. Values in Fig. \ref{machplot} have been averaged over
 a region within $2H$ of the vortex centre.    
 % Mach numbers with repect to the vortex bulk motion around the vortex
 % region of $|r-r_{vortex}|<2H$
@@ -669,7 +672,7 @@ RWI, this would oppose vortex growth. We examine this below.
 \end{figure}
 
 \subsection{Effect of vortex dissipation on the gap structure} 
-{\bf are these high resolution results?}
+{\bf are these high resolution results?:yes}
 We find vortex growth during the quasi-steady state and its dissipation
 also modifies the gap structure. Here, we 
 define a gap depth parameter by taking the azimuthal and radial average
@@ -710,6 +713,11 @@ reform again (at least within the simulation timescale).
     outer half of the gap.} \label{gapdepth}
 \end{figure}
 
+\begin{figure}
+  \includegraphics[width=\linewidth]{figures/gapchange}
+  \caption{Azimuthally averaged gap profiles of relative surface change for
+ before and after dissipation for $\tilde\beta=1.0$}
+\end{figure}
 
 \subsection{Vortex lifetimes as a function of cooling rate}
 
@@ -837,6 +845,7 @@ reproduce jump conditions along shocks and which cause vortex dissipation.
    beta runs vortices last slightly longer but for higher values it is
    quite drasticly different. Not sure how numerical dissipation as
    you mentioned would be a factor in this case} 
+{\bf you mentioned resolution and convergence to me being a known issue in a previous email}
 
 %be the optimum lifetime for long-term simulations of
 %isothermal disks with varying intial temperature profiles $h$. 
