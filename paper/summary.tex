@@ -1,71 +1,118 @@
 \section{Summary and discussion}\label{summary}
-In this paper, we have carried out numerical simulations of non-isothermal disc-planet interaction. 
-Our simulations were customised to examine the effect of a finite cooling time on the stability of gaps 
-opened by giant planets to the so-called vortex or Rossby wave instability. To do so, we 
-included an energy equation with a cooling term that restores the initial disc temperature on a characteristic timescale $t_c$. 
-We studied the evolution of the gap stability as a function of $t_c$. This is a natural extension to previous
-studies of on gap stability, which employ locally or strictly isothermal equations of state. 	
+In this paper, we have carried out numerical simulations of
+non-isothermal disc-planet interaction.  
+Our simulations were customised to examine the effect of a finite 
+cooling time on the stability of gaps  
+opened by giant planets to the so-called vortex or Rossby wave
+instability. To do so, we  
+included an energy equation with a cooling term that restores the 
+disc temperature to its initial profile on a characteristic timescale
+$t_c$. We studied the evolution of the gap stability as a function of 
+$t_c$. This is a natural extension to previous studies of on gap
+stability, which employ locally or strictly isothermal equations of
+state.   	
 
-We considered two types of numerical experiments. 
-We first used disc-planet interaction to self-consistently set up
-gap profiles, which were then perturbed and evolved without further the influence of the planet potential. This procedure  
-isolates the effect of cooling on gap stability through the set up of the initial gap profile. We find that as the cooling time $t_c$ is increased,
-the gaps became more stable, with lower growth rates of non-axisymmetric modes and the dominant azimuthal wavenumber also decreases. 
-This is consistent with the notion that increasing $t_c$ leads to higher temperatures or $h$, which opposes gap-opening by the planet. This means that
-the gaps opened by the planet in a disc with longer $t_c$ is smoother and therefore  more stable to the RWI. 
+We considered two types of numerical experiments. We first used
+disc-planet interaction to self-consistently set up gap profiles,
+which were then perturbed and evolved without further the influence of
+the planet potential. This procedure isolates the effect of cooling on
+gap stability through the set up of the initial gap profile. We find
+that as the cooling time $t_c$ is increased, the gaps became more
+stable, with lower growth rates of non-axisymmetric modes and the
+dominant azimuthal wavenumber also decreases. This is consistent with
+the notion that increasing $t_c$ leads to higher temperatures or $h$,
+which opposes gap-opening by the planet. This means that the gaps
+opened by the planet in a disc with longer $t_c$ is smoother and
+therefore  more stable to the RWI.   
 
 
-In the second set of calculations, we included the planet potential throughout the simulations 
-and examined the long-term evolution of the gap-edge vortex that develops from the RWI. The vortices to reach a
-quasi-steady state lasting $O(10^3)$ orbits, during which its amplitude grows until it begins to induce shocks,  
-afterwhich the vortex amplitudes decay. 
-We observe vortex lifetimes to increase with increasing cooling time until
-a cooling timescale on the order of the libration time at the gap edge {\bf (this statement assumes longest lifetime is $\tilde{\beta}=1$, so may change
-depending on new definitions of lifetimes)}, beyond which vortex lifetimes shorten again. 
+In the second set of calculations, we included the planet potential
+throughout the simulations  and examined the long-term evolution of
+the gap-edge vortex that develops from the RWI. The vortex reaches 
+a quasi-steady state lasting $O(10^3)$ orbits. Unlike the `planet-off'
+simulations, in which vortices decay after linear growth and merging,
+we find that with the planet potential kept on, the vortex amplitude
+grows during this quasi-steady state, until it begins to induce
+shocks, afterwhich the vortex amplitude begins to decay.   
 
-Our results indicate there exists an optimum cooling timescale to maximise the lifetime of gap-edge vortices. We suggest the non-monotonic dependence
-can be attributed to the time required for the vortex to grow to sufficient amplitude to induce shocks in the surrounding fluid, thereby losing energy and also smooth out the gap edge.  
-For short cooling timescales, the planet is able to open a deeper gap which favours the RWI, leading to stronger vortices. However, for long 
-cooling timescales, the vortex grow faster during the quasi-steady state {\bf check if statement true}. 
-We suggest the latter is due to the RWI being favoured with increasing disc temperature, according to previous stability
-calculations. These competing factors imply for both very short and long cooling timescales, the vortex reaches its maximum amplitude 
-, shocks, and begins to decay, sooner than intermediate cooling timescales. 
-%decay timescale depends on cooling time, but there seems to be a monotonic trend: longer cooling times, decay timescale is shorter, so this 
-%doesn't contribute to non-monotonic part
+We observe the duration of the quasi-steady state increases with
+increasing cooling time until some critical value, beyond which this
+quasi-steady state shortens again. The timescale for the vortex to
+decay, after reaching maximum amplitude, decreases monotonically with
+increasing cooling time. 
 
-We remark that a non-monotonic dependence of the vortex lifetime was also reported
-by \cite{fu14}, who performed isothermal disc-planet simluations with different values of the 
-disc aspect ratio. In their simulations the optimum aspect ratio is $h=0.06$. In our simulations,
-the aspect ratio is a dynamical variable, but by analysing the region where the vortex is located ($r-r_p\in[2,10]r_h$), 
-% {\bf define this region}
+%technically we should probably say there is an optimum cooling time
+%to maximise the quasi-steady state
+
+Our results indicate there exists an optimum cooling timescale to
+maximise the lifetime of gap-edge vortices. We suggest the
+non-monotonic dependence of the quasi-steady state can be attributed
+to the time required for the vortex to grow to sufficient amplitude to
+induce shocks in the surrounding fluid, thereby losing energy and also
+smooth out the gap edge.  
+
+For short cooling timescales, the planet is able to open a
+deeper gap which favours the RWI, leading to stronger
+vortices. However, for long  cooling timescales, the vortex grow
+faster during the quasi-steady state {\bf check if statement true}. We
+suggest the latter is due to the RWI being favoured with increasing
+disc temperature, according to previous stability calculations. These
+competing factors imply for both very short and long cooling
+timescales, the vortex reaches its maximum amplitude, shock, and
+begins to decay, sooner than intermediate cooling timescales.   
+
+%decay timescale depends on cooling time, but there seems to be a
+%monotonic trend: longer cooling times, decay timescale is shorter, so
+%this  
+%doesn't contribute to non-monotonic trend  
+
+We remark that a non-monotonic dependence of the vortex lifetime was
+also reported by \cite{fu14}, who performed isothermal disc-planet
+simluations with different values of the   
+disc aspect ratio. In their simulations the optimum aspect ratio is
+$h=0.06$. In our simulations, the disc aspect ratio is a dynamical
+variable, but by analysing the region where the vortex is located
+($r-r_p\in[2,10]r_h$), % {\bf define this region}
 we find for $\tilde\beta=5.0$ case, with the longest vortex lifetime, has
 $h\approx0.06$ on average throughout its lifetime. 
 {\bf if new definition of vortex lifetime gives other $\tilde{\beta}$ values as the maximum lifetime, then need to update this value of $h$}. 
-Our result is therefore qualitatively consistent with \citep{fu14}. 
-%This value of $h$ was also
-%found to maximise vortex lifetimes in the simulations of
-%\cite{fu14}. Note that $h$ is a fixed parameter in \cite{fu14} while in
-%our simulations $h$ is a dynamical variable. 
+Our result is therefore consistent with \citep{fu14}. 
+
+% we don't know how fu defined vortex lifetime
 
 \subsection{Caveats and outlooks}
-We discuss below several outstanding issues that needs to be addressed in future works:
+We discuss below several outstanding issues that needs to be addressed
+in future works: 
 
-\emph{Convergence.} Although lower-resolution simulations performed in the early stages of this project gave similar results 
-(most importantly, the non-monotonic dependence of vortex lifetimes on the cooling timescale), we did find the lower-resolution simulations 
-typically yield longer vortex lifetimes than that reported in this paper. This could be due to weaker RWI with low resolution. 
-It will be neccessary to perform even higher resolution  simulations in order to obtain quantitatively converged vortex lifetimes. 
+\emph{Convergence.} Although lower-resolution simulations performed in
+the early stages of this project gave similar results  
+(most importantly, the non-monotonic dependence of vortex lifetimes on
+the cooling timescale), we did find the lower-resolution simulations  
+typically yield longer vortex lifetimes than that reported in this
+paper. This could be due to weaker RWI with low resolution.  
+It will be neccessary to perform even higher resolution  simulations
+in order to obtain quantitatively co nverged vortex lifetimes.  
  
-\emph{Self-gravity.} We have ignored disc self-gravity in this study. Based on linear calculations, \cite{lovelace13} concluded self-gravity
-to be important for the RWI when $Q<O(1/h)$, or $Q\lesssim 20$ for $h\sim0.05$, as was typially considered in this work. This suggests that 
-self-gravity may affect vortex lifetimes even when the Toomre $Q$ parameter is not small. In particular, given that we observe
-vortices can reach significant over-densities (up to almost an order of magnitude), it will be important to include disc self-gravity 
-in the future. %self-gravitational collapse of vortices 
+\emph{Self-gravity.} We have ignored disc self-gravity in this
+study. Based on linear calculations, \cite{lovelace13} concluded
+self-gravity to be important for the RWI when $Q<O(1/h)$, or
+$Q\lesssim 20$ for $h\sim0.05$, as was typially considered in this
+work. This suggests that self-gravity may affect vortex lifetimes even
+when the Toomre $Q$ parameter is not small. In particular, given that
+we observe vortices can reach significant over-densities (up to almost
+an order of magnitude), it will be important to include disc
+self-gravity in the future. %self-gravitational collapse of vortices 
  
-\emph{Three-dimensional (3D) effects.} A vortex in a 3D disc may be subject to secondary instabilities 
-that destroy them \citep{lesur09,railton14}. This may an important factor in determining gap-edge vortex lifetimes
-in realistic discs. For example, if these secondary instabilities sets in before the vortex grows to sufficient amplitude to shock, 
-then the dependence of the vortex lifetime on the cooling timescale will be that through the 3D instability (as opposed to the effect on the RWI itself).  
-This problem needs to be clarified with full 3D disc-planet simulations. 
+\emph{Three-dimensional (3D) effects.} A vortex in a 3D disc may be
+subject to secondary instabilities that destroy them
+\citep{lesur09,railton14}. This may be an important factor in
+determining gap-edge vortex lifetimes in realistic discs. For example,
+if these secondary instabilities sets in before the vortex grows to
+sufficient amplitude to shock, then the dependence of the vortex
+lifetime on the cooling timescale will be its effect through the 3D
+instability (as opposed to the effect on the RWI itself, which is a 2D
+instability). This problem needs to be clarified with full 3D
+disc-planet simulations.  
 
 %3d is challenging because high resolution needed in for 3d instabilities
 %However, the role of these instabilities on gap-edge vortices, where disc-planet  

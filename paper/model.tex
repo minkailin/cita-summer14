@@ -1,16 +1,13 @@
 \section{Disc-planet models}\label{model}
-The system is a two-dimensional non-self-gravitating gas disc orbiting
-a central star of mass $M_*$.  
-%self-gravitating gas disc of mass
-%$M_d$ rotating about a central star of mass $M_*$. 
-Cylindrical
-co-ordinates $(r,\phi,z)$ centred on the star is adopted. The frame is   
+The system is a two-dimensional (2D) non-self-gravitating gas disc orbiting
+a central star of mass $M_*$. We adopt cylindrical
+co-ordinates $(r,\phi,z)$ centred on the star. The frame is   
 non-rotating. Computational units are such that 
 $G=M_*=\mathcal{R}=\mu=1$ where $G$ is the gravitational constant,
 $\mathcal{R}$ is the gas constant and $\mu$ is the mean molecular
-weight. %% \cite{lin12}
+weight. 
 
-The disc is governed by the standard fluid equations  
+The disc evolution is governed by the standard fluid equations  
 \begin{align}\label{3d_gov_eq}
   &\frac{\p\Sigma}{\p t}+\nabla\cdot(\Sigma \bv)=0, \\
   & \frac{\p\bv}{\p t}+\bv\cdot\nabla\bv= -\frac{1}{\rho}\nabla p 
@@ -25,10 +22,9 @@ per unit area and the adiabatic index $\gamma=1.4$ is assumed
 constant.  
 
 The total potential $\Phi$ includes the stellar potential, planet potential
-(described below) %, and the disc potential $\Phi_d$ which satisfies the
-%Poisson equation \ref{poisson}. 
+(described below) 
 and indirect potentials to account for the non-inertial reference
-frame.%  \citep[see][for explicit expressions]{masset02}
+frame. 
 In the momentum 
 equations, $\bm{f}_\nu$ represent viscous forces whose magnitude is 
 characterised by a constant kinematic viscosity parameter
@@ -56,7 +52,8 @@ $\beta\gg1$ is an adiabatic disk.
 
 Note that the energy source terms
 have been chosen to be absent at $t=0$, allowing the disc to be
-initialised close to steady state. The $\mathcal{C}$ function attempts to restore the initial energy density (and
+initialised close to steady state. The $\mathcal{C}$ function attempts
+to restore the initial energy density (and 
 therefore temperature) profile. In practice, this is a cooling term at
 the gap edge because disc-planet interaction leads to heating.  
 
@@ -74,20 +71,15 @@ where $\ciso=\sqrt{p/\Sigma}$ isothermal sound-speed. The disc aspect-ratio is d
 $h=0.05$. For a non-self-gravitating disc, the surface density scale
 $\Sigma_\mathrm{ref}$ is arbitrary. 
 
-%The surface density scale $\Sigma_0$ is set by  
-%\begin{align}
-%\Sigma_0 = \frac{h_i\rout\Omega_k^2(\rout)}{\pi G Q_o},
-%\end{align}
-%where $Q_o$ is the thin-disc Keplerian Toomre parameter at the outer boundary initially. 
-
 The initial azimuthal velocity $v_{\phi i}$ is set by centrifugal balance with
-pressure, stellar gravity and disc gravity. The initial radial velocity is $v_{r}=3\nu/r$ 
-with $\nu = \hat{\nu}\rin^2\Omega_k(\rin)$. For parameter values employed in this work, $v_{\phi}\simeq r\Omega_k$ 
-and $\hat{\nu}= 10^{-9}$, so that $|v_{r}/v_{\phi}|\ll1$ and the initial 
-flow is effectively only in the azimuthal direction.  With this choice
-of physical viscosity $\hat{\nu}$ the only heating source is through
-shock-heating (via artificial viscosity) and the $\mathcal{C}$
-function when $e\Sigma<e_i\Sigma_i$. 
+pressure, stellar gravity and disc gravity. For a thin disc, 
+$v_{\phi}\simeq r\Omega_k$. The initial radial velocity is
+$v_{r}=3\nu/r$, where $\nu = \hat{\nu}\rin^2\Omega_k(\rin)$, and we
+adopt $\hat{\nu}= 10^{-9}$, so that $|v_{r}/v_{\phi}|\ll1$ and the initial 
+flow is effectively only in the azimuthal direction.  With this value 
+of physical viscosity, the only source of heating is through
+compression, shock-heating (via artificial viscosity) and the
+$\mathcal{C}$ function when $e/\Sigma<e_i/\Sigma_i$. 
 
 \subsection{Planet potential}\label{planet_config}
 The planet potential is given by 
@@ -127,12 +119,12 @@ $\tilde{\beta}$ such that
 \begin{align}
   t_c(r_p+x_s) = \beta\Omega_k^{-1}(r_p+x_s) = \tilde{\beta} t_{\mathrm{lib}}(r_p+x_s), 
 \end{align}
-where $x_s=2r_h$ is the approximate distance from the planet to its
+where $x_s$ is the distance from the planet to its
 gap edge, and $t_\mathrm{lib}$ is the time interval between successive
 encounters of a fluid element at the gap edge and the planet's
 azimuth. That is, we measure the cooling time in units of the time
-taken for a gap edge fluid element to encounter planet-induced
-shocks.   
+interval between encounters of a fluid element at the gap edge and the
+planet-induced shock. 
 
 Assuming Keplerian orbital frequencies and $x_s\ll r_p$
 gives $t_\mathrm{lib}\simeq 4\pi r_p/(3\Omega_{kp} x_s)$, where
@@ -142,19 +134,12 @@ $\Omega_{kp} = \Omega_k(r_p)$. Therefore
 \end{align}
 where $x_s\ll r_p$ was used again. We use $x_s = 2r_h$ in
 Eq. \ref{betatilde}. For a planet mass with $q=10^{-3}$,
-Eq. \ref{betatilde} then gives $\beta \simeq 23.9\tilde{\beta}$. 
-
-
-%giant planet gap is 2.5rh
-%2rh is CR of G.E.I. 
-%\subsection{Simulation procedure}
-%The disc is evolved without a planet for $t\in[0,20]P_0$. The planet potential is smoothly switched on
-%between $t\in[20,30]P_0$.
-%%  In a separate set of calculations the planet
-%% potential is turned off after $t>t_\mathrm{off}$, immediately  
-%% afterwhich the surface density, energy density and velocity fields are
-%% azimuthally averaged and then subject to random surface density  
-%% perturbations of magnitude $10^{-2}$.
+Eq. \ref{betatilde} then gives $\beta \simeq 23.9\tilde{\beta}$. In
+terms of planetary orbital periods, this is
+\begin{align} 
+  t_c(r) = \frac{\beta}{2\pi}\left(\frac{r}{r_p}\right)^{3/2}P_0\simeq
+  3.8 \tilde{\beta}\left(\frac{r}{r_p}\right)^{3/2}P_0. 
+\end{align}
 
 \subsection{Diagonistic measures}
 
@@ -172,18 +157,16 @@ usual potential vorticity (PV, or vortensity).
 The generalized PV appears in the description of the linear stability
 of radially-structured adiabatic discs \citep{lovelace99,li00}, where
 the authors show an extremum in $\teta$ may lead to a dynamical
-instability. In a barotropic disc, the entropy factor is absent
-and the important quantity is the PV. 
+instability, the RWI. In a barotropic disc, the entropy factor is
+absent and the important quantity is the PV. 
 
 \subsubsection{Fourier modes} 
-The Rossby wave instability is characterized by exponetially
-growing pertibations. Though in this paper we do not formally consider
-linear instability, modal analysis will be useful to
-analyse the growth of different wavenumbers, which is associated with
-the number of vortices initially formed by the RWI.  
-
-%characterize 
-%azimuthal vortex numbers and overdensity values. 
+The RWI is characterized by exponetially
+growing perturbations. Though in this paper we do not consider a
+formal linear instability calculation, modal analysis will be useful
+to analyse the growth of perturbations with different azimuthal
+wavenumbers, which is associated with the number of vortices initially
+formed by the RWI.    
 
 The Fourier transform of the time-dependent surface density is
 \begin{align}\label{fouriertransform}
@@ -201,7 +184,7 @@ through
 \end{align}
 where %$\gamma$ is the real part of the $\sigma_m$ and 
 $\langle|\cdot|\rangle_r$ denotes the average of the absolute value
-over a raidal region of interest. By using Eq.~\ref{growth} the growth
+over a radial region of interest. By using Eq.~\ref{growth} the growth
 rates of the unstable modes can be found from successive spatial
 Fourier transforms over an appropriate period of time. 
 
@@ -218,19 +201,3 @@ Here $\langle \cdot \rangle_{\phi}$ denotes an azimuthal
 average. Values of $Ro<0$ correspond to anti-cyclonic rotation with
 respect to the background shear and thus can be used to identify
 vortices and quantify its intensity. 
-
-%{\bf {MKL.} describe vortensity and generalized vortensity, and its
-%  relevance to stability. fourier mode amplitude definition and how
-%  growth rates are obtained. rossby number. density
-%  perturbations. (see lin 2014)
-%}
-
-%% According to previous 2D studies, the key quantitiy in describing the
-%% stability of radially structured non-barotropic discs is the
-%% \emph{generalized vortensity} (GV): 
-%% \begin{align}
-%%   \tilde{\eta}\equiv \left(\frac{\kappa^2}{2\Omega\Sigma}\right)S^{-2/\gamma}, 
-%% \end{align}
-%% where $S \equiv p/\Sigma^\gamma$ is defined to be the entropy. The
-%% quantity in brackets, $\eta\equiv \kappa^2/2\Omega\Sigma$, is the
-%% usual vortensity or potential vorticity (PV). 
