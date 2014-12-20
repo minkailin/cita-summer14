@@ -323,7 +323,8 @@ potential is kept on.
   \includegraphics[width=\linewidth,clip=true,trim=0.5cm
   0cm 0cm 1.1cm]{figures/longterm_planetoff}
   \caption{Long term simulations without the planet potential after
-    the gap is set up. The $m=1$ surface density component at the
+    the gap is set up. The $m=1$ surface density component,
+    non-dimenionlised by the initial $m=0$ component, at the
     outer gap edge is shown as a function of the cooling timescale. 
   } \label{planetofflifetimeplot}
 \end{figure}
@@ -357,8 +358,8 @@ linear growth rates).
 \begin{figure}
   \includegraphics[width=\linewidth,clip=true,trim=0.5cm
   0cm 0cm 1cm]{figures/longterm_stability}
-  \caption{Evolution of the $m=1$ surface density component,
-    non-dimenionlised by the initial $m=0$ component, for long term
+  \caption{Evolution of the non-dimesnionalized $m=1$ surface density component
+    for long term
     simulations with the planet potential kept on. Notice there is
     vortex growth after the initial linear growth, which
     contrasts to Fig. \ref{planetofflifetimeplot}, where vortices
@@ -401,7 +402,7 @@ $\tilde\beta=0.1$ and $Ro\approx -0.45$ for $\tilde\beta=10$.
   \includegraphics[width=\linewidth,clip=true,trim=0.5cm
   0cm 0cm 1cm]{figures/rossby}
   \caption{Evolution of Rossby numbers at the centres of the vortices
-    form in in discs with different cooling rates. A negative Rossby
+    formed in discs with different cooling rates. A negative Rossby
     number implies anti-cyclonic motion. Boxcar averaging
     was used to remove contributions from the planet-induced spiral shock.\label{rossbyplot}}    
 \end{figure}
@@ -431,13 +432,15 @@ the post-merger vortex does not grow (Fig.
   0cm 0cm 1cm]{figures/vortex_density}
   \caption{Average value of the relative surface density perturbation
     at vortex centres for various cooling
-    times. \label{overdensity}}     
+    times. Intial vortex overdensities decrease with cooling rate while
+    vortex growth rates increase with cooling rate.
+    \label{overdensity}}     
 \end{figure}
 
 Fig. \ref{lifetimeplot} shows that the duration of the quasi-steady state
 varies with the cooling rate: for 
 $\tilde{\beta}=0.1$ and $10$, the vortex amplitude begins to decay around
-$t\sim900P_0$, while for $\tilde{\beta}=1,\,5$ the decay begins at 
+$t\sim800P_0$, while for $\tilde{\beta}=1,\,5$ the decay begins at 
 $t\sim1200P_0$. This non-monotonic dependence suggests that there
 exists an optimal cooling rate to maximise the vortex lifetime. We
 will discuss this issue further in 
@@ -541,7 +544,10 @@ begins decreasing to zero
     (middle), and just after the decay in the $m=1$ amplitude
     (right). The surface density perturbation
     (top) and the associated surface density gradient (bottom) are
-    shown. This plot is to be considered in conjunction with
+    shown. Wake like features corresponding to large density gradients
+    are found to originate from the vortices during the late phase of 
+    their quasi-steady states and into dissipation times.
+    This plot is to be considered in conjunction with
     Fig. \ref{lifetimeplot}. 
     \label{shockplot}}
   % Large surface density gradients become prominant
@@ -595,7 +601,8 @@ smoothed out.
   \caption{Azimuthally averaged profiles of the relative surface
     density perturbations for  $\tilde\beta=1.0$
     before (solid) and after vortex decay
-    (dashed).
+    (dashed). Alongside drastic reduction in the outer gap maxima, vortex decay
+    smoothens out the sharp outer gap edge.
     \label{gap_smoothed}} 
 \end{figure}
 
@@ -631,11 +638,15 @@ reform again (at least within the simulation timescale).
 \begin{figure}
   \includegraphics[width=\linewidth]{figures/gap_smoothness}
   \caption{Non-dimensional measure of the surface density gradient at
-    the outer gap edge $\tilde\beta=1.0$. A large $\delta\Sigma$
-    corresponds to a more sharply peaked outer gap edge.
+    the outer gap edge $\tilde\beta=1.0$. During the vortex quasi-steady state
+    the gap edge is found to have a large gradient and sharp peak while vortex
+    dissipation,
+    which occurs at $t\approx1000P_0$ as seen in Fig. \ref{lifetimeplot},
+    works to smoothen out the gap edge.
+% A large $\delta\Sigma$
+ %   corresponds to a more sharply peaked outer gap edge.
     \label{smoothnessplot}}  
 \end{figure}
-
 
 
 % {\bf It's a good idea to display the smoothening of the outer gap
@@ -684,7 +695,8 @@ times. We define the vortex lifetime, $t_{\mathrm{life}}$, as the time
 at which the over-density of the vortex
 % to reach $10\%$ of its max overdensity value
 returns to $\Delta \Sigma/\Sigma_0\sim1$ \emph{after} reaching maximum
-{\bf correct interpretation?} (which is on the order of the
+%{\bf correct interpretation?}
+ (which is on the order of the
 initial over-density associated with the gap formation). 
 
 We plot $t_{\mathrm{life}}$ with respect to cooling times in
@@ -711,11 +723,12 @@ $\tilde{\beta}=1$.
 \begin{figure}
   \includegraphics[width=\linewidth]{figures/betaplot}
   \caption{Characteristic timescales associated with vortex evolution, as a function of the cooling
-    parameter $\tilde\beta$: $t_\mathrm{diss}$ is when the $m=1$
-    surface density amplitude begins to decay (black);
-    $t_\mathrm{life}$ is the time at which the over-density at the
+    parameter $\tilde\beta$: time in which the $m=1$
+    surface density amplitude begins to decay, $t_\mathrm{diss}$ (black);
+    time at which the over-density at the
     vortex centre decreases to $\Delta\Sigma/\Sigma \sim 1$ after
-    reaching maximum (red); and $t_\mathrm{Mach}$ is the time taken
+    reaching maximum, $t_\mathrm{life}$ (red);
+    and $t_\mathrm{Mach}$ is the time taken
     for the average Mach number around the vortex to maximise
     (blue). \label{betaplot}}  
 % {\bf maybe useful to over-plot other timescales,
