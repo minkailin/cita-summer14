@@ -72,7 +72,7 @@ $h=0.05$. For a non-self-gravitating disc, the surface density scale
 $\Sigma_\mathrm{ref}$ is arbitrary. 
 
 The initial azimuthal velocity $v_{\phi i}$ is set by centrifugal balance with
-pressure, stellar gravity and disc gravity. For a thin disc, 
+pressure forces and stellar gravity. For a thin disc, 
 $v_{\phi}\simeq r\Omega_k$. The initial radial velocity is
 $v_{r}=3\nu/r$, where $\nu = \hat{\nu}\rin^2\Omega_k(\rin)$, and we
 adopt $\hat{\nu}= 10^{-9}$, so that $|v_{r}/v_{\phi}|\ll1$ and the initial 
@@ -92,7 +92,8 @@ The planet's position in the disc
 $\bm{r}_p=(r_p,\phi_p)$  and $\epsilon_p=0.5r_h$ is a softening
 length with $r_h=(q/3)^{1/3}r_p$ being the Hill radius.  
 %Hill radius chosen so eps doesn't change with time (scale-height does)
-The planet is held on a fixed circular orbit with $ r_p = 10\rin$. This also
+The planet is held on a fixed circular orbit with $ r_p = 10\rin$ and $\phi_p=\Omega_k(r_p)t$. 
+This also
 defines the time unit $P_0\equiv 2\pi/\Omega_k(r_p)$ used to describe results. 
 %In this study only one planet mass is considered, with $q=10^{-3}$. 
 %The initial orbital radius is 
@@ -104,7 +105,8 @@ The disc-planet system is evolved using the
 of the original \texttt{FARGO} code \citep{masset00a} to include the energy 
 equation. The code employs a finite-difference scheme similar 
 to the \texttt{ZEUS} code \citep{stone92}, but with a modified azimuthal transport 
-algorithm to circumvent the time-step restriction set by the inner disc boundary. 
+algorithm to circumvent the time-step restriction set by the fast rotation speed at the 
+inner disc boundary. 
 The disc is divided into $(N_r,N_\phi)$ zones in the radial and azimuthal directions, 
 respectively. The grid spacing is logarithmic in radius and uniform in azimuth.
 
@@ -157,7 +159,7 @@ usual potential vorticity (PV, or vortensity).
 The generalised PV appears in the description of the linear stability
 of radially-structured adiabatic discs \citep{lovelace99,li00}, where
 the authors show an extremum in $\teta$ may lead to a dynamical
-instability, the RWI. In a barotropic disc, the entropy factor is
+instability, the RWI. In a barotropic disc where $p=p(\Sigma)$, the entropy factor is 
 absent and the important quantity is the PV. 
 
 \subsubsection{Fourier modes} 
