@@ -105,7 +105,7 @@ large $\tilde{\beta}$.
 
 \begin{table}
   \centering
-  \caption{Dominant mode and growth rates for
+  \caption{Dominant azimuthal wavenumber $m$ and associated growth rate $\sigma$ for
     $\tilde{\beta}=0.1,1.0,10.0$ (fast, moderate, and slow cooling)
     values during `planet-off' simulations \label{modetable}} 
   \hfill
@@ -113,7 +113,7 @@ large $\tilde{\beta}$.
     \begin{tabularx}{\textwidth}{l R} 
       \multicolumn{2}{c}{$\tilde{\beta}=0.1$} \\ 
       \toprule
-      $m$ & $10^2\gamma/\Omega(r_p)$ \\
+      $m$ & $10^2\sigma/\Omega(r_p)$ \\
       \midrule
       6 & 7.3 \\
       7 & 7.8 \\
@@ -128,7 +128,7 @@ large $\tilde{\beta}$.
     \begin{tabularx}{\textwidth}{l R} 
       \multicolumn{2}{c}{$\tilde{\beta}=1.0$} \\ 
       \toprule
-      $m$ & $10^2\gamma/\Omega(r_p)$ \\
+      $m$ & $10^2\sigma/\Omega(r_p)$ \\
       \midrule
       3 & 2.0 \\
       4 & 2.2 \\
@@ -143,7 +143,7 @@ large $\tilde{\beta}$.
     \begin{tabularx}{\textwidth}{l R} 
       \multicolumn{2}{c}{$\tilde{\beta}=10.0$} \\ 
       \toprule
-      $m$ & $10^2\gamma/\Omega(r_p)$ \\
+      $m$ & $10^2\sigma/\Omega(r_p)$ \\
       \midrule
       1 & 1.1 \\
       2 & 1.6 \\
@@ -194,7 +194,7 @@ perturbation. For all three cooling times $\tilde{\beta}=0.1,\, 1.0,\,
 10$, we observe exponential growth of non-axisymmetric
 structures. An example is shown in Fig. \ref{linearmodes} for 
 $\tilde{\beta}=10$. We characterise these
-modes with an azimuthal wavenumber $m$ and growth rate $\gamma(m)$ as defined by
+modes with an azimuthal wavenumber $m$ and growth rate $\sigma(m)$ as defined by
 Eq.~\ref{fouriertransform}---\ref{growth}. Mode amplitudes were
 averaged over $r-r_p\in[2,5]r_h$. Table \ref{modetable}
 lists the growth rates measured during 
@@ -210,7 +210,7 @@ growth rate.
     `planet-off' simulation with $\tilde{\beta}=10$. Colours correspond
     to different $m$ values. The $m=3$ component is the fastest growing
     mode during linear growth with a growth rate of 
-    $\gamma=0.017\Omega(r_p)$.\label{linearmodes}}
+    $\sigma=0.017\Omega(r_p)$.\label{linearmodes}}
   % {\bf is the $\Sigma_0$ at t=0?} }  
 \end{figure}
 
@@ -219,7 +219,7 @@ growth rate.
 Table \ref{modetable} show that as
 $\tilde{\beta}$ is increased from $ 0.1\rightarrow10$ the dominant
 azimuthal Fourier mode decreases from $ m=9\rightarrow3$ and the
-respective growth rate decreases from $ \gamma/\Omega(r_p)=0.079
+respective growth rate decreases from $ \sigma/\Omega(r_p)=0.079
 \rightarrow 0.017$. However, despite two orders of magnitude increase in the
 cooling time, the instability remains dynamical with characteristic  growth time
 $\lesssim 10P_0$. Snapshots of the instability in for  
@@ -247,7 +247,7 @@ the disc is allowed to heat up.
     \includegraphics[width=0.3\linewidth]{figures/analysis_gvortensity75}
   }  
   \caption{Generalised vortensity perturbation (relative to $t=0$) for
-    cases of $\tilde{\beta}=0.1,1,10$ (left,middle,right) during
+    cases of $\tilde{\beta}=0.1,1,10$ (left, middle, right) during
     the growth of non-axisymmetric modes. The planet potential has
     been switched off.  The number of vortices
     decrease as $\tilde{\beta}$ increases. Note that snapshots are
@@ -262,7 +262,7 @@ the disc is allowed to heat up.
 
 The above `planet-off' simulations are not formally linear
 stability calculations, because the cooling time is comparable or shorter
-than the instability growth time, $t_c\lesssim\gamma^{-1}$.  
+than the instability growth time, $t_c\lesssim\sigma^{-1}$.  
 Thus the disk cools back to its initial temperature corresponding to
 $h=0.05$ before or during the instability growth, so we do not 
 have a steady basic state to formulate a standard linear stability 
@@ -546,9 +546,9 @@ begins decreasing to zero
     (middle), and just after the decay in the $m=1$ amplitude
     (right). The surface density perturbation
     (top) and the associated surface density gradient (bottom) are
-    shown. Wakes corresponding to large density gradients
-    are found to originate from the vortices during the late phase of 
-    their quasi-steady states, and persists during their decay. 
+    shown. Wakes corresponding to large surface density gradients
+    are found to originate from the vortex during the late phase of 
+    the quasi-steady state, and the wakes persist during vortex decay. 
     This plot is to be considered in conjunction with
     Fig. \ref{lifetimeplot}. 
     \label{shockplot}}
@@ -604,7 +604,7 @@ smoothed out.
     density perturbations for  $\tilde\beta=1.0$
     before (solid) and after vortex decay
     (dashed). Alongside drastic reduction in the outer gap maxima, vortex decay
-    smooth out out the sharp outer gap edge.
+    smooth out the outer gap edge.
     \label{gap_smoothed}} 
 \end{figure}
 
@@ -640,11 +640,11 @@ reform again (at least within the simulation timescale).
 \begin{figure}
   \includegraphics[width=\linewidth]{figures/gap_smoothness}
   \caption{Non-dimensional measure of the surface density gradient at
-    the outer gap edge $\tilde\beta=1.0$. During the vortex quasi-steady state
+    the outer gap edge for $\tilde\beta=1.0$. During the vortex quasi-steady state
     the gap edge is found to have a large gradient and sharp peak while vortex
     dissipation,
     which occurs at $t\approx1000P_0$ as seen in Fig. \ref{lifetimeplot},
-    works to smooth out out the gap edge.
+    works to smooth out the gap edge.
 % A large $\delta\Sigma$
  %   corresponds to a more sharply peaked outer gap edge.
     \label{smoothnessplot}}  
@@ -725,7 +725,7 @@ $\tilde{\beta}=1$.
 \begin{figure}
   \includegraphics[width=\linewidth]{figures/betaplot}
   \caption{Characteristic timescales associated with vortex evolution, as a function of the cooling
-    parameter $\tilde\beta$: time in which the $m=1$
+    parameter $\tilde\beta$: time at which the $m=1$
     surface density amplitude begins to decay, $t_\mathrm{diss}$ (black);
     time at which the over-density at the
     vortex centre decreases to $\Delta\Sigma/\Sigma \sim 1$ after
