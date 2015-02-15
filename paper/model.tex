@@ -25,18 +25,20 @@ The total potential $\Phi$ includes the stellar potential, planet potential
 (described below) 
 and indirect potentials to account for the non-inertial reference
 frame. 
-In the momentum 
-equations, $\bm{f}_\nu$ represent viscous forces whose magnitude is 
+In the momentum equations, $\bm{f}_\nu$ represent viscous forces, {\bf
+which includes artificial viscosity to handle shocks, and a
+Navier-Stokes viscosity } whose magnitude is  
 characterised by a constant kinematic viscosity parameter
 $\nu$. However, we will be considering effectively inviscid discs by
-adopting small values of $\nu$ .  
+adopting small values of $\nu$.  
 
 \subsection{Heating and cooling}
 In the energy equation, the heating term $\mathcal{H}$ is defined as 
 \begin{align}
   \mathcal{H} \equiv Q^+ - Q^+_i\frac{\Sigma}{\Sigma_i}, 
 \end{align}
-where $Q^+$ represents viscous heating and subscript $i$ denotes
+where $Q^+$ represents viscous heating {\bf(from both physical and
+  artificial viscosity)} and subscript $i$ denotes
 evaluation at $t=0$. The cooling term $\mathcal{C}$ is defined as
 \begin{align}
   \mathcal{C} \equiv \frac{1}{t_c}\left(e -

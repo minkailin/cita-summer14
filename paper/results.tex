@@ -113,7 +113,7 @@ large $\tilde{\beta}$.
     \begin{tabularx}{\textwidth}{l R} 
       \multicolumn{2}{c}{$\tilde{\beta}=0.1$} \\ 
       \toprule
-      $m$ & $10^2\gamma/\Omega(r_p)$ \\
+      $m$ & $10^2\sigma/\Omega(r_p)$ \\
       \midrule
       6 & 7.3 \\
       7 & 7.8 \\
@@ -128,7 +128,7 @@ large $\tilde{\beta}$.
     \begin{tabularx}{\textwidth}{l R} 
       \multicolumn{2}{c}{$\tilde{\beta}=1.0$} \\ 
       \toprule
-      $m$ & $10^2\gamma/\Omega(r_p)$ \\
+      $m$ & $10^2\sigma/\Omega(r_p)$ \\
       \midrule
       3 & 2.0 \\
       4 & 2.2 \\
@@ -143,7 +143,7 @@ large $\tilde{\beta}$.
     \begin{tabularx}{\textwidth}{l R} 
       \multicolumn{2}{c}{$\tilde{\beta}=10.0$} \\ 
       \toprule
-      $m$ & $10^2\gamma/\Omega(r_p)$ \\
+      $m$ & $10^2\sigma/\Omega(r_p)$ \\
       \midrule
       1 & 1.1 \\
       2 & 1.6 \\
@@ -199,7 +199,7 @@ perturbation. For all three cooling times $\tilde{\beta}=0.1,\, 1.0,\,
 10$, we observe exponential growth of non-axisymmetric
 structures. An example is shown in Fig. \ref{linearmodes} for 
 $\tilde{\beta}=10$. We characterise these
-modes with an azimuthal wavenumber $m$ and growth rate $\gamma(m)$ as defined by
+modes with an azimuthal wavenumber $m$ and growth rate $\sigma(m)$ as defined by
 Eq.~\ref{fouriertransform}---\ref{growth}. Mode amplitudes were
 averaged over $r-r_p\in[2,5]r_h$. Table \ref{modetable}
 lists the growth rates measured during 
@@ -228,7 +228,15 @@ respective growth rate decreases from $ \gamma/\Omega(r_p)=0.079
 \rightarrow 0.017$. However, despite two orders of magnitude increase in the
 cooling time, the instability remains dynamical with characteristic  growth time
 $\lesssim 10P_0$. Snapshots of the instability in for  
-the different $\tilde\beta$ are shown in Fig \ref{2Dlinear}. {\bf Isothermal simulations with set sound speed where also analyzed showing growth rates $\sim 5 \times 10^2 / \Omega(r_p)$. In comparison nearly isothermal simulation with $\tilde\beta=0.01$ had growth rates $\sim 8\times 10^2 / \Omega(r_p)$}
+the different $\tilde\beta$ are shown in Fig \ref{2Dlinear}. 
+
+{\bf We also simulated a locally isothermal disk where the sound-speed is
+  held fixed, which yield a most unstable growth rate
+  $\sigma/Omega(r_p)\simeq 0.05$, compared with a value of $0.08$ for
+  a case with $\tilde{\beta}=0.01$.}   
+%Isothermal simulations with set sound speed where also analyzed
+%  showing growth rates $\sim 5 \times 10^{-2} / \Omega(r_p)$. }
+%In comparison nearly isothermal simulation with $\tilde\beta=0.01$ had growth rates $\sim 8\times 10^52 / \Omega(r_p)$}
 
 These `planet-off' simulations show that gap edges become more stable with
 longer cooling times. This is expected because larger $\tilde{\beta}$
@@ -313,9 +321,13 @@ single vortex. For completeness we also ran intermediate cases with
 $\tilde{\beta}=0.5$ and $5.0$. The amplitude of the initially formed vortex was 
 found to decrease with increased cooling rate. The vortices simply decay on a
 timescale of $O(10^3)$ orbits with faster decay for stronger vortices
-(which are obtained with faster cooling rates). We will see in the
-next section that this behaviour is very different to when the planet
-potential is kept on. 
+(which are obtained with faster cooling rates). {\bf This decay is 
+  probably due to numerical viscosity. During the slow decay the
+  vortex elongates (weakens) while its radial width remains $O(H)$, so
+  its surface density decreases. (true?)} 
+We will see in the
+next section that this behaviour {\bf after linear growth} is very
+different to when the planet potential is kept on. 
 
 %Interestingly, though, vortices arising from the stronger
 %instabilities (shorter cooling times or lower $\tilde{\beta}$) decays
@@ -375,7 +387,8 @@ linear growth rates).
 In all cases the system remains in a quasi-steady state for
 $\gtrsim800P_0$ with a single vortex circulating 
 the outer gap edge at the local Keplerian  
-frequency. Fig. \ref{Vortex2D} shows a typical plot of the relative 
+frequency. 
+Fig. \ref{Vortex2D} shows a typical plot of the relative 
 surface density perturbation in this state. During this stage, the 
 vortex intensifies. This is better shown in Fig. \ref{rossbyplot} as the
 evolution of Rossby numbers measured at the vortex centres.  
@@ -395,12 +408,11 @@ $\tilde\beta=0.1$ and $Ro\approx -0.45$ for $\tilde\beta=10$.
   \includegraphics[width=\linewidth,height=\linewidth]{figures/vortex2D}
   \caption{Relative surface density perturbation for the
     $\tilde\beta=0.1$ case during quasi-steady state with a single
-    vortex at the outer gap edge. 
-    The plots for other values of the cooling time
-    $\tilde{\beta}$ are similar.
-    {\bf The decrease in density pertibation at $r>40r_{in}$ arises from the open
-    boundry condition.}
-    \label{Vortex2D}} 
+    vortex at the outer gap edge. The plot for other values of the cooling time
+    $\tilde{\beta}$ are similar. {\bf The decrease in the surface
+      density near} $r\sim 40 r_\mathrm{in}$ {\bf arises from mass loss due to the open
+      boundary condition imposed at} $r_\mathrm{out}$.
+    \label{Vortex2D} }
 \end{figure}
 
 
@@ -456,6 +468,13 @@ increasing cooling time: for $\tilde{\beta}=0.1$ it takes $\sim400P_0$
 whereas for $\tilde{\beta}=10$ it takes $\sim 100P_0$ for the $m=1$
 amplitude to decay significantly after reaching maximum. 
 
+
+{\bf For comparison we also ran a locally isothermal simulation to
+  compare with the case with rapid cooling ($\tilde{\beta}=0.01$), but
+  did not observe significant vortex decay within our simulation
+  timescale in the former case. This suggests there could be
+  fundamental differences between the two cases.}
+
 % {\bf may be more appropriate to quote the azimuthally averaged
 %   perturbation at the location of the vortex (5-6 Hill radii from the
 %   planet?): yes, this was my original idea, mistyped as 2.5
@@ -484,8 +503,6 @@ amplitude to decay significantly after reaching maximum.
 %     \label{2dgaps}} 
 % \end{figure}
 
-
-
 \subsection{Additional analysis on vortex decay}
 In this subsection we examine the vortex decay observed in our
 simulations in more detail. Fig. \ref{shockplot} show snapshots
@@ -505,7 +522,17 @@ state. We find the time at which
 the vortex begins to decay coincides with the emergence of these
 wakes. %{\bf true statement? yes, distortion of vortex shape form wakes happens at same time}  
 
-{\bf Radial locations of the vortices were found to migrate over their lifetime. During the quasi-steady state the vortices were found to orbit $\sim 6.5r_h$ from the planet radius. Simultaneously with the appearence of wakes, the vortices were found to move towards $\sim 5.3r_h$. This is a result of the the spiral waves transporting angular momentum to the disk (Is this true? Shocks on the inner disk seem stronger so I would think it would migrate outward). After the vortex reaches marginal amplitudes $<1 \Delta\Sigma/\Sigma$ the vortices were found to migrate back out towards $\sim 6.5 r_h$ from the planet location }
+{\bf During the quasi-steady state the vortex 
+  orbits at $r\sim r_p+6r_h$. We do not see significant
+  vortex migration at this stage (true?), since the vortex is located at a
+  surface density maximum, which can trap vortices
+  \citep{paardekooper10}. However, simultaneous with the
+  appearence of the wakes, we observe the vortex begins to migrate 
+  inwards to $r\sim r_p+5r_h$. 
+  % This is a result of the the spiral waves transporting
+  % angular momentum to the disk (Is this true? Shocks on the inner disk
+  % seem stronger so I would think it would migrate outward). 
+  } 
 
 % As the vortices grow in intensity wakes are seen to extend from them. 
 During quasi-steady state the average value of the surface density gradient
@@ -515,7 +542,10 @@ the surface density variation across the wake.
 Just before the $m=1$ amplitude begins to decrease, we observe this quantity
 sharply increases to $ \sim 0.6 $, and remains around this value
 until the vortex dies out, at which point the associated Rossby number
-begins decreasing to zero
+begins decreasing to zero. {\bf After the 
+  vortex reaches small amplitudes ($1\lesssim\Delta\Sigma/\Sigma$), it 
+  migrates out to $r\sim r_p+ 6.5 r_h$. 
+}
 %{\bf :check}.   
 
 % {\bf rough estimate of
@@ -634,12 +664,19 @@ drastically smoothed out, changing from a value of $\delta\Sigma=1.2$ during
 quasi-steady state to $0.4$ after dissipation. 
 %and we find that the gap edge is smoothed during this
 %process. 
+
 This can be interpreted as the vortex providing a viscosity;  
 and we measure a typical alpha viscosity $\alpha = O(10^{-2})$
 associated with the vortex. This acts against gap-opening
-by the planet, so the condition for the RWI
-becomes less favourable, which may explain why vortices do not
-reform again (at least within the simulation timescale). 
+by the planet {\bf, and smooths out the outer surface density bump,    
+} so the condition for the RWI 
+becomes less favourable. {\bf In
+  order to re-launch the RWI, the surface density bump should
+  reform. However, this is difficult as there is no more material
+  in the planet's vicinity to clear out (Fig. \ref{gap_smoothed}).} {\bf This may} may explain
+why vortices do  not reform again (at least within the simulation timescale). 
+{\bf what is aspect-ratio at outer gap edge after full decay?}
+
 %Thus, the
 %time needed for the vortex to grow to sufficient amplitude to modify
 %the gap structure  

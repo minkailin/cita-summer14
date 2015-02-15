@@ -1,0 +1,151 @@
+- §§4 and 5: would the results of a simulation with a very short
+  cooling time (beta << 1) be the same as those of a simulation with a
+  locally isothermal equation of state and same unperturbed sound
+  speed? 
+  ********************************************************************
+  We have performed addtional (low resolution) simulations with
+  beta=0.01 to compare with a locally isothermal disks. We find a
+  smaller linear growth rate in the locally isothermal case.  
+
+  ********************************************************************
+
+- §4.4: why does the vortex’s perturbed density decrease on the long
+  term? I suppose a related question is: what controls the long-term
+  evolution of the vortex’s potential vorticity or entropy-modified
+  potential vorticity? (whichever quantity is relevant). 
+  ********************************************************************
+  In theory a vortex should live forever in 2D inviscid flow. In
+  practice, however, there is numerical viscosity which we suspect is
+  responsible for the long term decay. As the vortex weakens
+  (elongates) its area increases and its surface density drops. 	
+
+
+  viscosity and elongation of vortex 
+
+  ask robert: does gap shape change significantly? 
+
+  ********************************************************************
+
+- §5.2-5.3: here again I’d like to have more details on the vortex
+        evolution and decay: 	
+        . Do the authors see the vortex migrate? I did a simulation
+        with the authors’ setup and a rather long cooling time
+        (beta_tilde ~ 8) where I see the vortex moving from ~6.5 rh to
+        ~5.3 rh relative to the planet’s orbital radius before the
+        vortex starts decaying (rh = Hill radius). The time when the
+        vortex starts decaying actually corresponds to a rather sudden
+        increase in the planet-vortex distance, which goes up to ~6.8
+        rh until the vortex dies off completely. If the authors get a
+        similar migration behaviour in their simulations, maybe this
+        could give further insight into the vortex evolution (vortex
+        getting stronger during the quasi steady state before fading
+        away). The connection between migration and the appearance of
+        spiral waves launched by the vortex could also be made. 
+	********************************************************************
+        We thank the reviewer for raising the issue of vortex
+        migration. We have re-examined our simulation results. We
+        indeed observe vortex migration but our result is somewhat
+        different to that of the reviewer. 
+
+ 	We do not see significant vortex migration during quasi-steady
+ 	state. This may be due to the fact that the
+ 	vortex forms at a surface density maximum, which is able to
+ 	trap vortices (Paardekooper et al 2010). 
+
+	Instead, we observe the vortex begins to migrate inwards
+	with the appearence of the spiral wakes (cf. planetary
+	migration). However, we find the vortex eventually migrates
+	outward to about 6.5rh before complete decay.   
+
+	We remark that for a vortex formed at a surface density
+ 	maximum (e.g. from the RWI), that subsequent perturbations may
+ 	lead to inwards or outwards vortex migration, depending on
+ 	what side of the maximum the vortex is displaced to
+ 	(Paardekooper et al 2010). 
+
+	Although we do not understand the discrepency between our
+	results and the reviewer's, we do agree with the reviewer
+	that vortex migration probably plays a role in determining
+	the overall vortex lifetime (it may affect the duration of the
+	quasi-steady state and/or the decay timescale). We now mention
+	this in the discussions and caveats. 
+	
+        ********************************************************************
+
+        . During the quasi steady state the vortex grows as a result
+        of continuous vortensity generation upon crossing the planet’s
+        wake. What about possible turbulent diffusion of potential
+        vorticity if the planet forms in a region of the disc with
+        non-negligible ‘turbulent viscosity’? Have the authors done
+        simulations with a non vanishingly small viscosity? 
+        ********************************************************************
+	Since a low-viscosity disc is needed for the RWI to operate,
+        we have chosen to focus on invisicd simulations. This also
+        helps to minimize vortex decay directly due to a physical
+        viscosity, so that we can examine the influence of
+        thermodynamics.    
+
+	Thus, we expect that vortex lifetimes in realistic viscous discs
+	to be shorter than that seen in our 
+	simulations. We mention this in the discussions.  
+       
+        ********************************************************************
+        . I was a bit surprised that the RWI couldn’t be launched
+        again after the vortex had decayed, and I’d like the authors
+        to be more specific about why it is so. About the vortex decay
+        providing an effective alpha viscosity~ 1d-2: isn’t this a
+        time-varying quantity, decreasing as the vortex is dying? If
+        so is it really the reason why the RWI isn’t launched again?
+        What about the disc’s aspect ratio at the outer gap edge after
+        the vortex’s full decay?     
+        ********************************************************************
+	The quoted value of 0.01 is a typical viscosity associated
+        with the vortex, averaged over radius and time. 
+
+	By the time the vortex dies out that there is
+	no longer a `vortex viscosity', but the outer gap edge
+	(surface density bump) has already been smoothed out, and the
+	site is no longer suitable for the RWI. Note that from
+	Fig. 11, smoothing out the surface density bump puts material
+	into the outer disc. 
+
+	In order to re-launch the RWI, the surface density bump needs
+	to reform. However, this seems difficult as the planet already
+	resides in a deep gap with little material to clear out
+	(c.f. the original surface density bump resulted from
+	gap-opening: the planet pushes material to either side of its
+	orbit).    	
+
+        ********************************************************************
+
+- §6.1: two caveats / outlooks could be added: (i) having a more
+  realistic cooling model (same caveat as for numerical simulations of
+  disc fragmentation by the gravitational instability…) and (ii)
+  considering planet migration. 
+  ********************************************************************
+  These are now added. 
+  ********************************************************************
+- §2: given the very low shear viscosity used in this work, I would
+  emphasize straight after eqs. (2) and (3) that f_v and H include the
+  contribution of a (Von Neumann-Ritchmyer) artificial bulk viscosity
+  to handle shocks. 
+  ********************************************************************
+  These comments are now added. 
+  ********************************************************************
+- §4.2: the minimum value of 2d-4 for kappa^2 + N^2 should rather be
+  expressed in units of Omega^2 at the planet’s orbital radius. Same
+  advice for N, for which the value of 1d-5 didn’t really speak to me
+  until I realised that the planet’s orbital radius wasn’t the code’s
+  unit of length. By the way, where is N evaluated? 
+  ********************************************************************
+  The frequencies are now expressed in units of the orbital frequency
+  at the planet's orbital radius. 
+  ********************************************************************
+- Fig. 6: the colour scale suggests that there is a discontinuous jump
+  in perturbed density at orbital radii R > 40 r_in, where the density
+  seems to take very small values… why is that? 
+  ********************************************************************
+  This is due to the open boundary conditions adopted at the outer
+  boundary, which leads to mass loss. We now mention this in the
+  caption of Fig. 6. 
+  ********************************************************************
