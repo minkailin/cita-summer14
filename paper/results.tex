@@ -324,7 +324,7 @@ timescale of $O(10^3)$ orbits with faster decay for stronger vortices
 (which are obtained with faster cooling rates). {\bf This decay is 
   probably due to numerical viscosity. During the slow decay the
   vortex elongates (weakens) while its radial width remains $O(H)$, so
-  its surface density decreases. (true?)} 
+  its surface density decreases. (true?) (For isothermal and long cases yes. Spiral waves appear in beta=0.1,0.5,1.0})
 We will see in the
 next section that this behaviour {\bf after linear growth} is very
 different to when the planet potential is kept on. 
@@ -468,12 +468,14 @@ increasing cooling time: for $\tilde{\beta}=0.1$ it takes $\sim400P_0$
 whereas for $\tilde{\beta}=10$ it takes $\sim 100P_0$ for the $m=1$
 amplitude to decay significantly after reaching maximum. 
 
+{\bf For comparison we also ran a locally isothermal simulation with results concident with those found in this section.
+}
 
-{\bf For comparison we also ran a locally isothermal simulation to
-  compare with the case with rapid cooling ($\tilde{\beta}=0.01$), but
-  did not observe significant vortex decay within our simulation
-  timescale in the former case. This suggests there could be
-  fundamental differences between the two cases.}
+%{\bf For comparison we also ran a locally isothermal simulation to
+%  compare with the case with rapid cooling ($\tilde{\beta}=0.01$), but
+%  did not observe significant vortex decay within our simulation
+%  timescale in the former case. This suggests there could be
+%  fundamental differences between the two cases.}
 
 % {\bf may be more appropriate to quote the azimuthally averaged
 %   perturbation at the location of the vortex (5-6 Hill radii from the
@@ -524,7 +526,7 @@ wakes. %{\bf true statement? yes, distortion of vortex shape form wakes happens 
 
 {\bf During the quasi-steady state the vortex 
   orbits at $r\sim r_p+6r_h$. We do not see significant
-  vortex migration at this stage (true?), since the vortex is located at a
+  vortex migration at this stage (true?:yes), since the vortex is located at a
   surface density maximum, which can trap vortices
   \citep{paardekooper10}. However, simultaneous with the
   appearence of the wakes, we observe the vortex begins to migrate 
@@ -675,7 +677,10 @@ becomes less favourable. {\bf In
   reform. However, this is difficult as there is no more material
   in the planet's vicinity to clear out (Fig. \ref{gap_smoothed}).} {\bf This may} may explain
 why vortices do  not reform again (at least within the simulation timescale). 
-{\bf what is aspect-ratio at outer gap edge after full decay?}
+{\bf After full decay the aspect ratio at the outer gap edge is $h\sim0.05$}
+% (0.06 for beta=5.0,10)}
+
+% what is aspect-ratio at outer gap edge after full decay?
 
 %Thus, the
 %time needed for the vortex to grow to sufficient amplitude to modify

@@ -20,9 +20,9 @@
   (elongates) its area increases and its surface density drops. 	
 
 
-  viscosity and elongation of vortex 
+  viscosity and elongation of vortex: is indeed seen
 
-  ask robert: does gap shape change significantly? 
+  ask robert: does gap shape change significantly?:Almost no gap change
 
   ********************************************************************
 
