@@ -15,9 +15,10 @@ $t_c$. We studied the evolution of the gap stability as a function of
 $t_c$. This is a natural extension to previous studies of on gap
 stability, which employ locally or strictly isothermal equations of
 state. {\bf We considered the inviscid limit which favors the RWI
-  \citep{li09,fu14}, so that the vortex lifetimes observed in our
-  simulations are likely longer than in realistic disks with non-zero
-  viscosity. }    	
+  \citep{li09,fu14} and avoids complications from viscous
+  heating. However, this means that the vortex lifetimes observed in
+  our simulations are likely longer than in realistic disks with
+  non-zero viscosity. }    	
 
 We considered two types of numerical experiments. We first used
 disc-planet interaction to self-consistently set up gap profiles,
@@ -34,22 +35,23 @@ opened by the planet in a disc with longer $t_c$ are smoother and
 therefore  more stable to the RWI. %generalized vortensity minima less
                                 %pronounced    
 
-
 In the second set of calculations, we included the planet potential
 throughout the simulations  and examined the long-term evolution of
 the gap-edge vortex that develops from the RWI. The vortex reaches 
 a quasi-steady state lasting $O(10^3)$ orbits. Unlike the `planet-off'
 simulations, in which vortices decay after linear growth and merging,
 we find that with the planet potential kept on, the vortex amplitude
-grows during this quasi-steady state, until it begins to induce
+grows during this quasi-steady state {\bf, during which no vortex migration is
+  observed}, until it begins to induce
 shocks, after which the vortex amplitude begins to decay.   
 
 The duration of the quasi-steady state increases with
 increasing cooling timescales until a critical value, beyond which this
 quasi-steady state shortens again. The timescale for the vortex to
 decay, after reaching maximum amplitude, decreases monotonically with
-increasing cooling time. {\bf We observe vortex migration during this
-  decay, which may contribute to this decay timescale.} The sum of
+increasing cooling time. {\bf We do observe vortex migration during this
+  decay, which may influence this decay timescale. } 
+The sum of
 these two timescales results in a double-peaked vortex lifetime as a
 function of cooling timescale. 
 %technically we should probably say there is an optimum cooling time
@@ -127,8 +129,9 @@ in order to obtain quantitatively converged vortex lifetimes.
   heating/cooling is convenient to probe the full range of
   thermodynamic response of the disk. However, in order to calculate 
   vortex lifetimes in actual 
-  protoplanetary disks, a more realistic thermodynamics treatment ,
-  e.g. based on radiative cooling, should be used in future work.   
+  protoplanetary disks, an improved thermodynamics treatment ,
+  e.g. radiative cooling based on realistic disk temperature, density,
+  opacity models etc., should be used in future work.   
 }
 
 \emph{Self-gravity.} We have ignored disc self-gravity in this

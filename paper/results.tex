@@ -177,7 +177,7 @@ $\sim 0.45 \, \Omega^2(r_p)$
 %$\sim 2\times10^{-4}$ (code units)
  for all $\tilde\beta$. The
 Brunt-V\"ais\"al\"a frequency at the outer gap edge is
-$N\sim 10^{-2} \, \Omega^2(r_p)$,}
+$N\sim 10^{-2} \, \Omega(r_p)$} 
 % $N\sim 10^{-5}$,
 decreasing marginally with longer cooling rate. 
 The Solberg-Hoiland criteria is similarly satisfied for the entire 2D disc throughout the 
@@ -230,10 +230,6 @@ cooling time, the instability remains dynamical with characteristic  growth time
 $\lesssim 10P_0$. Snapshots of the instability in for  
 the different $\tilde\beta$ are shown in Fig \ref{2Dlinear}. 
 
-{\bf We also simulated a locally isothermal disk where the sound-speed is
-  held fixed, which yield a most unstable growth rate
-  $\sigma/Omega(r_p)\simeq 0.05$, compared with a value of $0.08$ for
-  a case with $\tilde{\beta}=0.01$.}   
 %Isothermal simulations with set sound speed where also analyzed
 %  showing growth rates $\sim 5 \times 10^{-2} / \Omega(r_p)$. }
 %In comparison nearly isothermal simulation with $\tilde\beta=0.01$ had growth rates $\sim 8\times 10^52 / \Omega(r_p)$}
@@ -269,6 +265,13 @@ the disc is allowed to heat up.
     \label{2Dlinear} 
   } 
 \end{figure}
+
+{\bf For completeness we also performed a lower resolution simulation
+  where the sound-speed is effectively held fixed (a locally
+  isothermal disk) by setting $\gamma=1.01$. This simulation
+  yield a most unstable growth rate $\sigma/\Omega(r_p)\simeq 0.05$,
+  compared with a value of $0.08$ for a case with
+  $\tilde{\beta}=0.01$. However, the vortex evolutions were similar.}  
 
 \subsubsection{Nearly adiabatic discs}
 \label{adiabatic_section}
@@ -321,12 +324,18 @@ single vortex. For completeness we also ran intermediate cases with
 $\tilde{\beta}=0.5$ and $5.0$. The amplitude of the initially formed vortex was 
 found to decrease with increased cooling rate. The vortices simply decay on a
 timescale of $O(10^3)$ orbits with faster decay for stronger vortices
-(which are obtained with faster cooling rates). {\bf This decay is 
-  probably due to numerical viscosity. During the slow decay the
-  vortex elongates (weakens) while its radial width remains $O(H)$, so
-  its surface density decreases. (true?) (For isothermal and long cases yes. Spiral waves appear in beta=0.1,0.5,1.0})
+(which are obtained with faster cooling rates). 
+
+{\bf This decay is probably due to numerical viscosity. During the
+  slow decay the vortex elongates (weakens) while its radial width
+  remains $O(H)$, so its surface density decreases. In addition, for 
+  $\tilde{\beta}=0.1,\,0.5$ and $1.0$ we also observe the appearence of
+  spiral waves associated with the vortex, which may contribute to
+  its dissipation (see below).} 
+% (true?) (For isothermal and long
+% cases yes. Spiral waves appear in beta=0.1,0.5,1.0}) 
 We will see in the
-next section that this behaviour {\bf after linear growth} is very
+next section that this {\bf decay after linear growth} is very
 different to when the planet potential is kept on. 
 
 %Interestingly, though, vortices arising from the stronger
@@ -357,10 +366,16 @@ for these
 simulations to be computationally feasible. We also use a larger
 disc with $r_{\mathrm{out}}=45r_{\mathrm{in}}$ to minimise boundary
 effects on vortex evolution, and apply open boundaries at
-$r=r_\mathrm{in},\,r_\mathrm{out}$. We comment that lower-resolution
-simulations with $(N_r,N_{\phi})=(256,512)$ were initially carried
-out, which show similar behaviour and trends as the high-resolution
-runs reported below.   
+$r=r_\mathrm{in},\,r_\mathrm{out}$. 
+
+We comment that lower-resolution simulations with
+$(N_r,N_{\phi})=(256,512)$ show similar behaviour and trends as the
+high-resolution runs reported below. {\bf These simulations
+  include a case with $\tilde{\beta}=0.01$ and a locally isothermal
+  disk run, which show similar behavior. In particular, we find vortex
+  lifetimes have a non-monotonic dependence on $\tilde{\beta}$, with
+  longest lifetimes as $\tilde{\beta}\to 0$ (or locally isothermal
+  disks) and for $\tilde{\beta}\sim 1$}.     
 
 \subsection{Generic evolution} 
 The linear growth of the RWI and vortex-formation is followed by 
@@ -468,8 +483,7 @@ increasing cooling time: for $\tilde{\beta}=0.1$ it takes $\sim400P_0$
 whereas for $\tilde{\beta}=10$ it takes $\sim 100P_0$ for the $m=1$
 amplitude to decay significantly after reaching maximum. 
 
-{\bf For comparison we also ran a locally isothermal simulation with results concident with those found in this section.
-}
+
 
 %{\bf For comparison we also ran a locally isothermal simulation to
 %  compare with the case with rapid cooling ($\tilde{\beta}=0.01$), but
@@ -526,11 +540,10 @@ wakes. %{\bf true statement? yes, distortion of vortex shape form wakes happens 
 
 {\bf During the quasi-steady state the vortex 
   orbits at $r\sim r_p+6r_h$. We do not see significant
-  vortex migration at this stage (true?:yes), since the vortex is located at a
-  surface density maximum, which can trap vortices
-  \citep{paardekooper10}. However, simultaneous with the
-  appearence of the wakes, we observe the vortex begins to migrate 
-  inwards to $r\sim r_p+5r_h$. 
+  vortex migration at this stage, since the vortex is located at a 
+  surface density maximum \citep{paardekooper10}. However,
+  simultaneous with the appearence of the wakes, we observe the vortex
+  begins to migrate inwards to $r\sim r_p+5r_h$.  
   % This is a result of the the spiral waves transporting
   % angular momentum to the disk (Is this true? Shocks on the inner disk
   % seem stronger so I would think it would migrate outward). 
@@ -675,9 +688,11 @@ by the planet {\bf, and smooths out the outer surface density bump,
 becomes less favourable. {\bf In
   order to re-launch the RWI, the surface density bump should
   reform. However, this is difficult as there is no more material
-  in the planet's vicinity to clear out (Fig. \ref{gap_smoothed}).} {\bf This may} may explain
+  in the planet's vicinity to clear out (Fig. \ref{gap_smoothed}) to
+  form a surface density bump outside the gap.} {\bf This may} explain
 why vortices do  not reform again (at least within the simulation timescale). 
-{\bf After full decay the aspect ratio at the outer gap edge is $h\sim0.05$}
+{\bf After full decay the aspect ratio at the outer gap edge is
+  $h\sim0.05$. }
 % (0.06 for beta=5.0,10)}
 
 % what is aspect-ratio at outer gap edge after full decay?
