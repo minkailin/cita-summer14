@@ -1,11 +1,23 @@
+We thank the reviewer for a timely report, and apologize for the delay
+in our response. We have performed addition simulations (at lower
+resolution) to address some of the reviewer's questions. The revisions
+to the manuscript are made in bold, and further explained below. 
+
+
+
 - §§4 and 5: would the results of a simulation with a very short
   cooling time (beta << 1) be the same as those of a simulation with a
   locally isothermal equation of state and same unperturbed sound
   speed? 
   ********************************************************************
-  We have performed addtional (low resolution) simulations with
-  beta=0.01 to compare with a locally isothermal disks. We find a
-  smaller linear growth rate in the locally isothermal case.  
+  We have performed addtional (lower resolution) simulations with
+  beta=0.01 to compare with a locally isothermal disks, which we obtain 
+  from our numerical models by setting gamma=1.01. We find a slightly
+  smaller linear growth rate in the locally isothermal case. However,
+  the vortex formation and evolution are similar. We    
+  obtain longer gap-edge vortex lifetimes than beta=0.1 (at the same
+  resolution) consistent with our double-peaked lifetime result for
+  high resolution simulations.      
 
   ********************************************************************
 
@@ -17,12 +29,12 @@
   In theory a vortex should live forever in 2D inviscid flow. In
   practice, however, there is numerical viscosity which we suspect is
   responsible for the long term decay. As the vortex weakens
-  (elongates) its area increases and its surface density drops. 	
-
-
-  viscosity and elongation of vortex: is indeed seen
-
-  ask robert: does gap shape change significantly?:Almost no gap change
+  (elongates) its area increases and its surface density drops. In
+  addition, for beta=0.1, 0.5, 1.0, for which the initially-formed
+  vortex is stronger, we observe the appearence of spiral waves
+  associated with the vortex, which may contribute to the decay. It
+  can be seen in Fig. 4 that these cases experience a larger decay
+  rate.  
 
   ********************************************************************
 
@@ -48,14 +60,15 @@
         different to that of the reviewer. 
 
  	We do not see significant vortex migration during quasi-steady
- 	state. This may be due to the fact that the
+ 	state. This may be due to the fact that the 	  
  	vortex forms at a surface density maximum, which is able to
- 	trap vortices (Paardekooper et al 2010). 
+ 	trap vortices (Paardekooper et al 2010). Thus, the growth
+ 	during quasi steady state is not due to vortex migration.  
 
 	Instead, we observe the vortex begins to migrate inwards
 	with the appearence of the spiral wakes (cf. planetary
 	migration). However, we find the vortex eventually migrates
-	outward to about 6.5rh before complete decay.   
+	outward to about 6.5rh before complete decay.    
 
 	We remark that for a vortex formed at a surface density
  	maximum (e.g. from the RWI), that subsequent perturbations may
@@ -81,9 +94,8 @@
         ********************************************************************
 	Since a low-viscosity disc is needed for the RWI to operate,
         we have chosen to focus on invisicd simulations. This also
-        helps to minimize vortex decay directly due to a physical
-        viscosity, so that we can examine the influence of
-        thermodynamics.    
+        helps to minimize complications from vortex decay directly due to a physical
+        viscosity (which also contributes to heating). 
 
 	Thus, we expect that vortex lifetimes in realistic viscous discs
 	to be shorter than that seen in our 
@@ -139,7 +151,8 @@
   unit of length. By the way, where is N evaluated? 
   ********************************************************************
   The frequencies are now expressed in units of the orbital frequency
-  at the planet's orbital radius. 
+  at the planet's orbital radius. The quoted value of N is evaluated
+  at the outer gap edge. 
   ********************************************************************
 - Fig. 6: the colour scale suggests that there is a discontinuous jump
   in perturbed density at orbital radii R > 40 r_in, where the density
