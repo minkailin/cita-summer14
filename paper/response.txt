@@ -1,7 +1,10 @@
 We thank the reviewer for a timely report, and apologize for the delay
-in our response. We have performed addition simulations (at lower
-resolution) to address some of the reviewer's questions. The revisions
-to the manuscript are made in bold, and further explained below. 
+in our response. We have performed additional simulations to address
+some of the reviewer's questions. In particular, Fig. 13 has been
+expanded to include more cases to strengthen our main result 
+of a non-monotonic dependence of the vortex lifetime on beta. The
+revisions to the manuscript are made in bold, and further explained
+below.    
 
 
 
@@ -10,14 +13,15 @@ to the manuscript are made in bold, and further explained below.
   locally isothermal equation of state and same unperturbed sound
   speed? 
   ********************************************************************
-  We have performed addtional (lower resolution) simulations with
-  beta=0.01 to compare with a locally isothermal disks, which we obtain 
+  We have performed additional (lower resolution) simulations that
+  compare beta=0.01 with a locally isothermal disks, which we obtain 
   from our numerical models by setting gamma=1.01. We find a slightly
   smaller linear growth rate in the locally isothermal case. However,
-  the vortex formation and evolution are similar. We    
-  obtain longer gap-edge vortex lifetimes than beta=0.1 (at the same
-  resolution) consistent with our double-peaked lifetime result for
-  high resolution simulations.      
+  the vortex formation and evolution are similar. 
+  
+  We obtain longer gap-edge vortex lifetimes with beta=0.01 than 
+  beta=0.1. We now include this result in Fig. 13 (all simulations in
+  this figure employ the same resolution).   
 
   ********************************************************************
 
@@ -31,9 +35,9 @@ to the manuscript are made in bold, and further explained below.
   responsible for the long term decay. As the vortex weakens
   (elongates) its area increases and its surface density drops. In
   addition, for beta=0.1, 0.5, 1.0, for which the initially-formed
-  vortex is stronger, we observe the appearence of spiral waves
+  vortex is stronger, we observe the appearance of spiral waves
   associated with the vortex, which may contribute to the decay. It
-  can be seen in Fig. 4 that these cases experience a larger decay
+  can be seen in Fig. 4 that these cases experience a faster decay
   rate.  
 
   ********************************************************************
@@ -62,11 +66,12 @@ to the manuscript are made in bold, and further explained below.
  	We do not see significant vortex migration during quasi-steady
  	state. This may be due to the fact that the 	  
  	vortex forms at a surface density maximum, which is able to
- 	trap vortices (Paardekooper et al 2010). Thus, the growth
- 	during quasi steady state is not due to vortex migration.  
+ 	trap vortices (Paardekooper et al 2010). Thus, in our
+ 	simulations the growth during quasi steady state is not due to
+ 	vortex migration.   
 
 	Instead, we observe the vortex begins to migrate inwards
-	with the appearence of the spiral wakes (cf. planetary
+	with the appearance of the spiral wakes (cf. planetary
 	migration). However, we find the vortex eventually migrates
 	outward to about 6.5rh before complete decay.    
 
@@ -76,7 +81,7 @@ to the manuscript are made in bold, and further explained below.
  	what side of the maximum the vortex is displaced to
  	(Paardekooper et al 2010). 
 
-	Although we do not understand the discrepency between our
+	Although we do not understand the discrepancy between our
 	results and the reviewer's, we do agree with the reviewer
 	that vortex migration probably plays a role in determining
 	the overall vortex lifetime (it may affect the duration of the
@@ -93,8 +98,9 @@ to the manuscript are made in bold, and further explained below.
         simulations with a non vanishingly small viscosity? 
         ********************************************************************
 	Since a low-viscosity disc is needed for the RWI to operate,
-        we have chosen to focus on invisicd simulations. This also
-        helps to minimize complications from vortex decay directly due to a physical
+        we have chosen to focus on inviscid simulations. This also
+        helps to minimize complications from vortex decay directly due
+        to a physical  
         viscosity (which also contributes to heating). 
 
 	Thus, we expect that vortex lifetimes in realistic viscous discs
