@@ -1,0 +1,5 @@
+We thank the reviewer for the new suggestion and comments. We have made revisions in bold, and further explain them below.
+
+We have performed locally isothermal simulations and describe our findings in Section 4.3 and 5.4. In the case where the planet potential is switch off after a partial gap is opened (Section 4.3), we observe similar vortex evolution, although linear growth rates were slightly smaller in the locally isothermal disk. In the case where the planet was kept on (Section 5.4) we did not observe vortex decay in the locally isothermal disk, and conclude the vortex lifetime is at least beyond our simulation timescales of about 2000 orbits. We incorported the reviewer's explanation of why one may in fact expect a discrepency between a locally isothermal disk simulation, and that including an energy equation but with rapid cooling. 
+
+We confirm that the reviewer's plots of vortex migration is fully consistent with our findings. 
