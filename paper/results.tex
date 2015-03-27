@@ -267,14 +267,14 @@ the disc is allowed to heat up.
 \end{figure}
 
 
-{\bf For completeness we also simulated a locally
+ For completeness we also simulated a locally
   isothermal disc with $h=0.05$ where the
   sound-speed is kept strictly equal to its initial value.  This
   simulation yield a most unstable growth rate
   $\sigma/\Omega(r_p)\simeq 0.05$ at $m=5$,   
   compared with a value of $0.085$ at $m=6$ for a corresponding
   simulation that includes the energy equation but with rapid cooling
-  $\tilde{\beta}=0.01$. However, the vortex evolution is similar.}   
+  $\tilde{\beta}=0.01$. However, the vortex evolution is similar. 
 
 
 \subsubsection{Nearly adiabatic discs}
@@ -484,8 +484,8 @@ $t\sim800P_0$, while for $\tilde{\beta}=1,\,5$ the decay begins at
 $t\sim1200P_0$. This non-monotonic dependence suggests that there
 exists an optimal cooling rate to maximise the vortex lifetime. We
 will discuss this issue further in 
-\S\ref{lifetime_discuss}. Notice the decay timescale decreases with
-increasing cooling time: for $\tilde{\beta}=0.1$ it takes $\sim400P_0$
+\S\ref{lifetime_discuss}. Notice the decay timescale {\bf can be long} with
+rapid cooling: for $\tilde{\beta}=0.1$ it takes $\sim400P_0$ 
 whereas for $\tilde{\beta}=10$ it takes $\sim 100P_0$ for the $m=1$
 amplitude to decay significantly after reaching maximum. 
 
@@ -535,7 +535,7 @@ decrease ($t=1300P_0$) and just after the rapid amplitude decay
 ($t=1510P_0$). 
 
 In quasi-steady ($t=700P_0$) the vortex is elongated with a vortex aspect ratio $ \approx 4$
-, but becomes more compact approaching a ratio of 2 during its decay ($t=1310$).   
+, but becomes more compact approaching a ratio of 2 during its decay ($t=1310P_0$).   
 Notice in Fig. \ref{shockplot} the appearance of wakes extending from
 either side of the vortex at $t=1300P_0$. These 
 wakes correlate with large gradients in surface density (bottom
@@ -763,10 +763,9 @@ why vortices do  not reform again (at least within the simulation timescale).
 % }
 
 We now examine vortex lifetimes as function of the imposed cooling
-times. {\bf For this study, additional simulations with intermediate
-  values of $\tilde\beta=0.25,0.75,2.5,7.5$ were performed, as well as
-  a nearly (locally) isothermal case with $\tilde{\beta}=0.01$.} 
- We define the vortex lifetime, $t_{\mathrm{life}}$, as the time
+times. For this study, additional simulations with 
+  $\tilde\beta=0.01,\,0.25,\,0.75,\,2.5,\,7.5$ were also performed.  
+We define the vortex lifetime, $t_{\mathrm{life}}$, as the time
 at which the over-density of the vortex
 % to reach $10\%$ of its max overdensity value
 returns to $\Delta \Sigma/\Sigma_0\sim1$ \emph{after} reaching maximum
@@ -783,21 +782,15 @@ for the average Mach number around the vortex to maximise.
 For fast cooling rates ($\tilde{\beta}\lesssim 1$), the
 vortex lifetime is maximized for $\tilde{\beta}\to0$: we find 
 $t_{\mathrm{life}} \approx 2100P_0$ for $\tilde{\beta}=0.01$ and 
-decreases to $t_{\mathrm{life}} \approx 1100P_0$ for
-$\tilde{\beta}=0.5$. This is due to the longer decay timescale with
-decreasing $\tilde{\beta}$. For longer cooling times ($\tilde{\beta}\gtrsim
+decreases to $t_{\mathrm{life}} \approx 950P_0$ for
+$\tilde{\beta}=0.25$. {\bf Note that for very small $\tilde{\beta}$, 
+  there is significant contribution to the overall vortex lifetime due
+  to a long decay timescale. }
+For longer cooling times ($\tilde{\beta}\gtrsim
 1$) the vortex lifetimes maximizes at $\tilde\beta=2.5$ with 
-$t_{\mathrm{life}}\approx 1650P_0$.  The other timescales $t_\mathrm{diss}$ and
-$t_\mathrm{Mach}$ are less complicated, but still display a
-non-monotonic dependence on $\tilde{\beta}$, with a single maximum at
-$\tilde{\beta}=1$. 
-<<<<<<< HEAD
-% his is in comparison with the timescale of intial vortex dissipation which has 
-% non-monotonic dependence and a single maxima at $\tilde\beta=5.0$.
-%non-monotonic dependence for all timescales
-=======
+$t_{\mathrm{life}}\approx 1650P_0$.  
 
-{\bf We comment here that a locally isothermal simulation, where the
+ We comment here that a locally isothermal simulation, where the
   disc sound-speed is kept constant in time, was also
   performed for comparison. In this case we did not observe
   significant vortex decay within the simulation timescale
@@ -811,8 +804,7 @@ $\tilde{\beta}=1$.
  Nevertheless, a longer vortex 
  lifetime in a locally isothermal disc would 
  be consistent with the above trend of increasing vortex lifetimes as
- $\tilde{\beta}\to0$.}  
->>>>>>> bf143e0174461a5f9b922181b662170ed5fd43de
+ $\tilde{\beta}\to0$.  
 
 \begin{figure}
   \includegraphics[width=\linewidth]{figures/betaplot}
@@ -830,21 +822,21 @@ $\tilde{\beta}=1$.
 %      reach zero.}
 \end{figure}
 
-In the previous section, we observed that vortices began to decay when
-it starts to induce shocks. We therefore suggest the vortex lifetime
-is determined the time needed for the vortex to grow to 
-sufficient amplitude to induce shocks in the surrounding fluid, and 
-the decay timescale itself. The latter was found to shorten 
-with increasing $\tilde{\beta}$. However, the former timescale
-($t_\mathrm{diss}$), which may be considered as the 
-duration of the quasi-steady state, reaches a single maximum with
-respect to cooling time. The sum of these two timescales results in the
-double-peaked behaviour of $t_\mathrm{life}$ in Fig. \ref{betaplot}. 
-% \footnote{The 
-%  decay timescale itself is also a factor, but we found this timescale
-%  to be much shorter than the duration of the quasi-steady state
-%  (Fig. \ref{lifetimeplot}), except at very short cooling times.}. 
-We suggest below competing factors that may result in this
+In the previous section, we observed that vortices began to decay when it starts to
+induce shocks. {\bf We thus suggest that the time needed for the vortex to grow to 
+sufficient amplitude to induce shocks in the surrounding fluid,   
+%The former timescale
+%($t_\mathrm{diss}$), 
+which may be considered as the duration of the quasi-steady state or
+$t_\mathrm{diss}$, is an important contribution to the overall vortex
+lifetime.} 
+%reaches a single maximum with
+%respect to cooling time {\bf for $\tilde{\beta}\geq 0.1$ (see also Fig. \ref{lifetimeplot})}. 
+%{\bf (The case with $\tilde{\beta}=0.01$ and the locally isothermal disc, 
+%does not follow this broad trend and may need to be analyzed separately.)} 
+%The sum of these two timescales leads to the 
+%double-peaked behaviour of $t_\mathrm{life}$ in Fig. \ref{betaplot}. 
+We discuss below some competing factors that may result in a 
 non-monotonic dependence of $t_\mathrm{diss}$ on the cooling rate.  
 
 \subsubsection{Factors that lengthen vortex lifetimes}
@@ -857,8 +849,6 @@ with the present simulations: at the beginning of the
 quasi-steady  state ($t\sim100P_0$) we find the over-density at the
 vortex centre is $\Delta\Sigma/\Sigma_0=2.5$ for $\tilde\beta=0.1$ and
 $\Delta\Sigma/\Sigma_0=1.48$ for $\tilde\beta=10$.%, both with
-%$Ro\simeq-0.15$.   
-% {\bf rossby numbers?} 
 
 The growth of the post-merger single vortex is mediated by disc-planet
 interaction. However, gap-opening becomes more difficult in a hotter 
