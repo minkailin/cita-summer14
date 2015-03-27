@@ -266,12 +266,16 @@ the disc is allowed to heat up.
   } 
 \end{figure}
 
-{\bf For completeness we also performed a lower resolution simulation
-  where the sound-speed is effectively held fixed (a locally
-  isothermal disc) by setting $\gamma=1.01$. This simulation
-  yield a most unstable growth rate $\sigma/\Omega(r_p)\simeq 0.05$,
-  compared with a value of $0.08$ for a case with
-  $\tilde{\beta}=0.01$. However, the vortex evolution were similar.}  
+
+{\bf For completeness we also simulated a locally
+  isothermal disc with $h=0.05$ where the
+  sound-speed is kept strictly equal to its initial value.  This
+  simulation yield a most unstable growth rate
+  $\sigma/\Omega(r_p)\simeq 0.05$ at $m=5$,   
+  compared with a value of $0.085$ at $m=6$ for a corresponding
+  simulation that includes the energy equation but with rapid cooling
+  $\tilde{\beta}=0.01$. However, the vortex evolution is similar.}   
+
 
 \subsubsection{Nearly adiabatic discs}
 \label{adiabatic_section}
@@ -787,9 +791,28 @@ $t_{\mathrm{life}}\approx 1650P_0$.  The other timescales $t_\mathrm{diss}$ and
 $t_\mathrm{Mach}$ are less complicated, but still display a
 non-monotonic dependence on $\tilde{\beta}$, with a single maximum at
 $\tilde{\beta}=1$. 
+<<<<<<< HEAD
 % his is in comparison with the timescale of intial vortex dissipation which has 
 % non-monotonic dependence and a single maxima at $\tilde\beta=5.0$.
 %non-monotonic dependence for all timescales
+=======
+
+{\bf We comment here that a locally isothermal simulation, where the
+  disc sound-speed is kept constant in time, was also
+  performed for comparison. In this case we did not observe
+  significant vortex decay within the simulation timescale
+ (implying $t_\mathrm{diss}\gtrsim2000P_0$).  We expect the corresponding vortex
+ lifetime to exceed that for $\tilde{\beta}=0.01$. Including an energy
+ equation with rapid cooling (or setting $\gamma$ close to 
+ unity), could still lead to discrepancies with a locally isothermal disc. This is 
+ due to the advection-creation of specific entropy within the planet's horseshoe
+ region with the former case,  thereby affecting the generalized vortensity 
+ and therefore the instability (\S\ref{linear}) and subsequent vortex evolution. 
+ Nevertheless, a longer vortex 
+ lifetime in a locally isothermal disc would 
+ be consistent with the above trend of increasing vortex lifetimes as
+ $\tilde{\beta}\to0$.}  
+>>>>>>> bf143e0174461a5f9b922181b662170ed5fd43de
 
 \begin{figure}
   \includegraphics[width=\linewidth]{figures/betaplot}
